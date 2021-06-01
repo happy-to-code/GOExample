@@ -37,7 +37,6 @@ func main() {
 		CompanyInfomation.Name:Sunny
 		CompanyInfomation.Department:[Finance Design Program Sales]
 	*/
-	// 	------------------------------------
 	fmt.Println()
 	fmt.Println("==========================================")
 	getStringSlice := v.GetStringSlice("CompanyInfomation.Department")
