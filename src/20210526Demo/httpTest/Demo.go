@@ -30,9 +30,9 @@ func httpGet() {
 }
 
 func httpPost() {
-	resp, err := http.Post("http://www.01happy.com/demo/accept.php",
+	resp, err := http.Post("http://localhost:9088/v1/api/post",
 		"application/x-www-form-urlencoded",
-		strings.NewReader("name=cjb"))
+		strings.NewReader("{\"name\":\"aa8\",\"age\":8}"))
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -47,8 +47,8 @@ func httpPost() {
 }
 
 func httpPostForm() {
-	resp, err := http.PostForm("http://www.01happy.com/demo/accept.php",
-		url.Values{"key": {"Value"}, "id": {"123"}})
+	resp, err := http.PostForm("http://localhost:9088/v1/api/post",
+		url.Values{"name": {"Value"}, "age": {"123"}})
 
 	if err != nil {
 		// handle error

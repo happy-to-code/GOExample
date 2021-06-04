@@ -18,11 +18,11 @@ var (
 	}
 )
 
-func main() {
+func main0() {
 	req := fasthttp.AcquireRequest()
 	req.SetRequestURI("http://localhost:9088/v1/api/post")
 	req.Header.SetMethod("POST")
-	req.Header.SetContentType("application/json")
+	req.Header.SetContentType("application/x-www-form-urlencoded")
 	req.SetBody([]byte("{\"name\":\"aa8\",\"age\":8}"))
 
 	resp := fasthttp.AcquireResponse()
@@ -43,7 +43,7 @@ type PostDemo struct {
 	Age  int    `json:"age"`
 }
 
-func main0() {
+func main() {
 	// http://localhost:9088/v1/api/world
 	// url := "http://localhost:9088/v1/api/world"
 	// for i := 0; i < 10; i++ {
@@ -55,13 +55,14 @@ func main0() {
 	// }
 
 	// 	========================================================
+	// url := "http://localhost:9088/v1/api/post"
 	url := "http://localhost:9088/v1/api/post"
 	for i := 0; i < 10; i++ {
 		var p PostDemo
 		p.Age = i
 		p.Name = "aa" + strconv.Itoa(i)
 		jsonBytes, _ := json.Marshal(p)
-		fmt.Println("---->", string(jsonBytes))
+		// fmt.Println("---->", string(jsonBytes))
 		err, s := httpPost(url, string(jsonBytes))
 		if err == nil {
 			fmt.Println(s)
@@ -78,6 +79,7 @@ func httpPost(url, jsonData string) (error, string) {
 
 	// 默认是application/x-www-form-urlencoded
 	req.Header.SetContentType("application/json")
+	// req.Header.SetContentType("application/x-www-form-urlencoded")
 	req.Header.SetMethod("POST")
 
 	resp := &fasthttp.Response{}
