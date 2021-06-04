@@ -4,15 +4,46 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/valyala/fasthttp"
+	"log"
 	"strconv"
+	"time"
 )
+
+var (
+	// HTTPClient global http client object
+	client *fasthttp.Client = &fasthttp.Client{
+		MaxConnsPerHost: 16384, // MaxConnsPerHost  default is 512, increase to 16384
+		ReadTimeout:     5 * time.Second,
+		WriteTimeout:    5 * time.Second,
+	}
+)
+
+func main() {
+	req := fasthttp.AcquireRequest()
+	req.SetRequestURI("http://localhost:9088/v1/api/post")
+	req.Header.SetMethod("POST")
+	req.Header.SetContentType("application/json")
+	req.SetBody([]byte("{\"name\":\"aa8\",\"age\":8}"))
+
+	resp := fasthttp.AcquireResponse()
+
+	defer fasthttp.ReleaseResponse(resp)
+	defer fasthttp.ReleaseRequest(req)
+
+	if err := client.Do(req, resp); err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(resp)
+	fmt.Println("===--->", string(resp.Body()))
+}
 
 type PostDemo struct {
 	Name string `json:"name"`
 	Age  int    `json:"age"`
 }
 
-func main() {
+func main0() {
 	// http://localhost:9088/v1/api/world
 	// url := "http://localhost:9088/v1/api/world"
 	// for i := 0; i < 10; i++ {
@@ -30,7 +61,7 @@ func main() {
 		p.Age = i
 		p.Name = "aa" + strconv.Itoa(i)
 		jsonBytes, _ := json.Marshal(p)
-		// fmt.Println("---->", string(jsonBytes))
+		fmt.Println("---->", string(jsonBytes))
 		err, s := httpPost(url, string(jsonBytes))
 		if err == nil {
 			fmt.Println(s)
