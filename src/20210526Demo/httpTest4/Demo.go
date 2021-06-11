@@ -1,11 +1,9 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"github.com/valyala/fasthttp"
 	"log"
-	"strconv"
 	"time"
 )
 
@@ -45,33 +43,36 @@ type PostDemo struct {
 
 func main() {
 	// http://localhost:9088/v1/api/world
-	// url := "http://localhost:9088/v1/api/world"
-	// for i := 0; i < 10; i++ {
-	// 	err, s := httpGet(url)
-	// 	if err == nil {
-	// 		// panic(err)
-	// 		fmt.Println(s)
-	// 	}
-	// }
-
-	// 	========================================================
-	// url := "http://localhost:9088/v1/api/post"
-	url := "http://localhost:9088/v1/api/post"
+	url := "http://localhost:9088/v1/api/world"
 	for i := 0; i < 10; i++ {
-		var p PostDemo
-		p.Age = i
-		p.Name = "aa" + strconv.Itoa(i)
-		jsonBytes, _ := json.Marshal(p)
-		// fmt.Println("---->", string(jsonBytes))
-		err, s := httpPost(url, string(jsonBytes))
+		// err, s := httpGet(url)
+		s, err := httpGetAndPost(url, "GET", "")
 		if err == nil {
+			// panic(err)
 			fmt.Println(s)
 		}
 	}
+
+	// ========================================================
+	// url := "http://localhost:9088/v1/api/post"
+	// url := "http://localhost:9088/v1/api/post"
+	// for i := 0; i < 10; i++ {
+	// 	var p PostDemo
+	// 	p.Age = i
+	// 	p.Name = "aa" + strconv.Itoa(i)
+	// 	jsonBytes, _ := json.Marshal(p)
+	// 	// fmt.Println("---->", string(jsonBytes))
+	// 	// err, s := httpPost(url, string(jsonBytes))
+	// 	s, err := httpGetAndPost(url,"POST",string(jsonBytes))
+	// 	if err == nil {
+	// 		fmt.Println(s)
+	// 	}
+	// }
 }
 
 func httpPost(url, jsonData string) (error, string) {
 	req := &fasthttp.Request{}
+	req.Header.Set("my", "HHHHAAAAA")
 	req.SetRequestURI(url)
 
 	requestBody := []byte(jsonData)
@@ -109,6 +110,35 @@ func httpGet(url string) (error, string) {
 
 	// fmt.Println(string(resp))
 	return nil, string(resp)
+}
+
+func httpGetAndPost(url, method, data string) (string, error) {
+	req := &fasthttp.Request{} // 相当于获取一个对象
+
+	req.SetRequestURI(url) // 设置请求的url
+	req.Header.Set("my", "HHHHHHHHHHHHHHHHHHHHHHHHH")
+
+	// bytes, err := json.Marshal(data) // data是请求数据
+	//
+	// if err != nil {
+	// 	return "", err
+	// }
+
+	req.SetBody([]byte(data)) // 存储转换好的数据
+
+	req.Header.SetContentType("application/json") // 设置header头信息
+
+	req.Header.SetMethod(method) // 设置请求方法
+
+	resp := &fasthttp.Response{} // 相应结果的对象
+
+	client := &fasthttp.Client{} // 发起请求的对象
+
+	if err := client.Do(req, resp); err != nil {
+		return "", err
+	}
+
+	return string(resp.Body()), nil
 }
 
 func main1() {
