@@ -44,13 +44,14 @@ type PostDemo struct {
 func main() {
 	// http://localhost:9088/v1/api/world
 	url := "http://localhost:9088/v1/api/world"
-	for i := 0; i < 10; i++ {
-		// err, s := httpGet(url)
-		s, err := httpGetAndPost(url, "GET", "")
-		if err == nil {
-			// panic(err)
-			fmt.Println(s)
-		}
+
+	// err, s := httpGet(url)
+	s, err := httpGetAndPost(url, "GET", "")
+	if err == nil {
+		// panic(err)
+		fmt.Println(s)
+	} else {
+		fmt.Println("err:", err)
 	}
 
 	// ========================================================
@@ -134,7 +135,10 @@ func httpGetAndPost(url, method, data string) (string, error) {
 
 	client := &fasthttp.Client{} // 发起请求的对象
 
-	if err := client.Do(req, resp); err != nil {
+	// if err := client.Do(req, resp); err != nil {
+	// 	return "", err
+	// }
+	if err := client.DoTimeout(req, resp, time.Second*11); err != nil {
 		return "", err
 	}
 

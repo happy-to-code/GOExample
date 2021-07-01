@@ -1,0 +1,115 @@
+用气：
++-------------------+---------------+------+-----+-------------------+-----------------------------+
+| Field             | Type          | Null | Key | Default           | Extra                       |
++-------------------+---------------+------+-----+-------------------+-----------------------------+
+| HZ                | varchar(200)  | YES  |     | NULL              |                             |
+| HZZJLX            | varchar(20)   | YES  |     | NULL              |                             |
+| HZZJHM            | varchar(30)   | YES  |     | NULL              |                             |
+| LX                | varchar(20)   | NO   |     | NULL              |                             |
+| SD                | varchar(20)   | NO   |     | NULL              |                             |
+| SYL               | decimal(18,2) | NO   |     | NULL              |                             |
+| JLDW              | varchar(2)    | NO   |     | NULL              |                             |
+| XXYTBMQC          | varchar(200)  | NO   |     | NULL              |                             |
+| TGDWQC            | varchar(200)  | NO   |     | NULL              |                             |
+| TGRQ              | datetime      | NO   |     | NULL              |                             |
+| I_FLAG            | char(10)      | YES  |     | NULL              |                             |
+| I_TIME            | timestamp     | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| S_CREATETIME      | timestamp     | NO   |     | CURRENT_TIMESTAMP |                             |
+| S_LAST_UPDATETIME | timestamp     | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| I_ID              | int(11)       | NO   | PRI | NULL              | auto_increment              |
++-------------------+---------------+------+-----+-------------------+-----------------------------+
+
+
+
+用水：
++-------------------+---------------+------+-----+-------------------+-----------------------------+
+| Field             | Type          | Null | Key | Default           | Extra                       |
++-------------------+---------------+------+-----+-------------------+-----------------------------+
+| HZ                | varchar(200)  | YES  |     | NULL              |                             |
+| YHDZ              | varchar(200)  | YES  |     | NULL              |                             |
+| HH                | varchar(30)   | YES  |     | NULL              |                             |
+| HZZJLX            | varchar(20)   | YES  |     | NULL              |                             |
+| HZZJHM            | varchar(30)   | YES  |     | NULL              |                             |
+| LX                | varchar(20)   | YES  |     | NULL              |                             |
+| SD                | varchar(20)   | YES  |     | NULL              |                             |
+| SYL               | decimal(18,1) | YES  |     | NULL              |                             |
+| JLDW              | varchar(2)    | YES  |     | NULL              |                             |
+| XXYTBMQC          | varchar(200)  | YES  |     | NULL              |                             |
+| TGDWQC            | varchar(200)  | YES  |     | NULL              |                             |
+| TGRQ              | datetime      | YES  |     | NULL              |                             |
+| S_LAST_UPDATETIME | timestamp     | YES  |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| I_TIME            | timestamp     | YES  |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
++-------------------+---------------+------+-----+-------------------+-----------------------------+
+
+
+
+用气信息
+-- renminyinhang.yqxx definition
+
+CREATE TABLE `yqxx` (
+  `HZ` varchar(200) DEFAULT NULL COMMENT '户主',
+  `HZZJLX` varchar(20) DEFAULT NULL COMMENT '户主证件类型',
+  `HZZJHM` varchar(30) DEFAULT NULL COMMENT '户主证件号码',
+  `LX` varchar(20) NOT NULL COMMENT '类型',
+  `SD` varchar(20) NOT NULL COMMENT '时段',
+  `SYL` decimal(18,2) NOT NULL COMMENT '使用量',
+  `JLDW` varchar(2) NOT NULL COMMENT '计量单位',
+  `XXYTBMQC` varchar(200) NOT NULL COMMENT '信息源头部门全称 ',
+  `TGDWQC` varchar(200) NOT NULL COMMENT '提供单位全称',
+  `TGRQ` datetime NOT NULL COMMENT '提供日期',
+  `I_FLAG` char(10) DEFAULT NULL COMMENT 'I_FLAG',
+  `I_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'I_TIME',
+  `S_CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'S_CREATETIME',
+  `S_LAST_UPDATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'S_LAST_UPDATETIME',
+  `I_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'I_ID',
+  PRIMARY KEY (`I_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=98116 DEFAULT CHARSET=utf8 COMMENT='用气信息';
+
+用水信息
+-- renminyinhang.ysxx definition
+
+CREATE TABLE `ysxx` (
+  `HZ` varchar(200) DEFAULT NULL COMMENT '户主',
+  `YHDZ` varchar(200) DEFAULT NULL COMMENT '用户地址',
+  `HH` varchar(30) DEFAULT NULL COMMENT '户号',
+  `HZZJLX` varchar(20) DEFAULT NULL COMMENT '户主证件类型',
+  `HZZJHM` varchar(30) DEFAULT NULL COMMENT '户主证件号码',
+  `LX` varchar(20) DEFAULT NULL COMMENT '类型',
+  `SD` varchar(20) DEFAULT NULL COMMENT '时段',
+  `SYL` decimal(18,1) DEFAULT NULL COMMENT '使用量',
+  `JLDW` varchar(2) DEFAULT NULL COMMENT '计量单位',
+  `XXYTBMQC` varchar(200) DEFAULT NULL COMMENT '信息源头部门全称',
+  `TGDWQC` varchar(200) DEFAULT NULL COMMENT '提供单位全称',
+  `TGRQ` datetime DEFAULT NULL COMMENT '提供日期',
+  `S_LAST_UPDATETIME` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'S_LAST_UPDATETIME',
+  `I_TIME` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用水信息';
+
+市燃气公司_欠缴费用信息（商业违约信息）
+-- renminyinhang.srqgs_qjfy definition
+
+CREATE TABLE `srqgs_qjfy` (
+  `ZHH` varchar(40) NOT NULL COMMENT '账户号',
+  `ZHMC` varchar(200) NOT NULL COMMENT '账户名称',
+  `ZJLX` varchar(20) NOT NULL COMMENT '证件类型',
+  `ZJHM` varchar(30) NOT NULL COMMENT '证件号码',
+  `QJLXMC` varchar(10) NOT NULL COMMENT '欠缴类型名称',
+  `QJKSYHR` varchar(20) NOT NULL COMMENT '欠缴开始月或日',
+  `QJTJJZYHR` varchar(20) NOT NULL COMMENT '欠缴统计截止月或日',
+  `QJZQ` varchar(100) NOT NULL COMMENT '欠缴账期',
+  `TQTS` varchar(20) NOT NULL COMMENT '拖欠天数',
+  `QFL` varchar(50) DEFAULT NULL COMMENT '欠费量',
+  `QFJEY` decimal(18,2) NOT NULL COMMENT '欠费金额（元）',
+  `SPBJ` varchar(10) NOT NULL COMMENT '是否补缴',
+  `SXYZCD` varchar(1) DEFAULT NULL COMMENT '失信严重程度',
+  `SXXWYXQ` date DEFAULT NULL COMMENT '失信行为有效期',
+  `XXYTBMQC` varchar(200) NOT NULL COMMENT '信息源头部门全称',
+  `TGDWQC` varchar(200) NOT NULL COMMENT '提供单位全称',
+  `TGRQ` datetime NOT NULL COMMENT '提供日期',
+  `I_FLAG` char(10) DEFAULT NULL COMMENT 'I_FLAG',
+  `I_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'I_TIME',
+  `S_CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'S_CREATETIME',
+  `S_LAST_UPDATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'S_LAST_UPDATETIME',
+  `I_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'I_ID',
+  PRIMARY KEY (`I_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1296 DEFAULT CHARSET=utf8 COMMENT='市燃气公司_欠缴费用信息（商业违约信息）';

@@ -1,0 +1,16 @@
+{
+  "state": 200,
+  "message": "success",
+  "data": [
+    {
+      "id": "38vtHB8YMxHVM8e52HDYFGXqbq6Y9UhtrAi8sX8YpcanWd5ahs",
+      "code": "PSBC",
+      "name": "邮储银行",
+      "pubkey": "dec189fff326cdb31b2fbe8bdbe0a7f781afe41c5d8ca646104ee71bf7f8699e86b89e073ca1faa9b30451333ff5d82b746f603a6265d62dc6804e248a263e6",
+      "wxMiniProgram": {
+        "appid": "appid",
+        "path": "utl"
+      }
+    }
+  ]
+}
