@@ -18,7 +18,10 @@ func main() {
 		fmt.Println("t1:::", the_time.Unix())
 	}
 
+	fmt.Println("=============================================================")
 	now := time.Now().Unix()
 	fmt.Println("now:", now)
+
+	fmt.Println(time.Unix(time.Now().Unix(), 0).Format("2006-01-02--15:04:05"))
 
 }

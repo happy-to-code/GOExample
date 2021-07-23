@@ -1,0 +1,69 @@
+{
+    "subject_information": {
+        "basic_information_subject": {
+            "general_information_subject": [
+                "subject_id",
+                "subject_type",
+                "subject_main_administrative_region",
+                "subject_create_time"
+            ],
+            "subject_qualification_information": "subject_qualification_information"
+        },
+        "organization_subject_information": {
+            "basic_information_of_enterprise":{
+                "basic_information_description": [
+                    "subject_company_name",
+                    "subject_company_english_name",
+                    "subject_company_short_name",
+                    "subject_company_short_english_name",
+                    "subject_organization_nature",
+                    "subject_legal_type",
+                    "subject_economic_type",
+                    "subject_company_type",
+                    "subject_scale_type",
+                    "subject_high_technology_enterprise",
+                    "subject_document_information",
+                    "subject_registry_date",
+                    "subject_business_license",
+                    "subject_business_scope",
+                    "subject_industry",
+                    "subject_company_business",
+                    "subject_company_profile",
+                    "subject_registered_capital",
+                    "subject_registered_capital_currency",
+                    "subject_paid_in_capital",
+                    "subject_paid_in_capital_currency",
+                    "subject_registered_address",
+                    "subject_province",
+                    "subject_city",
+                    "subject_district",
+                    "subject_office_address",
+                    "subject_contact_address",
+                    "subject_contact_number",
+                    "subject_fax",
+                    "subject_postal_code",
+                    "subject_internet_address",
+                    "subject_mail_box",
+                    "subject_association_articles",
+                    "subject_regulator",
+                    "subject_shareholders_number",
+                    "subject_taxpayer_id_number",
+                    "subject_invoice_bank",
+                    "subject_invoice_account_number",
+                    "subject_invoice_address",
+                    "subject_invoice_telephone_number",
+                    "subject_approval_time",
+                    "subject_insured_number",
+                    "subject_company_status",
+                    "subject_company_status_deregistration",
+                    "subject_company_status_deregistration_date",
+                    "subject_company_status_windingup",
+                    "subject_company_status_windingup_date",
+                    "subject_name_used_before",
+                    "subject_personnel_size"
+                ],
+                "leading_member_information":"leading_member_information"
+            }
+        }
+    }
+}

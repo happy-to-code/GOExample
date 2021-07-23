@@ -80,19 +80,21 @@ func main() {
 
 	var individual Individual
 	var subject Subject
-	subject.Id = "360202198807090038"
-	subject.Name = "曾嵩"
+	// subject.Id = "360202198807090038"
+	// subject.Name = "曾嵩"
+	subject.Id = "321088198811155757"
+	subject.Name = "周江安"
 	individual.SubjectType = "natural"
 	individual.Subject = subject
 
-	var individual2 Individual
-	var subject2 Subject
-	subject2.Id = "321088198610215450"
-	subject2.Name = "吴正寅"
-	individual2.SubjectType = "natural"
-	individual2.Subject = subject2
+	// var individual2 Individual
+	// var subject2 Subject
+	// subject2.Id = "321088198610215450"
+	// subject2.Name = "吴正寅"
+	// individual2.SubjectType = "natural"
+	// individual2.Subject = subject2
 
-	inds = append(inds, individual2)
+	// inds = append(inds, individual2)
 	inds = append(inds, individual)
 
 	for _, i := range inds {
@@ -113,22 +115,32 @@ func main() {
 		httpDo(httpClient, "GET", api, "application/x-www-form-urlencoded", "")
 		*/
 
-		/*// 社保
-		var api2 = UrlPrefix + "gateway/api/1/zrrsbjnxxcxjk"
-		data := "xm=" + i.Subject.Name+"&zjhm=" + i.Subject.Id
-		httpDo(httpClient, "POST", api2, "application/x-www-form-urlencoded", data)
-		*/
+		// 社保
+		// var api2 = UrlPrefix + "gateway/api/1/zrrsbjnxxcxjk"
+		// data := "xm=" + i.Subject.Name+"&zjhm=" + i.Subject.Id
+		// httpDo(httpClient, "POST", api2, "application/x-www-form-urlencoded", data)
 
 		// 自然人严重失信黑名单
-		var api = UrlPrefix + "gateway/api/1/zrryzsxhmdfy"
-		api = api + "?ROWNUM=0&PAGESIZE=1&SFZJHM=" + i.Subject.Id
+		// var api = UrlPrefix + "gateway/api/1/zrryzsxhmdfy"
+		// api = api + "?ROWNUM=0&PAGESIZE=1&SFZJHM=" + i.Subject.Id
+		// httpDo(httpClient, "GET", api, "application/x-www-form-urlencoded", "")
+		//
+		// // 自然人守信红名单Url
+		// api = UrlPrefix + "gateway/api/1/shfrcssxhmdfyfw"
+		// // api = api + "?ROWNUM=0&PAGESIZE=1&QYMC=" + i.Subject.Name
+		// data := "ROWNUM=0&PAGESIZE=1&QYMC=" + i.Subject.Name
+		// httpDo(httpClient, "GET", api, "application/x-www-form-urlencoded", data)*/
+
+		// 	网格数据
+		fmt.Println("i==>", i)
+		// api := "http://127.0.0.1:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022195706281518"
+		// api := "http://172.21.43.41:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022195706281518"
+		api := "http://172.21.43.41:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022197206221518"
 		httpDo(httpClient, "GET", api, "application/x-www-form-urlencoded", "")
 
-		// 自然人守信红名单Url
-		api = UrlPrefix + "gateway/api/1/shfrcssxhmdfyfw"
-		// api = api + "?ROWNUM=0&PAGESIZE=1&QYMC=" + i.Subject.Name
-		data := "ROWNUM=0&PAGESIZE=1&QYMC=" + i.Subject.Name
-		httpDo(httpClient, "GET", api, "application/x-www-form-urlencoded", data)
+		// api := "http://127.0.0.1:8088/fast-api/peasantHousehold/getDataList?beginTime="+url.QueryEscape("2021-06-13 00:00:00")+"&endTime="+url.QueryEscape("2021-06-23 00:00:00")
+		// // data := "beginTime=2021-06-13 00:00:00&endTime=2021-06-23 00:00:00"
+		// httpDo(httpClient, "GET", api, "application/json;charset=UTF-8", "")
 
 	}
 
@@ -136,7 +148,6 @@ func main() {
 
 // 有时需要在请求的时候设置头参数、cookie之类的数据，就可以使用http.Do方法。
 func httpDo(client *http.Client, requestType, url, contentType, data string) {
-	// req, err := http.NewRequest(requestType, url, strings.NewReader("name=cjb"))
 	req, err := http.NewRequest(requestType, url, strings.NewReader(data))
 	req.Header.Set("Appkey", "718131542538321920")
 	if err != nil {

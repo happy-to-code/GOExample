@@ -89,7 +89,7 @@ func (r *Rsa) init() {
 func (r *Rsa) Encrypt(data []byte) ([]byte, error) {
 	// blockLength = 密钥长度 = 一次能加密的明文长度
 	// "/8" 将bit转为bytes
-	// "-11" 为 PKCS#1 建议的 padding 占用了 11 个字节
+	// "-11.txt" 为 PKCS#1 建议的 padding 占用了 11.txt 个字节
 	blockLength := r.rsaPublicKey.N.BitLen()/8 - 11
 	// 如果明文长度不大于密钥长度，可以直接加密
 	if len(data) <= blockLength {

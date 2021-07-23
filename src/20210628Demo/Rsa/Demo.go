@@ -104,23 +104,23 @@ func DecrptogRSA(src []byte, path string) (res []byte, privateKey *rsa.PrivateKe
 	return
 }
 func main() {
-	err := RSAGenKey(2048)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Println("秘钥生成成功！")
+	// err := RSAGenKey(2048)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+	// fmt.Println("秘钥生成成功！")
 
 	str := "山重水复疑无路，柳暗花明又一村！"
-	fmt.Println("加密之前的数据为：", string(str))
-	data, _, err := EncyptogRSA([]byte(str), "publicKey.pem")
+	fmt.Println("加密之前的数据为：", str)
+	data, _, err := EncyptogRSA([]byte(str), "tpub.pem")
 	if err != nil {
 		fmt.Printf("err1:%v\n", err)
 	}
 	fmt.Println("加密之后的数据为：", string(data))
 	fmt.Println("加密之后16进制编码的数据为：", hex.EncodeToString(data))
 
-	data2, _, er := DecrptogRSA(data, "privateKey.pem")
+	data2, _, er := DecrptogRSA(data, "tpri.pem")
 	if er != nil {
 		fmt.Printf("err2:%v\n", er)
 	}
@@ -131,7 +131,6 @@ func main() {
 	fmt.Println("sign:", sign)
 	verify := VerifyRSA([]byte("data"), sign, "tpub.pem")
 	fmt.Println("verify:", verify)
-
 }
 
 /*
@@ -145,17 +144,7 @@ func main() {
 func SignatureRSA(plainText []byte, fileName string) []byte {
 	// ------1.获取私匙------
 	// Step1:打开文件获取私匙
-	file, err := os.Open(fileName)
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
-	fileinfo, err := file.Stat()
-	if err != nil {
-		panic(err)
-	}
-	buf := make([]byte, fileinfo.Size())
-	file.Read(buf)
+	_, buf := readFile(fileName)
 	// Step2:将私匙反pem化
 	block, _ := pem.Decode(buf)
 	// Step3:将私匙反X509序列化
@@ -193,17 +182,7 @@ func SignatureRSA(plainText []byte, fileName string) []byte {
 func VerifyRSA(plainText, sigText []byte, fileName string) bool {
 	// ------1.获取公钥------
 	// Step1:打开文件获取公匙
-	file, err := os.Open(fileName)
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
-	fileinfo, err := file.Stat()
-	if err != nil {
-		panic(err)
-	}
-	buf := make([]byte, fileinfo.Size())
-	file.Read(buf)
+	err, buf := readFile(fileName)
 	// Step2：将公匙反pem码化
 	block, _ := pem.Decode(buf)
 	// Step3:将公匙反x509序列化
@@ -234,4 +213,19 @@ func VerifyRSA(plainText, sigText []byte, fileName string) bool {
 	} else {
 		return true
 	}
+}
+
+func readFile(fileName string) (error, []byte) {
+	file, err := os.Open(fileName)
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+	fileinfo, err := file.Stat()
+	if err != nil {
+		panic(err)
+	}
+	buf := make([]byte, fileinfo.Size())
+	file.Read(buf)
+	return err, buf
 }

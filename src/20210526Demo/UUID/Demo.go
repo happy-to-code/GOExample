@@ -11,10 +11,10 @@ func createUUID() string {
 	return strings.Replace(ul.String(), "-", "", -1)
 }
 func main() {
-	ss := "3130303131393230323130333031313239323933"
-
-	fmt.Println(ss[:8])
-	fmt.Println(len(ss))
+	// ss := "3130303131393230323130333031313239323933"
+	//
+	// fmt.Println(ss[:8])
+	// fmt.Println(len(ss))
 	for i := 0; i < 100; i++ {
 		s := createUUID()
 		fmt.Println(s, "--", len(s))

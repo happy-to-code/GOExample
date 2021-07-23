@@ -1,0 +1,15 @@
+新增授权：
+curl -H "Content-Type:application/json" -X POST -d '{"AuthId":"77888654kjjsdsdmmnn","SubjectType":"natural","BankId":"4ak9sBpMKFm9PkfEFvaWK5JfmoSRRUX6dsnZRvTGTTrhkUJvG8","EndTime":"2021-07-25 18:18:18","FileHash":"hsdhfhshfsdfsfdsdfsdfsdfsdf","Subject":{"Id":"360202198807090038","Name":"曾嵩"}}'  http://localhost:60004/jml/v1/authorize/add
+
+查询：
+curl -H "Content-Type:application/json" -X POST -d '{"RequestId": "testkkk001", "AuthId":"77888654kjjsdsdmmnn", "PersonId":"360202198807090038","PersonName":"曾嵩","Purpose":"ssss"}'  http://localhost:60004/jml/v1/creditdata/query
+
+
+
+
+
+
+"http://172.21.43.42:60001-->http://32.207.245.24:60142",
+"http://172.21.43.42:60002-->http://32.207.245.24:60242",
+"http://172.21.43.44:60001-->http://32.207.245.24:60144",
+"http://172.21.43.44:60002-->http://32.207.245.24:60244"
