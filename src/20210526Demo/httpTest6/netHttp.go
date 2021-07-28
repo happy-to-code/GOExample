@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net"
@@ -80,10 +81,10 @@ func main() {
 
 	var individual Individual
 	var subject Subject
-	// subject.Id = "360202198807090038"
-	// subject.Name = "曾嵩"
-	subject.Id = "321088198811155757"
-	subject.Name = "周江安"
+	subject.Id = "360202198807090038"
+	subject.Name = "曾嵩"
+	// subject.Id = "321088198811155757"
+	// subject.Name = "周江安"
 	individual.SubjectType = "natural"
 	individual.Subject = subject
 
@@ -98,27 +99,26 @@ func main() {
 	inds = append(inds, individual)
 
 	for _, i := range inds {
-		/*requestType := "POST"
+		// requestType := "POST"
 		contentType := "application/x-www-form-urlencoded"
 		var p = PersonInfo{Qlr: i.Subject.Name, Sfzh: i.Subject.Id}
 		bytes, _ := json.Marshal(p)
 		parm := "args={\"selarea\":\"\",\"clientusername\":\"1\",\"clientusercid\":\"2\",\"ytcn\":\"test\",\"computerid\":\"4\",\"computermac\":\"5\",\"computername\":\"dsj\",\"psw\":\"7\",\"cxrzp\":\"8\",\"qlrlist\":[" + string(bytes) + "]}"
-		fmt.Println("参数 parm:", parm)
+		// fmt.Println("参数 parm:", parm)
 
 		// 覆盖范围邗江区、广陵区、经济开发区和江都区
 		var api = UrlPrefix + "gateway/api/1/fwqscx"
-		httpDo(httpClient, requestType, api, contentType, parm)*/
+		httpDo(httpClient, "POST", api, contentType, parm)
 
-		/*// 婚姻
-		var api = UrlPrefix + "gateway/api/1/hydjxxcx"
-		api = api + "?gmsfzh=" + i.Subject.Id
-		httpDo(httpClient, "GET", api, "application/x-www-form-urlencoded", "")
-		*/
+		// 婚姻
+		var api1 = UrlPrefix + "gateway/api/1/hydjxxcx"
+		api1 = api1 + "?gmsfzh=" + i.Subject.Id
+		httpDo(httpClient, "GET", api1, "application/x-www-form-urlencoded", "")
 
 		// 社保
-		// var api2 = UrlPrefix + "gateway/api/1/zrrsbjnxxcxjk"
-		// data := "xm=" + i.Subject.Name+"&zjhm=" + i.Subject.Id
-		// httpDo(httpClient, "POST", api2, "application/x-www-form-urlencoded", data)
+		var api2 = UrlPrefix + "gateway/api/1/zrrsbjnxxcxjk"
+		data := "xm=" + i.Subject.Name + "&zjhm=" + i.Subject.Id
+		httpDo(httpClient, "POST", api2, "application/x-www-form-urlencoded", data)
 
 		// 自然人严重失信黑名单
 		// var api = UrlPrefix + "gateway/api/1/zrryzsxhmdfy"
@@ -129,14 +129,14 @@ func main() {
 		// api = UrlPrefix + "gateway/api/1/shfrcssxhmdfyfw"
 		// // api = api + "?ROWNUM=0&PAGESIZE=1&QYMC=" + i.Subject.Name
 		// data := "ROWNUM=0&PAGESIZE=1&QYMC=" + i.Subject.Name
-		// httpDo(httpClient, "GET", api, "application/x-www-form-urlencoded", data)*/
+		// httpDo(httpClient, "GET", api, "application/x-www-form-urlencoded", data)
 
 		// 	网格数据
 		fmt.Println("i==>", i)
 		// api := "http://127.0.0.1:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022195706281518"
 		// api := "http://172.21.43.41:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022195706281518"
-		api := "http://172.21.43.41:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022197206221518"
-		httpDo(httpClient, "GET", api, "application/x-www-form-urlencoded", "")
+		var api4 = "http://172.21.43.41:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022197206221518"
+		httpDo(httpClient, "GET", api4, "application/x-www-form-urlencoded", "")
 
 		// api := "http://127.0.0.1:8088/fast-api/peasantHousehold/getDataList?beginTime="+url.QueryEscape("2021-06-13 00:00:00")+"&endTime="+url.QueryEscape("2021-06-23 00:00:00")
 		// // data := "beginTime=2021-06-13 00:00:00&endTime=2021-06-23 00:00:00"
