@@ -7,7 +7,7 @@ func main() {
 
 	topic := make([]string, 0)
 
-	for k, _ := range topicList {
+	for k := range topicList {
 		tmp := topicList[k] + "/" + "#"
 		topic = append(topic, tmp)
 	}

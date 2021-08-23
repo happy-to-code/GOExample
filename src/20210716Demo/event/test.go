@@ -51,8 +51,16 @@ func runWeb(port string) {
 
 	router.POST("/event", handlerEvent)
 	router.POST("/callback", handlerCallback)
+	router.GET("/test/:param", handParam)
 	fmt.Println(fmt.Sprintf("服务启动...端口为%v...", port))
 	router.Run(":" + port)
+}
+
+func handParam(c *gin.Context) {
+	param := c.Param("param")
+
+	fmt.Println("param:", param)
+	return
 }
 
 func handlerEvent(c *gin.Context) {

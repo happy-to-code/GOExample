@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net"
@@ -100,25 +99,25 @@ func main() {
 
 	for _, i := range inds {
 		// requestType := "POST"
-		contentType := "application/x-www-form-urlencoded"
-		var p = PersonInfo{Qlr: i.Subject.Name, Sfzh: i.Subject.Id}
-		bytes, _ := json.Marshal(p)
-		parm := "args={\"selarea\":\"\",\"clientusername\":\"1\",\"clientusercid\":\"2\",\"ytcn\":\"test\",\"computerid\":\"4\",\"computermac\":\"5\",\"computername\":\"dsj\",\"psw\":\"7\",\"cxrzp\":\"8\",\"qlrlist\":[" + string(bytes) + "]}"
-		// fmt.Println("参数 parm:", parm)
-
-		// 覆盖范围邗江区、广陵区、经济开发区和江都区
-		var api = UrlPrefix + "gateway/api/1/fwqscx"
-		httpDo(httpClient, "POST", api, contentType, parm)
-
-		// 婚姻
-		var api1 = UrlPrefix + "gateway/api/1/hydjxxcx"
-		api1 = api1 + "?gmsfzh=" + i.Subject.Id
-		httpDo(httpClient, "GET", api1, "application/x-www-form-urlencoded", "")
-
-		// 社保
-		var api2 = UrlPrefix + "gateway/api/1/zrrsbjnxxcxjk"
-		data := "xm=" + i.Subject.Name + "&zjhm=" + i.Subject.Id
-		httpDo(httpClient, "POST", api2, "application/x-www-form-urlencoded", data)
+		// contentType := "application/x-www-form-urlencoded"
+		// var p = PersonInfo{Qlr: i.Subject.Name, Sfzh: i.Subject.Id}
+		// bytes, _ := json.Marshal(p)
+		// parm := "args={\"selarea\":\"\",\"clientusername\":\"1\",\"clientusercid\":\"2\",\"ytcn\":\"test\",\"computerid\":\"4\",\"computermac\":\"5\",\"computername\":\"dsj\",\"psw\":\"7\",\"cxrzp\":\"8\",\"qlrlist\":[" + string(bytes) + "]}"
+		// // fmt.Println("参数 parm:", parm)
+		//
+		// // 覆盖范围邗江区、广陵区、经济开发区和江都区
+		// var api = UrlPrefix + "gateway/api/1/fwqscx"
+		// httpDo(httpClient, "POST", api, contentType, parm)
+		//
+		// // 婚姻
+		// var api1 = UrlPrefix + "gateway/api/1/hydjxxcx"
+		// api1 = api1 + "?gmsfzh=" + i.Subject.Id
+		// httpDo(httpClient, "GET", api1, "application/x-www-form-urlencoded", "")
+		//
+		// // 社保
+		// var api2 = UrlPrefix + "gateway/api/1/zrrsbjnxxcxjk"
+		// data := "xm=" + i.Subject.Name + "&zjhm=" + i.Subject.Id
+		// httpDo(httpClient, "POST", api2, "application/x-www-form-urlencoded", data)
 
 		// 自然人严重失信黑名单
 		// var api = UrlPrefix + "gateway/api/1/zrryzsxhmdfy"

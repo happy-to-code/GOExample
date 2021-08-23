@@ -18,4 +18,11 @@ func main() {
 	for k, v := range m {
 		fmt.Println(k, "--", v)
 	}
+
+	bytes, _ := test()
+	fmt.Println(len(bytes))
+}
+
+func test() ([]byte, error) {
+	return nil, nil
 }

@@ -19,13 +19,14 @@ var connectLostHandler mqtt.ConnectionLostHandler = func(client mqtt.Client, err
 }
 
 func main() {
-	var broker = "broker-cn.emqx.io"
-	var port = 1883
+	var broker = "10.1.3.151"
+	// var broker = "broker-cn.emqx.io"
+	var port = 1884
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(fmt.Sprintf("tcp://%s:%d", broker, port))
-	opts.SetClientID("go_mqtt_client")
-	opts.SetUsername("emqx")
-	opts.SetPassword("public")
+	opts.SetClientID("go_mqtt_client66")
+	// opts.SetUsername("admin")
+	// opts.SetPassword("public")
 	opts.SetDefaultPublishHandler(messagePubHandler)
 	opts.OnConnect = connectHandler
 	opts.OnConnectionLost = connectLostHandler
@@ -40,19 +41,21 @@ func main() {
 	client.Disconnect(250)
 }
 
+// 发布信息
 func publish(client mqtt.Client) {
-	num := 10
+	num := 500
 	for i := 0; i < num; i++ {
-		text := fmt.Sprintf("Message %d", i)
-		token := client.Publish("topic/test", 0, false, text)
+		text := fmt.Sprintf("发布消息 Message %d", i)
+		token := client.Publish("yestopic66", 0, false, text)
 		token.Wait()
 		time.Sleep(time.Second)
 	}
 }
 
+// 订阅
 func sub(client mqtt.Client) {
-	topic := "topic/test"
-	token := client.Subscribe(topic, 1, nil)
+	topic := "yestopic66"
+	token := client.Subscribe(topic, 0, nil)
 	token.Wait()
 	fmt.Printf("Subscribed to topic: %s", topic)
 }
