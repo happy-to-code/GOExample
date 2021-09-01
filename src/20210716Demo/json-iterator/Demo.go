@@ -15,20 +15,29 @@ func init() {
 }
 
 type StdStruct struct {
+	Id   int    `json:"id"`
 	Age  int    `json:"age"`
 	Name string `json:"name"`
 }
 
 func main() {
-	var s = StdStruct{11, "zyf"}
+	var s = []StdStruct{
+		{0, 11, "zyf"},
+		{0, 12, "vv"},
+		{0, 14, "sdf"},
+	}
+	for i, stdStruct := range s {
+		stdStruct.Id = i
+		s[i] = stdStruct
+	}
 	marshal, _ := json.Marshal(s)
+	fmt.Printf("111:%+v\n", string(marshal))
 
-	d := &StdStruct{}
+	d := &[]StdStruct{}
 
 	if err := json.Unmarshal(marshal, d); err != nil {
 		fmt.Println(err)
 	} else {
 		fmt.Printf("%+v\n", d)
-		fmt.Printf("%T\n", d.Age)
 	}
 }

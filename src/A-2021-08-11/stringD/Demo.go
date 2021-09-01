@@ -22,4 +22,8 @@ func main() {
 	fmt.Println("-->", split[0])
 	fmt.Println("-->", split[1])
 
+	fmt.Println("-----------------------------------")
+	var sList []string
+	fmt.Println(append(sList, "qq", "bb"))
+
 }

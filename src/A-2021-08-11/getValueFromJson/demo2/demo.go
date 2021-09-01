@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-const json1 = `{
+var jsonStr = `{
   "body": {
     "registration_information": {
       "register_basic_infomation": {},
@@ -64,16 +64,26 @@ const json1 = `{
   }
 }`
 
+var (
+	err       error
+	repairStr string
+)
+
 func main() {
-	value1 := gjson.Get(json1, "body.registration_information.registration_rights.basic_information_rights.basic_information_description.register_product_ref")
+	value1 := gjson.Get(jsonStr, "body.registration_information.registration_rights.basic_information_rights.basic_information_description.register_product_ref")
 	fmt.Println("value--->", value1.String(), "<---")
 
-	replace := strings.Replace(json1, "register_basic_infomation", "register_basic_information", 1)
-	// fmt.Println(replace)
+	repairStr = strings.Replace(jsonStr, "register_basic_infomation", "register_basic_information", 1)
+	// registrationRights := gjson.Get(jsonStr, "body.registration_information.registration_rights")
+	// fmt.Println(registrationRights)
+	registerSubjectRef := gjson.Get(repairStr, "body.registration_information.registration_rights.basic_information_rights.basic_information_description.register_subject_ref")
+	fmt.Println(registerSubjectRef)
 
-	value2 := gjson.Get(replace, "body.registration_information.register_basic_information")
-	fmt.Println("value--->", value2.String(), "<---")
-	result := gjson.Parse(json1)
-	fmt.Println("result:", result.Map())
+	// repairStr, err = sjson.Set(repairStr, "body.registration_information.register_basic_information.register_object_type", 1)
+	// repairStr, err = sjson.Set(repairStr, "body.registration_information.register_basic_information.register_event_type", 2)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// fmt.Println(repairStr)
 
 }

@@ -70,8 +70,9 @@ func main() {
 }
 func SortByDate(ls []LegalSSPayment) []LegalSSPayment {
 	sort.Slice(ls, func(i, j int) bool {
-		return ls[i].JNRQ > ls[j].JNRQ
+		return ls[i].JFNY > ls[j].JFNY
 	})
+
 	return ls
 }
 
@@ -91,3 +92,11 @@ type LegalSSPayment struct {
 	LB       string  `json:"LB"`
 	CBRS     int     `json:"CBRS"`
 }
+
+// ZZJGDM   string  `json:"company_name"` // 组织机构代码
+// CBRS     int     `json:"persons"`      // 参保人数
+// DWJFJS   float64 `json:"base"`         // 单位缴费基数
+// JFNY     string  `json:"month"`        // 缴费年月
+// BYYJJEHJ float64 `json:"payable"`      // 本月应缴金额合计（元）
+// BYSJJEHJ float64 `json:"paid"`         // 本月实缴金额合计（元）
+// LB       string  `json:"type"`         // 类别
