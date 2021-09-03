@@ -1,9 +1,0 @@
-fund_44c1ba6c68374345af687f6047c723c7,0,settlement
-fund_446109b7d407466e825bd0da813c326d,0,settlement
-fund_dd61b791d50a403f906080d34699a393,0,settlement
-fund_d2f9b08275c249e7a6f84cbdb02ab193,0,settlement
-fund_32e96ab8a0a0434fad0547c08ffab7af,0,settlement
-3096921193254d6f98cd37077712638a,0,registration
-bfc3e91c1b234b8ba2b29e30978827f7,0,registration
-fa3ebd59f2b944e2a5e26c402a970ce0,0,registration
-864310308f36426783d84afb1bfbae98,0,registration

@@ -6,7 +6,7 @@ import (
 	"github.com/tidwall/sjson"
 )
 
-var json1 = `{
+var json1 = `
     "body": {
         "subject_information": {
             "basic_information_subject": {
@@ -39,8 +39,24 @@ var json1 = `{
                 }
             }
         }
+    },
+{
+    "header": {
+        "content": {
+            "object_id": "25c3863df99e4ae09af2d99e3d6984c4",
+            "operation": "create",
+            "timestamp": 1626775775,
+            "type": "registration",
+            "version": 0
+        },
+        "metadata": null,
+        "model": {
+            "protocol": "区域性股权市场跨链业务数据模型",
+            "version": "2.0.0"
+        }
     }
-}`
+}
+`
 
 func main() {
 
