@@ -280,6 +280,7 @@ func main() {
 					sLine = sLine + " [" + reply.Message + "]"
 					writeResult(hasErrFixFile, sLine)
 				} else {
+					// 修复成功的数据
 					sLine = sLine + fmt.Sprintf("%s%s%s", " [", reply.Data, "]")
 					writeResult(hasFixedFile, sLine)
 				}
