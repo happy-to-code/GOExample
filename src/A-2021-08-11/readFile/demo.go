@@ -104,9 +104,9 @@ func makeErrFixedFile(timeStr string) string {
 	// 拼装文件路径
 	path := GetProjectPath()
 	if sysType == "windows" {
-		path = path + "\\dataRepair\\fixErr\\" + timeStr + "-hasFix.txt"
+		path = path + "\\dataRepair\\fixErr\\" + timeStr + "-errFix.txt"
 	} else if sysType == "linux" {
-		path = path + "/dataRepair/fixErr/" + timeStr + "-hasFix.txt"
+		path = path + "/dataRepair/fixErr/" + timeStr + "-errFix.txt"
 	}
 
 	// 创建文件
@@ -139,11 +139,11 @@ func httpDo(client *http.Client, url, data string) (string, error) {
 		return "", fmt.Errorf("ioutil.ReadAll err:%v\n", er)
 	}
 
-	fmt.Println("==========================================================")
+	fmt.Println("1===============================1===========================1")
 	var reply Reply
 	json.Unmarshal(body, &reply)
 	log.Printf("reply:%+v\n", reply)
-	fmt.Println("==========================================================")
+	fmt.Println("2===============================2===========================2")
 
 	return string(body), nil
 }
@@ -205,7 +205,7 @@ func writeResult(fileName, data string) error {
 	f, err := os.OpenFile(fileName, os.O_WRONLY, 0644)
 	if err != nil {
 		// 打开文件失败处理
-		fmt.Println("########", err)
+		log.Fatalln("########", err)
 		return err
 	} else {
 		// 查找文件末尾的偏移量
@@ -265,21 +265,22 @@ func main() {
 		// 调用http请求
 		httpResponse, err := httpDo(httpClient, url, string(objBytes))
 		if err != nil {
-			sLine = sLine + fmt.Sprintf("%s", err)
+			sLine = sLine + fmt.Sprintf("%s%s%s", " [", err, "]")
 			writeResult(hasErrFixFile, sLine)
 		} else {
 			// http 返回值
 			var reply Reply
 			err := json.Unmarshal([]byte(httpResponse), &reply)
 			if err != nil {
-				sLine = sLine + fmt.Sprintf("JSON发序列化出错:%s", err)
+				sLine = sLine + " [" + fmt.Sprintf("JSON发序列化出错:%s", err) + "]"
 				writeResult(hasErrFixFile, sLine)
 			} else {
 				if reply.State != http.StatusOK {
-					sLine = sLine + reply.Message
+					// 失败  400
+					sLine = sLine + " [" + reply.Message + "]"
 					writeResult(hasErrFixFile, sLine)
 				} else {
-					sLine = sLine + fmt.Sprintf("%s", reply.Data)
+					sLine = sLine + fmt.Sprintf("%s%s%s", " [", reply.Data, "]")
 					writeResult(hasFixedFile, sLine)
 				}
 			}

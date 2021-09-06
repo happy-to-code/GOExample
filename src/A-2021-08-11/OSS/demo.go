@@ -159,7 +159,7 @@ func main() {
 	objectName := "25c3863df99e4ae09af2d99e3d6984c4/0"
 
 	ctx := context.Background()
-	endpoint := "121.224.59.167:9000"
+	endpoint := "10.1.5.168:9000"
 	accessKeyID := "minioadmin"
 	secretAccessKey := "minioadmin"
 	useSSL := false
