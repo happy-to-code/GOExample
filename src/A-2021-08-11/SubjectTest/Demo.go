@@ -1,8 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
+	"strconv"
 )
 
 type Boy struct {
@@ -12,15 +12,19 @@ type Boy struct {
 
 func main() {
 	var boy = Boy{"XM", 11}
-	s := test(boy)
-	fmt.Println("s:", s)
 	fmt.Println("boy:", boy)
-	boyB, _ := json.Marshal(boy)
-	fmt.Println("boyB:", string(boyB))
+
+	var boyBack = boy
+	boy.Name = "HHHH"
+	fmt.Println("boy2:", boy)
+
+	fmt.Println("boyBack:", boyBack)
+
+	fileName := boy.Name + "/" + strconv.Itoa(int(boy.Age)) + "_bk"
+	fmt.Println(fileName)
 }
 
-func test(b Boy) string {
+func test(b Boy) Boy {
 	b.Name = ""
-	marshal, _ := json.Marshal(b)
-	return string(marshal)
+	return b
 }

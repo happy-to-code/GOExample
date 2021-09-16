@@ -12,15 +12,14 @@ func main() {
 	var key = flag.String("key", "", "键")
 
 	flag.Parse()
-	// fmt.Println("---->",*dburl,*key)
-	// fmt.Println("-2--->",flag.Args())
 	db, err := leveldb.OpenFile(*dburl, nil)
 	if err != nil {
 		panic(fmt.Sprintf("打开数据库失败：%v", err))
 	}
 	get, err := db.Get([]byte(*key), nil)
 	if err != nil {
-		panic(fmt.Sprintf("根据键值获取失败：%v", err))
+		fmt.Println(fmt.Sprintf("根据键值获取失败：%v", err))
+		return
 	}
 	fmt.Printf("value:%s\n\n", get)
 

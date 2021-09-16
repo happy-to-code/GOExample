@@ -139,11 +139,11 @@ func httpDo(client *http.Client, url, data string) (string, error) {
 		return "", fmt.Errorf("ioutil.ReadAll err:%v\n", er)
 	}
 
-	fmt.Println("1===============================1===========================1")
-	var reply Reply
-	json.Unmarshal(body, &reply)
-	log.Printf("reply:%+v\n", reply)
-	fmt.Println("2===============================2===========================2")
+	// fmt.Println("1===============================1===========================1")
+	// var reply Reply
+	// json.Unmarshal(body, &reply)
+	// log.Printf("reply:%+v\n", reply)
+	// fmt.Println("2===============================2===========================2")
 
 	return string(body), nil
 }

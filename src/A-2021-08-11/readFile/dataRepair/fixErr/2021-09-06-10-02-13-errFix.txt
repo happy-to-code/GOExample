@@ -1,0 +1,10 @@
+1,25c3863df99e4ae09af2d99e3d6984c4,0,registration [将数据存证&更新数据库hash出错,err:保存存证内容出错,err:rpc error: code = Unknown desc = ledger id should be assigned
+]
+2,fund_446109b7d407466e825bd0da813c326d,0,settlement [目前只支持registration、subject类型数据修复]
+3,fund_dd61b791d50a403f906080d34699a393,0,settlement [目前只支持registration、subject类型数据修复]
+4,fund_d2f9b08275c249e7a6f84cbdb02ab193,0,settlement [目前只支持registration、subject类型数据修复]
+5,fund_32e96ab8a0a0434fad0547c08ffab7af,0,settlement [目前只支持registration、subject类型数据修复]
+6,3096921193254d6f98cd37077712638a,0,registration [查询失败:The specified key does not exist.]
+7,bfc3e91c1b234b8ba2b29e30978827f7,0,registration [查询失败:The specified key does not exist.]
+8,fa3ebd59f2b944e2a5e26c402a970ce0,0,registration [查询失败:The specified key does not exist.]
+9,864310308f36426783d84afb1bfbae98,0,registration [查询失败:The specified key does not exist.]
