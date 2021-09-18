@@ -139,7 +139,7 @@ func main() {
                         "register_subject_account_ref": "RSAR624/0",
                         "register_subject_ref": "RSR624/0",
                         "register_subject_type": 1,
-                        "register_time": "2020-12-16T12:00:25+08:00"
+                        "register_time": "2020-12-1612:00:25+08:00"
                     },
                     "description_status_information": {
                         "register_asset_equity_type": 1,
@@ -206,10 +206,7 @@ func main() {
                 "basic_information_roster": {
                     "register_product_ref": "prodEqp4dNCofJ3CfH/0",
                     "register_subject_ref": "RSR624/0"
-                },
-                "fund_investors": null,
-                "register_creditors": null,
-                "register_shareholders": null
+                }
             }
         }
     }

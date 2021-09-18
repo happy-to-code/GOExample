@@ -19,7 +19,7 @@ func TestMain(m *testing.M) {
 
 func TestGetWrite(t *testing.T) {
 	kv := KV{
-		Key:   []byte("test1"),
+		Key:   []byte("user"),
 		Value: []byte("value1"),
 	}
 

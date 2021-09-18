@@ -32,7 +32,7 @@ func main() {
 	)
 	failOnError(err, "Failed to declare a queue")
 
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < 5000; i++ {
 		body := "1f34gh35f4ghdd:" + fmt.Sprintf("%d", i)
 		err = ch.Publish(
 			"", // exchange

@@ -57,7 +57,7 @@ func init() {
 func main() {
 	conf := TestConfReader
 	log.Println(conf.GetAllKeys())
-	log.Println(conf.GetString("test1"))
+	log.Println(conf.GetString("user"))
 	time.Sleep(20 * time.Second)
-	log.Println(conf.GetString("test1"))
+	log.Println(conf.GetString("user"))
 }

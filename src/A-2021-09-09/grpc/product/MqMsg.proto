@@ -1,0 +1,18 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "./;proto";
+
+service Event {
+  // 接收sdk发送的信号
+  rpc receiveSignal(Signal) returns (Reply);
+}
+
+message Signal {
+  map<string,int64> ledgerAndHeight = 1;
+  int32    sendType = 2;
+}
+
+message Reply {
+  string message = 1;
+}
