@@ -124,7 +124,7 @@ func (r *RabbitMQ) ConsumeSimple() {
 	// 启用协程处理消息
 	go func() {
 		for d := range msgs {
-			log.Printf("小杜同学写的Simple模式接收到了消息:%s\n", d.Body)
+			log.Printf("Simple模式接收到了消息:%s\n", d.Body)
 		}
 	}()
 	log.Printf(" [*] Waiting for messages. To exit press CTRL+C")
@@ -148,7 +148,7 @@ func NewRabbitMqSubscription(exchangeName string) *RabbitMQ {
 	return rabbitmq
 }
 
-// 订阅模式发布消息
+// PublishSubscription 订阅模式发布消息
 func (r *RabbitMQ) PublishSubscription(message string) {
 	// 第一步，尝试连接交换机
 	err := r.channel.ExchangeDeclare(
@@ -174,7 +174,7 @@ func (r *RabbitMQ) PublishSubscription(message string) {
 		})
 }
 
-// 订阅模式消费者
+// ConsumeSbuscription 订阅模式消费者
 func (r *RabbitMQ) ConsumeSbuscription() {
 	// 第一步，试探性创建交换机exchange
 	err := r.channel.ExchangeDeclare(
@@ -193,7 +193,7 @@ func (r *RabbitMQ) ConsumeSbuscription() {
 		"", // 随机生产队列名称
 		false,
 		false,
-		true,
+		false,
 		false,
 		nil,
 	)
@@ -212,7 +212,7 @@ func (r *RabbitMQ) ConsumeSbuscription() {
 	messages, err := r.channel.Consume(
 		q.Name,
 		"",
-		true,
+		false,
 		false,
 		false,
 		false,
@@ -222,7 +222,8 @@ func (r *RabbitMQ) ConsumeSbuscription() {
 	forever := make(chan bool)
 	go func() {
 		for d := range messages {
-			fmt.Printf("小杜同学写的订阅模式收到的消息：%s\n", d.Body)
+			fmt.Printf("发布订阅模式收到的消息：%s\n", d.Body)
+			d.Ack(false)
 		}
 	}()
 

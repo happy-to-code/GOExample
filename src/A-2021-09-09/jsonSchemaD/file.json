@@ -1,0 +1,144 @@
+{
+  "header": {
+    "model": {
+      "protocol": "区域性股权市场跨链业务数据模型",
+      "version": "2.0.0"
+    },
+    "content": {
+      "type": "registration",
+      "object_id": "5No00017aX5PxC51u",
+      "version": 0,
+      "operation": "create",
+      "timestamp": 1513374000
+    },
+    "metadata": null
+  },
+  "body": {
+    "registration_information": {
+      "register_basic_information": {
+        "register_event_type": 1,
+        "register_object_type": 1
+      },
+      "registration_rights": {
+        "basic_information_rights": {
+          "authentic_right_record": {
+            "register_authentic_right_recognition_date": "2025-12-16",
+            "register_right_recognition_agent_subject_name": "确权代理方主体名称CHARACTER",
+            "register_right_recognition_agent_subject_ref": "RRRASR624/0",
+            "register_right_recognition_description": "确权描述信息CHARACTER",
+            "register_right_recognition_doc": [
+              {
+                "file_name": "1file1.pdf",
+                "file_number": "2",
+                "hash": "da1234filehash52221",
+                "summary": "简述1",
+                "term_of_validity": "2018-10-23",
+                "term_of_validity_type": "0",
+                "url": "http://test.com/file/201/1file1.pdf"
+              },
+              {
+                "file_name": "2file1.pdf",
+                "file_number": "2",
+                "hash": "da1234filehash52222",
+                "summary": "简述2",
+                "term_of_validity": "2018-10-23",
+                "term_of_validity_type": "0",
+                "url": "http://test.com/file/201/2file1.pdf"
+              }
+            ],
+            "register_right_recognition_mode": 1,
+            "register_right_recognition_subject_name": "确权方主体名称CHARACTER",
+            "register_right_recognition_subject_ref": "RRRSR624/0"
+          },
+          "available_registration": {
+            "register_asset_balance_after": 3000,
+            "register_asset_balance_before": 2000,
+            "register_asset_balance_change": 1000
+          },
+          "basic_information_description": {
+            "register_asset_currency": "156",
+            "register_asset_type": 1,
+            "register_asset_unit": 1,
+            "register_authentic_right_recognition_status": 1,
+            "register_create_time": "2020-12-16T12:00:25+08:00",
+            "register_description": "登记描述信息CHARACTER",
+            "register_product_ref": "prodEqp4dNCofJ3CfH/0",
+            "register_serial_number": "登记流水号CHARACTER",
+            "register_subject_account_ref": "RSAR624/0",
+            "register_subject_ref": "RSR624/0",
+            "register_subject_type": 1,
+            "register_time": "2020-12-16T12:00:25+08:00"
+          },
+          "description_status_information": {
+            "register_asset_equity_type": 1,
+            "register_asset_holding_nature": 1,
+            "register_asset_holding_status": 1,
+            "register_asset_holding_status_description": "持有状态说明TEXT",
+            "register_asset_note": "登记说明TEXT",
+            "register_asset_verification_doc": [
+              {
+                "file_name": "1file1.pdf",
+                "file_number": "2",
+                "hash": "da1234filehash52221",
+                "summary": "简述1",
+                "term_of_validity": "2018-10-23",
+                "term_of_validity_type": "0",
+                "url": "http://test.com/file/201/1file1.pdf"
+              },
+              {
+                "file_name": "2file1.pdf",
+                "file_number": "2",
+                "hash": "da1234filehash52222",
+                "summary": "简述2",
+                "term_of_validity": "2018-10-23",
+                "term_of_validity_type": "0",
+                "url": "http://test.com/file/201/2file1.pdf"
+              }
+            ],
+            "register_source_type": 0
+          },
+          "freezing_registration": {
+            "register_frozen_balance": 1000,
+            "register_frozen_balance_after": 5000,
+            "register_frozen_balance_change": 500,
+            "register_thaw_description": "冻结/解冻说明信息TEXT",
+            "register_thaw_doc": [
+              {
+                "file_name": "1file1.pdf",
+                "file_number": "2",
+                "hash": "da1234filehash52221",
+                "summary": "简述1",
+                "term_of_validity": "2018-10-23",
+                "term_of_validity_type": "0",
+                "url": "http://test.com/file/201/1file1.pdf"
+              },
+              {
+                "file_name": "2file1.pdf",
+                "file_number": "2",
+                "hash": "da1234filehash52222",
+                "summary": "简述2",
+                "term_of_validity": "2018-10-23",
+                "term_of_validity_type": "0",
+                "url": "http://test.com/file/201/2file1.pdf"
+              }
+            ]
+          },
+          "pledge_registration": {
+            "register_pledge_balance_after": 5000,
+            "register_pledge_balance_before": 1000,
+            "register_pledge_balance_change": 1000
+          }
+        }
+      },
+      "roll_records": {
+        "basic_information_roster": {
+          "register_product_ref": "prodEqp4dNCofJ3CfH/0",
+          "register_subject_ref": "RSR624/0"
+        },
+        "fund_investors": null,
+        "register_creditors": null,
+        "register_shareholders": null
+      }
+    }
+  }
+}

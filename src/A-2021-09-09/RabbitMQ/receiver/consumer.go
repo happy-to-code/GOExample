@@ -24,12 +24,12 @@ func main() {
 	failOnError(err, "Failed to declare an exchange")
 
 	q, err := ch.QueueDeclare(
-		"tj-event-queue", // name
-		true,             // durable
-		false,            // delete when unused
-		false,            // exclusive
-		false,            // no-wait
-		nil,              // arguments
+		"task_queue", // name
+		true,         // durable
+		false,        // delete when unused
+		false,        // exclusive
+		false,        // no-wait
+		nil,          // arguments
 	)
 	failOnError(err, "Failed to declare a queue")
 	// 为了保证公平分发，不至于其中某个consumer一直处理，而其他不处理

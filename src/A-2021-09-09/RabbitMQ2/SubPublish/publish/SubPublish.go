@@ -8,7 +8,7 @@ import (
 
 func main() {
 	rabbitmq := RabbitMQ2.NewRabbitMqSubscription("duexchangeName")
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 10; i++ {
 		rabbitmq.PublishSubscription("订阅模式生产第" + strconv.Itoa(i) + "条数据")
 		fmt.Printf("订阅模式生产第" + strconv.Itoa(i) + "条数据\n")
 	}
