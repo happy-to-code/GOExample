@@ -7,9 +7,7 @@ import (
 )
 
 func main() {
-
 	num := randNum()
-
 	if num < 4 {
 		for i := 0; i < 500; i++ {
 			num = randNum()
@@ -24,7 +22,6 @@ func main() {
 	} else {
 		fmt.Println("once")
 	}
-
 }
 
 func randNum() int {
