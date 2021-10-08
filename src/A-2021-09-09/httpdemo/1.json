@@ -1,0 +1,18 @@
+{
+  "Education":"大学本科",             //学历
+  "CompanyName":"扬州市江都人民医院",  //所在单位名称
+  "WorkYear":"3",                     //工作年限、工龄
+  "FamilyTotalAssets":"12",             //家庭总资产
+  "AdministrativeLevel":"1",            //是否公务员   0.不是 1.是
+  "GJJDepositType":"0",                 //0正常；1封存；2空账(开户未缴存)；9销户
+
+  "GJJPersonalCompanyM12":["扬州市江都人民医院"],//公积金个人每月缴 存单位
+  "GJJPersonalAmountM12":["1000"],        //公积金个人每月缴存金额
+  "GJJPersonalRateM12":["0.1"],           //公积金个人每月缴存比例
+  "GJJCompanyAmountM12":["1000"],         //公积金单位每月缴存金额
+  "GJJCompanyRateM12":["0.05"],           //公积金单位每月缴存比例
+
+  "WorkAddress":"扬州市文昌中路",            //申请人单位地址
+  "HomeAddress":"扬州市文昌中路",          //申请人居住地址
+  "Lxjcmonth":"120"                       //连续缴存月数
+}

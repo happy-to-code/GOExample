@@ -126,3 +126,13 @@
 18:49:29.519288 version@stat F·[2 1] S·498B[317B 181B] Sc·[0.50 0.00]
 18:49:29.574142 db@janitor F·5 G·0
 18:49:29.574142 db@open done T·98.7363ms
+=============== Sep 28, 2021 (CST) ===============
+09:38:53.238784 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+09:38:53.272637 version@stat F·[2 1] S·498B[317B 181B] Sc·[0.50 0.00]
+09:38:53.272637 db@open opening
+09:38:53.272637 journal@recovery F·1
+09:38:53.273664 journal@recovery recovering @31
+09:38:53.307549 memdb@flush created L0@33 N·5 S·169B "key_1,v27":"tizi,d31"
+09:38:53.307549 version@stat F·[3 1] S·667B[486B 181B] Sc·[0.75 0.00]
+09:38:53.358408 db@janitor F·6 G·0
+09:38:53.358408 db@open done T·85.7715ms

@@ -21,6 +21,10 @@ func main() {
 		fmt.Println(err)
 		panic(err)
 	}
+
+	get, _ := db.Get([]byte("key_1"), nil)
+	fmt.Println("----", string(get))
+
 	// 正常的db操作逻辑...
 	// 正常的db操作逻辑...
 	err = db.Put([]byte("key_1"), []byte("key_1"), nil)

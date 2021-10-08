@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/tidwall/gjson"
-	"github.com/tidwall/sjson"
 	"github.com/xeipuuv/gojsonschema"
 )
 
@@ -23,40 +21,33 @@ var jsonStr = `{
         "metadata": null
     },
     "body": {
-	    "registration_information": {
-	        "register_basic_information": {
-	            "register_event_type": 1,
-	            "register_object_type": 2
-	        },
-	        "registration_rights": {
-	            "basic_information_rights": {
-	                "authentic_right_record": {},
-	                "available_registration": {},
-	                "basic_information_description": {
-	                    "register_product_ref": "B8EFCABC7922DF91631931EE252228FE"
-	                },
-	                "description_status_information": {},
-	                "freezing_registration": {},
-	                "pledge_registration": {}
-	            }
-	        },
-	        "roll_records": {
-	            "basic_information_roster": {
-	                "register_product_ref": "B8EFCABC7922DF91631931EE252228FE"
+	    "subject_information": {
+	        "basic_information_subject": {
+	            "general_information_subject": {
+	                "subject_create_time": "2015-03-26T00:00:00+08:00",
+	                "subject_main_administrative_region": 1,
+	                "subject_type": 2
 	            },
-	            "fund_investors": [],
-	            "register_creditors": [],
-	            "register_shareholders": [
-	                {
-	                    "register_asset_holding_status": 3,
-	                    "register_equity_capital": 52000000,
-	                    "register_equity_capital_paidin": 52000000,
-	                    "register_equity_number": 52000000,
-	                    "register_equity_shareholding": 58.69,
-	                    "register_equity_subject_ref": "C57B91FEFB1C94EDD52F55F7585B1848",
-	                    "register_equity_subject_type": 0
-	                }
-	            ]
+	            "subject_qualification_information": []
+	        },
+	        "personal_subject_information": {
+	            "personal_subject_basic_information": {
+	                "subject_birthday": "1970-04-05",
+	                "subject_cellphone_number": "18637128818",
+	                "subject_city": "",
+	                "subject_contact_address": "河南省郑州市市辖区郑东新区商都路8号东2单元19层1902号",
+	                "subject_contact_number": "0371-66987768",
+	                "subject_education": 0,
+	                "subject_gender": 2,
+	                "subject_id_address": "河南省新乡市红旗区西马小营北街14号",
+	                "subject_id_doc_mailbox": "1647611158@qq.com",
+	                "subject_id_number": "372930197004052196",
+	                "subject_id_type": 1,
+	                "subject_investor_name": "刘春生",
+	                "subject_personal_fax": "0371-55985955",
+	                "subject_postal_code": "450001",
+	                "subject_province": ""
+	            }
 	        }
 	    }
     }
@@ -65,22 +56,6 @@ var jsonStr = `{
 
 func main() {
 	var err error
-
-	//	获取 register_object_type
-	registerObjectTypeResult := gjson.Get(jsonStr, "body.registration_information.register_basic_information.register_object_type")
-	if registerObjectTypeResult.Int() == 1 {
-		jsonStr, err = sjson.Delete(jsonStr, "body.registration_information.roll_records")
-		if err != nil {
-			panic(fmt.Errorf("删除名册登记列表错误：%v", err))
-			return
-		}
-	} else {
-		jsonStr, err = sjson.Delete(jsonStr, "body.registration_information.registration_rights")
-		if err != nil {
-			panic(fmt.Errorf("删除权利登记列表错误：%v", err))
-			return
-		}
-	}
 
 	valid, err := checkSchemaValid(jsonStr)
 	fmt.Println("valid:", valid)
