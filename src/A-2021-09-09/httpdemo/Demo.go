@@ -87,8 +87,20 @@ func main() {
 		Orgnum:    "0600",
 		Username:  "曾嵩",
 	}
+	var param6 = Param{
+		Paperkind: "110001",
+		Paperid:   "321088198811155757",
+		Orgnum:    "0600",
+		Username:  "周江安",
+	}
+	var param7 = Param{
+		Paperkind: "110001",
+		Paperid:   "321084198106080416",
+		Orgnum:    "0600",
+		Username:  "吕兵兵",
+	}
 
-	paramList = append(paramList, param1, param2, param3, param4, param5)
+	paramList = append(paramList, param1, param2, param3, param4, param5, param6, param7)
 
 	for i, param := range paramList {
 		api := UrlPrefix + "gateway/api/1/getdata"
