@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	uuid "github.com/satori/go.uuid"
 	"io/ioutil"
@@ -438,14 +439,30 @@ func main() {
 	httpDo(httpClient, "POST", api1, contentType, zfs)
 
 	// 股东列表
-	api := "http://10.1.3.150:9100/equity/shareholder/list"
-	httpDo(httpClient, "POST", api, contentType, shareholderList)
+	api := "http://10.1.3.150:9100/equity/share/shareholder/list"
+	holderListStr := httpDo(httpClient, "POST", api, contentType, shareholderList)
+	change2Map(holderListStr)
 
 	fmt.Println("===========================")
 	// 转让
 	api2 := "http://10.1.3.150:9100/equity/share/transfer"
 	httpDo(httpClient, "POST", api2, contentType, zrs)
 
+	holderListStr2 := httpDo(httpClient, "POST", api, contentType, shareholderList)
+	change2Map(holderListStr2)
+}
+
+func change2Map(holderListStr string) map[string]int {
+	var res Res
+	json.Unmarshal([]byte(holderListStr), &res)
+
+	m := make(map[string]int)
+	data := res.Data
+	for _, datum := range data {
+		m[datum.Address] = datum.Amount
+	}
+	fmt.Printf("m==>%+v  %d\n", m, len(m))
+	return m
 }
 
 // 有时需要在请求的时候设置头参数、cookie之类的数据，就可以使用http.Do方法。
@@ -476,4 +493,16 @@ func httpDo(client *http.Client, requestType, url, contentType, data string) str
 func createUUID() string {
 	ul := uuid.NewV4()
 	return strings.Replace(ul.String(), "-", "", -1)
+}
+
+type Res struct {
+	State   int    `json:"state"`
+	Message string `json:"message"`
+	Data    []struct {
+		Amount          int    `json:"amount"`
+		LockAmount      int    `json:"lockAmount"`
+		ShareProperty   int    `json:"shareProperty"`
+		SharePropertyCN string `json:"sharePropertyCN"`
+		Address         string `json:"address"`
+	} `json:"data"`
 }

@@ -1,0 +1,17 @@
+| 名称      | 类型   | 说明 |
+| --------- | ------ | ---- |
+| education          | string | 学历                            |
+|companyName         | string |所在单位名称                     |
+|workYear            | string |工作年限、工龄                   |
+|familyTotalAssets   | string |家庭总资产                      |
+|isPublicFunctionary | string |是否公务员                      |
+|status              | string |正常；封存；空账(开户未缴存)；销户|
+|workAddress         | string |申请人单位地址                  |
+|homeAddress         | string |申请人居住地址                  |
+|depositMonths       | string |连续缴存月数                     |
+|fundMonthInfos      | array  |每月（单位和个人）缴纳的详细信息    |
+|payer               | string |公积金个人每月缴存单位    |
+|personAmount        | string |公积金个人每月缴存金额    |
+|personRate          | string |公积金个人每月缴存比例    |
+|payerAmount         | string |公积金单位每月缴存金额    |
+|payerRate           | string |公积金单位每月缴存比例    |
