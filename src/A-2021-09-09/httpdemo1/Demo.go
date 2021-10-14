@@ -282,8 +282,8 @@ var zr = `{
     "keyId": "c3lp9vd2uehckgv68140",
     "UniqueId": "%s",
     "fromAddress": "SodNgpNjE99NxtfiUy4FwdxVspdUfPfVsRgxFVzqjqZV4jRkugQ",
-    "amount": 200,
-    "toAddress": "SmtUeCCN13SASfmi3V6jKRAUgZs7K2nKSBfBPSXSrfQL9EQmB6y",
+    "amount": 10,
+    "toAddress": "SoLJJvYDzqCfcvxmMVXywU1PKWNWsxye5sxBaSnsXZFBPq3wvoB",
     "shareProperty": 0,
     "equityCode": "8008",
     "txInformation": {
@@ -319,7 +319,7 @@ var zr = `{
         "transaction_intermediary_name": "gf"
     },
     "fromRegisterInformation": {
-        "register_object_type": 1,
+        "register_object_type": 2,
         "register_creditors": [],
         "fund_investors": [],
         "register_shareholders": [],
@@ -372,7 +372,7 @@ var zr = `{
         "register_creditor_contact_info": "dfgdfg"
     },
     "toRegisterInformation": {
-        "register_object_type": 1,
+        "register_object_type": 2,
         "register_creditors": [],
         "fund_investors": [],
         "register_shareholders": [],
@@ -435,8 +435,8 @@ func main() {
 
 	var contentType = "application/json"
 	// 增发
-	api1 := "http://10.1.3.150:9100/equity/share/increase"
-	httpDo(httpClient, "POST", api1, contentType, zfs)
+	// api1 := "http://10.1.3.150:9100/equity/share/increase"
+	// httpDo(httpClient, "POST", api1, contentType, zfs)
 
 	// 股东列表
 	api := "http://10.1.3.150:9100/equity/share/shareholder/list"
