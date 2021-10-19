@@ -482,7 +482,6 @@ var account1 = `
 }
 }
 `
-var account1Str = fmt.Sprintf(account1, createUUID(), createUUID())
 
 var account2 = `
 {
@@ -812,7 +811,6 @@ var account2 = `
 }
 }
 `
-var account2Str = fmt.Sprintf(account2, createUUID(), createUUID())
 
 var account3 = `
 {
@@ -1142,7 +1140,6 @@ var account3 = `
 }
 }
 `
-var account3Str = fmt.Sprintf(account3, createUUID(), createUUID())
 
 var zr = `{
     "keyId": "%s",
@@ -1705,11 +1702,11 @@ var xzbg = `
 // var equity string
 
 func main() {
-	for i := 0; i < 10; i++ {
+	var contentType = "application/json"
+	for i := 0; i < 1; i++ {
 		equity := createUUID()
 		fmt.Println("===============iii=================", i, "  ", equity)
 
-		var contentType = "application/json"
 		// 增发
 		// api1 := "http://10.1.3.150:9100/equity/share/increase"
 		// httpDo(httpClient, "POST", api1, contentType, zfs)
@@ -1721,17 +1718,20 @@ func main() {
 
 		// 创建账号
 		accountUrl := "http://10.1.3.150:9100/equity/account/create"
+		account1Str := fmt.Sprintf(account1, createUUID(), createUUID())
 		accountRes1 := httpDo(httpClient, "POST", accountUrl, contentType, account1Str)
 		accountStruct1 := change2Account(accountRes1)
-		// fmt.Println("accountStruct1:", accountStruct1)
+		fmt.Println("accountStruct1:", accountStruct1)
 
+		account2Str := fmt.Sprintf(account2, createUUID(), createUUID())
 		accountRes2 := httpDo(httpClient, "POST", accountUrl, contentType, account2Str)
 		accountStruct2 := change2Account(accountRes2)
-		// fmt.Println("accountStruct2:", accountStruct2)
+		fmt.Println("accountStruct2:", accountStruct2)
 
+		account3Str := fmt.Sprintf(account3, createUUID(), createUUID())
 		accountRes3 := httpDo(httpClient, "POST", accountUrl, contentType, account3Str)
 		accountStruct3 := change2Account(accountRes3)
-		// fmt.Println("accountStruct3:", accountStruct3)
+		fmt.Println("accountStruct3:", accountStruct3)
 
 		// 初始登记
 		csdjUrl := "http://10.1.3.150:9100/equity/share/issue"
@@ -1739,13 +1739,13 @@ func main() {
 			accountStruct2.Data.AccountList.Address, createUUID())
 		httpDo(httpClient, "POST", csdjUrl, contentType, csdjs)
 
-		time.Sleep(time.Second * 3)
-		// 股东列表
 		shareholderList := fmt.Sprintf(`{"equityCode":"%s"}`, equity)
 		fmt.Println("shareholderList===>", shareholderList)
-		api := "http://10.1.3.150:9100/equity/share/shareholder/list"
-		holderListStr := httpDo(httpClient, "POST", api, contentType, shareholderList)
-		fmt.Println("股东列表：", holderListStr)
+		// time.Sleep(time.Second * 3)
+		// // 股东列表
+		// api := "http://10.1.3.150:9100/equity/share/shareholder/list"
+		// holderListStr := httpDo(httpClient, "POST", api, contentType, shareholderList)
+		// fmt.Println("股东列表：", holderListStr)
 
 		time.Sleep(time.Second * 4)
 		// 股份性质变更
@@ -1755,7 +1755,7 @@ func main() {
 		fmt.Println("xzbgRes===>", xzbgRes)
 
 		// 股东列表
-		api = "http://10.1.3.150:9100/equity/share/shareholder/list"
+		api := "http://10.1.3.150:9100/equity/share/shareholder/list"
 		holderListStr2 := httpDo(httpClient, "POST", api, contentType, shareholderList)
 		fmt.Println("股东列表2：", holderListStr2)
 		m2 := change2Map(holderListStr2)
@@ -1770,8 +1770,8 @@ func main() {
 
 		// time.Sleep(time.Second * 5)
 		// 股东列表
-		api = "http://10.1.3.150:9100/equity/share/shareholder/list"
-		holderListStr3 := httpDo(httpClient, "POST", api, contentType, shareholderList)
+		api3 := "http://10.1.3.150:9100/equity/share/shareholder/list"
+		holderListStr3 := httpDo(httpClient, "POST", api3, contentType, shareholderList)
 		fmt.Println("股东列表3：", holderListStr3)
 		m3 := change2Map(holderListStr3)
 		if len(m3)-len(m2) != 1 {
