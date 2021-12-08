@@ -119,7 +119,7 @@ func main() {
 		// http://ip/gateway/api/1/ylbxjfjlcx
 		// ?bac045=&aae135&baz805&aac001=2000000309107370&date=20150917&time=142623&cpage=1&rows=1
 		api := UrlPrefix + "gateway/api/1/ylbxjfjlcx"
-		api = api + "?bac045=&aae135=" + param.Paperid + "&baz805&aac001=&date=20210818&time=142623&cpage=0&rows=24"
+		api = api + "?bac045=&aae135=" + param.Paperid + "&baz805&aac001=&date=20210818&time=142623&cpage=0&rows=120"
 		ylbx := httpDo(httpClient, "POST", api, contentType, "")
 		fmt.Println("养老保险：", ylbx)
 

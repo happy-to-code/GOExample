@@ -80,8 +80,8 @@ func main() {
 
 	var individual Individual
 	var subject Subject
-	subject.Id = "360202198807090038"
-	subject.Name = "曾嵩"
+	subject.Id = "321084197406210724"
+	subject.Name = "马雪华"
 	// subject.Id = "321088198811155757"
 	// subject.Name = "周江安"
 	individual.SubjectType = "natural"
@@ -109,10 +109,10 @@ func main() {
 		// var api = UrlPrefix + "gateway/api/1/fwqscx"
 		// httpDo(httpClient, "POST", api, contentType, parm)
 		//
-		// // 婚姻
-		// var api1 = UrlPrefix + "gateway/api/1/hydjxxcx"
-		// api1 = api1 + "?gmsfzh=" + i.Subject.Id
-		// httpDo(httpClient, "GET", api1, "application/x-www-form-urlencoded", "")
+		// 婚姻
+		var api1 = UrlPrefix + "gateway/api/1/hydjxxcx"
+		api1 = api1 + "?gmsfzh=" + i.Subject.Id
+		httpDo(httpClient, "POST", api1, "application/x-www-form-urlencoded", "")
 		//
 		// // 社保
 		// var api2 = UrlPrefix + "gateway/api/1/zrrsbjnxxcxjk"
@@ -131,11 +131,11 @@ func main() {
 		// httpDo(httpClient, "GET", api, "application/x-www-form-urlencoded", data)
 
 		// 	网格数据
-		fmt.Println("i==>", i)
+		// fmt.Println("i==>", i)
 		// api := "http://127.0.0.1:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022195706281518"
 		// api := "http://172.21.43.41:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022195706281518"
-		var api4 = "http://172.21.43.41:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022197206221518"
-		httpDo(httpClient, "GET", api4, "application/x-www-form-urlencoded", "")
+		// var api4 = "http://172.21.43.41:60005/fast-api/peasantHousehold/getDataByCardNo?cardNo=321022197206221518"
+		// httpDo(httpClient, "GET", api4, "application/x-www-form-urlencoded", "")
 
 		// api := "http://127.0.0.1:8088/fast-api/peasantHousehold/getDataList?beginTime="+url.QueryEscape("2021-06-13 00:00:00")+"&endTime="+url.QueryEscape("2021-06-23 00:00:00")
 		// // data := "beginTime=2021-06-13 00:00:00&endTime=2021-06-23 00:00:00"

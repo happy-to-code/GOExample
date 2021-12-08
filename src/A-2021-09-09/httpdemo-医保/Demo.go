@@ -106,26 +106,25 @@ func main() {
 
 	var contentType = "application/x-www-form-urlencoded"
 	for _, param := range paramList {
-		// 用户基本信息查询接口
-		api := UrlPrefix + "gateway/api/1/yhjbxxcxjk"
-
-		// http://ip/gateway/api/1/yhjbxxcxjk
-		// ?bac045=&aae135&baz805&aac001=2000000309107370&date=20150917&time=142623
-		api = api + "?bac045=&aae135=" + param.Paperid + "&baz805&aac001=2000000309107370&date=20210917&time=142623"
+		// 扬州市医保服务接口-用户基本信息查询接口
+		api := UrlPrefix + "gateway/api/1/yhjbxx"
+		api = api + "?bac045=&aae135=" + param.Paperid + "&baz805=&aac001=&cpage=1&rows=24&date=20211018&time=160012"
 		basicInfo := httpDo(httpClient, "POST", api, contentType, "")
-		fmt.Println("用户基本信息：", basicInfo)
+		fmt.Println("用户基本信息查询接口：", basicInfo)
 		fmt.Println("------------------------------------------------------------------------------")
-		// 失业保险缴费信息
-		api = UrlPrefix + "gateway/api/1/sybxjfjlcxjk"
-		api = api + "?bac045=&aae135=" + param.Paperid + "&baz805=&aac001=&date=20210917&time=142623&cpage=1&rows=100"
+
+		// 扬州市医保服务接口-医疗保险缴费信息查询接口
+		api = UrlPrefix + "gateway/api/1/dsylbxjfxxcx"
+		api = api + "?bac045=&aae135=" + param.Paperid + "&baz805=&aac001=&cpage=1&rows=24&date=20211018&time=160012"
+		ylbxInfo := httpDo(httpClient, "POST", api, contentType, "")
+		fmt.Println("医疗保险缴费信息查询接口：", ylbxInfo)
+		fmt.Println("------------------------------------------------------------------------------")
+
+		// 扬州市医保服务接口-生育保险缴费信息查询接口
+		api = UrlPrefix + "gateway/api/1/dssybxjfjl"
+		api = api + "?bac045=&aae135=" + param.Paperid + "&baz805=&aac001=&cpage=1&rows=24&date=20211018&time=160012"
 		sybxInfo := httpDo(httpClient, "POST", api, contentType, "")
-		fmt.Println("失业保险信息：", sybxInfo)
-		fmt.Println("------------------------------------------------------------------------------")
-		// 工伤保险
-		api = UrlPrefix + "gateway/api/1/gsbxjfjkcxjk"
-		api = api + "?bac045=&aae135=" + param.Paperid + "&baz805=&aac001=&date=20210917&time=142623&cpage=1&rows=24"
-		gsbxInfo := httpDo(httpClient, "POST", api, contentType, "")
-		fmt.Println("工商保险信息：", gsbxInfo)
+		fmt.Println("生育保险缴费信息查询接口：", sybxInfo)
 
 		fmt.Println("----------------------------" + param.Username + "-------------------------------")
 	}

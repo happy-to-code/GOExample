@@ -159,9 +159,12 @@ func main() {
 	objectName := "25c3863df99e4ae09af2d99e3d6984c4/0"
 
 	ctx := context.Background()
-	endpoint := "10.1.5.168:9000"
-	accessKeyID := "minioadmin"
-	secretAccessKey := "minioadmin"
+	// endpoint := "10.1.5.168:9000"
+	// accessKeyID := "minioadmin"
+	// secretAccessKey := "minioadmin"
+	endpoint := "10.1.3.250:9000"
+	accessKeyID := "bid-test"
+	secretAccessKey := "bid-test"
 	useSSL := false
 
 	// 初使化 minio client对象。
@@ -174,7 +177,7 @@ func main() {
 	}
 
 	// 创建一个叫mymusic的存储桶。
-	bucketName := "zyf-test"
+	bucketName := "bid-test"
 
 	// minioClient.
 	// 使用FPutObject上传一个zip文件。

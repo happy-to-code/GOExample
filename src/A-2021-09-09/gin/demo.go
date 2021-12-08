@@ -57,5 +57,6 @@ func handParam(c *gin.Context) {
 	param := c.Param("param")
 
 	fmt.Println("param:", param)
+	fmt.Printf("param:%T", param)
 	return
 }
