@@ -3,6 +3,8 @@ package BLC
 import (
 	"bytes"
 	"crypto/sha256"
+	"encoding/gob"
+	"log"
 	"strconv"
 	"time"
 )
@@ -75,4 +77,32 @@ func (block *Block) SetHash() {
 // CreateGenesisBlock step4:创建创世区块：
 func CreateGenesisBlock(data string) *Block {
 	return NewBlock(data, make([]byte, 32, 32), 0)
+}
+
+// Serilalize 将区块序列化，得到一个字节数组---区块的行为，设计为方法
+func (block *Block) Serilalize() []byte {
+	// 1.创建一个buffer
+	var result bytes.Buffer
+	// 2.创建一个编码器
+	encoder := gob.NewEncoder(&result)
+	// 3.编码--->打包
+	err := encoder.Encode(block)
+	if err != nil {
+		log.Panic(err)
+	}
+	return result.Bytes()
+}
+
+// DeserializeBlock 反序列化，得到一个区块---设计为函数
+func DeserializeBlock(blockBytes []byte) *Block {
+	var block Block
+	var reader = bytes.NewReader(blockBytes)
+	// 1.创建一个解码器
+	decoder := gob.NewDecoder(reader)
+	// 解包
+	err := decoder.Decode(&block)
+	if err != nil {
+		log.Panic(err)
+	}
+	return &block
 }
