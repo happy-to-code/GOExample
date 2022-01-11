@@ -51,12 +51,11 @@ func (pow *ProofOfWork) Run() ([]byte, int64) {
 		// 将hash存储到hashInt
 		hashInt.SetBytes(hash[:])
 		// 判断hashInt是否小于Block里的target
-		/*
-		   Com compares x and y and returns:
-		   -1 if x < y
-		   0 if x == y
-		   1 if x > y
-		*/
+		// Com compares x and y and returns:
+		// -1 if x < y
+		// 0 if x == y
+		// 1 if x > y
+
 		if pow.Target.Cmp(hashInt) == 1 {
 			break
 		}
