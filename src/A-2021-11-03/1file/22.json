@@ -1,0 +1,338 @@
+{
+  "subjectType": "natural",
+  "subjectId": "360202198807090038",
+  "totalItems": 14,
+  "errItems": 0,
+  "identity": {
+    "totalItems": 3,
+    "errItems": 0,
+    "items": [
+      {
+        "itemName": "婚姻登记",
+        "sourceHash": "09a416247d52d4b28ea94acb5d49e92c104058d67b065ceea2184bd4310a478f",
+        "itemValue": [
+          {
+            "cert_num_man": "123456789012345678",
+            "cert_num_woman": "123456789012345678",
+            "folk_man": "01",
+            "folk_woman": "01",
+            "name_man": "张三",
+            "name_woman": "李四",
+            "nation_man": "156",
+            "nation_woman": "156",
+            "op_date": "2012-10-12 00:00:00",
+            "op_type": "IA"
+          }
+        ]
+      },
+      {
+        "itemName": "户籍信息",
+        "sourceHash": "90604afc0aaaccd848597d9d362e871da6906af3b810cbf9ba00d8e326a38db2",
+        "itemValue": {
+          "birthday": "20210101",
+          "ethnicity": "01",
+          "gender": "1         ",
+          "id_no": "123456789012345678",
+          "name": "张三",
+          "present_address": "测试地址",
+          "residence_address": "测试地址"
+        }
+      }
+    ]
+  },
+  "asset": {
+    "totalItems": 10,
+    "errItems": 0,
+    "items": [
+      {
+        "itemName": "用气信息",
+        "sourceHash": "",
+        "itemValue": {
+          "householder": "",
+          "id_no": "",
+          "usage": null
+        }
+      },
+      {
+        "itemName": "用水信息",
+        "sourceHash": "875bf4022493e2dec97fe0473ffae0e52e000c5627d0a649e0187e793168428d",
+        "itemValue": {
+          "address": "测试小区",
+          "householder": "张三",
+          "id_no": "123456789012345678",
+          "usage": [
+            {
+              "amount": "0.0",
+              "month": "202110",
+              "type": "用水",
+              "unit": "吨"
+            },
+            {
+              "amount": "103.0",
+              "month": "202110",
+              "type": "用水",
+              "unit": "吨"
+            }
+          ]
+        }
+      },
+      {
+        "itemName": "车辆登记信息",
+        "sourceHash": "58514395935d8d3d04a1f2c66dd98db983c28033ff5154e49601c2b723896f52",
+        "itemValue": [
+          {
+            "address": "江苏省扬州市",
+            "id_name": "A",
+            "id_number": "123456789012345678",
+            "issue_date": "20181223",
+            "last_inspection_date": "20191229",
+            "model": "汽车品牌",
+            "obtaining_way": "A",
+            "owner": "张三",
+            "plate_number": "苏K12345",
+            "use_character": "A"
+          }
+        ]
+      },
+      {
+        "itemName": "公积金缴纳",
+        "sourceHash": "a28b5769ab2e78afd24e7d6a48508f5cc95b3a3fab803de9d09ccf22379aa643",
+        "itemValue": {
+          "companyName": "中国人民银行扬州市中心支行",
+          "depositMonths": "264",
+          "education": "",
+          "familyTotalAssets": "",
+          "fundMonthInfos": [
+            {
+              "payer": "中国人民银行扬州市中心支行",
+              "payerAmount": "1677",
+              "payerRate": "0.1",
+              "personAmount": "1677",
+              "personRate": "0.1",
+              "tradingDate": "2021-12-08"
+            },
+            {
+              "payer": "中国人民银行扬州市中心支行",
+              "payerAmount": "1677",
+              "payerRate": "0.1",
+              "personAmount": "1677",
+              "personRate": "0.1",
+              "tradingDate": "2021-11-08"
+            }
+          ],
+          "homeAddress": "",
+          "isPublicFunctionary": "未知",
+          "status": "正常",
+          "workAddress": "测试地址",
+          "workYear": ""
+        }
+      },
+      {
+        "itemName": "生育保险缴纳",
+        "sourceHash": "ea9e9da507b6ded062f54e9c2cdead726e881f82263ac4ddf6f174771a52cad3",
+        "itemValue": {
+          "records": [
+            {
+              "company": "中国人民银行扬州市中心支行",
+              "company_amount": "35.9",
+              "pay_month": "201912",
+              "person_amount": "0.0",
+              "person_base": "7179.0",
+              "total_amount": "35.9"
+            },
+            {
+              "company": "中国人民银行扬州市中心支行",
+              "company_amount": "35.9",
+              "pay_month": "201911",
+              "person_amount": "0.0",
+              "person_base": "7179.0",
+              "total_amount": "35.9"
+            }
+          ]
+        }
+      },
+      {
+        "itemName": "医疗保险缴纳",
+        "sourceHash": "21b9b8a5a9ec9f1745e4c60214411f6c584e356302b77fe332a54a54d2148ced",
+        "itemValue": {
+          "records": [
+            {
+              "company": "中国人民银行扬州市中心支行",
+              "company_amount": "394.85",
+              "pay_month": "202111",
+              "person_amount": "149.58",
+              "person_base": "7179.0",
+              "total_amount": "544.43"
+            },
+            {
+              "company": "中国人民银行扬州市中心支行",
+              "company_amount": "394.85",
+              "pay_month": "202110",
+              "person_amount": "149.58",
+              "person_base": "7179.0",
+              "total_amount": "544.43"
+            }
+          ]
+        }
+      },
+      {
+        "itemName": "养老保险缴纳",
+        "sourceHash": "483f61499c402aae5cfc237ec6ee9fe1a0791e1f17e2eddc9746fc08c324e3c4",
+        "itemValue": {
+          "continuous_total_month": 0,
+          "records": [
+            {
+              "company": "扬州有限公司",
+              "company_amount": "502.32",
+              "pay_date": "20130401",
+              "pay_month": "201303",
+              "person_amount": "143.52",
+              "person_base": "1794",
+              "status": "正常补缴",
+              "total_amount": "645.84"
+            }
+          ],
+          "total_month": "1"
+        }
+      },
+      {
+        "itemName": "失业保险缴纳",
+        "sourceHash": "f4b2e9ef45cabf1cacb44017871ef8e6b9c76673cacd3565e4e86e3f2dad58a6",
+        "itemValue": {
+          "continuous_total_month": -1,
+          "records": [
+            {
+              "company": "扬州有限公司",
+              "company_amount": "35.88",
+              "pay_date": "20130301",
+              "pay_month": "201303",
+              "person_amount": "17.94",
+              "person_base": "1794",
+              "status": "正常应缴",
+              "total_amount": "53.82"
+            }
+          ],
+          "total_month": "1"
+        }
+      },
+      {
+        "itemName": "工伤保险缴纳",
+        "sourceHash": "ee92b3f951b76d42305d056424dd675314dc2ac8a7908099967388cf312075c2",
+        "itemValue": {
+          "continuous_total_month": -1,
+          "records": [
+            {
+              "company": "中国人民银行扬州市中心支行",
+              "company_amount": "14.36",
+              "pay_date": "尚未缴纳",
+              "pay_month": "202112",
+              "person_amount": "0",
+              "person_base": "7179",
+              "status": "正常应缴",
+              "total_amount": "14.36"
+            },
+            {
+              "company": "中国人民银行扬州市中心支行",
+              "company_amount": "14.36",
+              "pay_date": "20211118",
+              "pay_month": "202111",
+              "person_amount": "0",
+              "person_base": "7179",
+              "status": "正常应缴",
+              "total_amount": "14.36"
+            }
+          ],
+          "total_month": "72"
+        }
+      },
+      {
+        "itemName": "房屋权属",
+        "sourceHash": "4370610d3e56b731d526affbb3aaeef5664b5021b06f4e29f5bcd56217aaa6bc",
+        "itemValue": [
+          {
+            "area": "宗地面积0.00㎡/房屋建筑面积50.10㎡",
+            "holders": [
+              {
+                "cert_no": "苏(2017)扬州市不动产权第**号",
+                "enroll_date": "2020-12-11",
+                "id_no": "123456789012345678",
+                "name": "张三",
+                "old_cert_no": "苏(2017)扬州市不动产权第**号",
+                "share_status": "共同共有"
+              },
+              {
+                "cert_no": "苏(2017)扬州市不动产权第**号",
+                "enroll_date": "2020-12-11",
+                "id_no": "123456789012345678",
+                "name": "李四",
+                "old_cert_no": "苏(2017)扬州市不动产权第**号",
+                "share_status": "共同共有"
+              }
+            ],
+            "is_sealup": false,
+            "location": "房屋地址",
+            "mortgage_list": [
+              {
+                "duration": "2020-11-17起2050-11-17止",
+                "obligee": "江苏扬州****股份有限公司"
+              }
+            ],
+            "seq": 1,
+            "status": "现势",
+            "type": "土地、房屋",
+            "usage": "城镇住宅用地/住宅"
+          },
+          {
+            "area": "宗地面积0.00㎡/房屋建筑面积100.04㎡",
+            "holders": [
+              {
+                "cert_no": "苏(2017)扬州市不动产权第0042729号",
+                "enroll_date": "2017-04-21",
+                "id_no": "123456789012345678",
+                "name": "李四",
+                "old_cert_no": "维共字*****/维字******/扬国用(2012Z)第***号",
+                "share_status": "共同共有"
+              },
+              {
+                "cert_no": "苏(2017)扬州市不动产权第**号",
+                "enroll_date": "2017-04-21",
+                "id_no": "123456789012345678",
+                "name": "张三",
+                "old_cert_no": "维共字*****/维字******/扬国用(2012Z)第***号",
+                "share_status": "共同共有"
+              }
+            ],
+            "is_sealup": false,
+            "location": "房屋地址",
+            "mortgage_list": [
+              {
+                "duration": "2017-03-29起2047-03-28止",
+                "obligee": "江苏扬州****股份有限公司"
+              }
+            ],
+            "seq": 2,
+            "status": "现势",
+            "type": "土地、房屋",
+            "usage": "城镇住宅用地/住宅"
+          }
+        ]
+      }
+    ]
+  },
+  "risk": {
+    "totalItems": 1,
+    "errItems": 0,
+    "items": [
+      {
+        "itemName": "严重失信",
+        "sourceHash": "",
+        "itemValue": []
+      }
+    ]
+  },
+  "other": {
+    "totalItems": 0,
+    "errItems": 0,
+    "items": null
+  }
+}

@@ -21,6 +21,6 @@ func main() {
 		fmt.Println(fmt.Sprintf("根据键值获取失败：%v", err))
 		return
 	}
-	fmt.Printf("value:%s\n\n", get)
+	fmt.Printf("%s", get)
 
 }

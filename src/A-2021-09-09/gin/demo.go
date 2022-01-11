@@ -18,6 +18,7 @@ func runWeb(port string) {
 
 	router.POST("/event", handlerEvent)
 	router.POST("/callback", handlerCallback)
+	router.POST("/testParameter", handlerParameter)
 
 	router.GET("/test/:param", handParam)
 	fmt.Println(fmt.Sprintf("服务启动...端口为%v...", port))
@@ -58,5 +59,23 @@ func handParam(c *gin.Context) {
 
 	fmt.Println("param:", param)
 	fmt.Printf("param:%T", param)
+
+	c.JSON(200, param+" hello,world")
 	return
+}
+
+type ParameterTest struct {
+	Id         string `json:"id,omitempty"`
+	DidJsonStr string `json:"didJsonStr,omitempty"`
+}
+
+func handlerParameter(c *gin.Context) {
+	var parameter ParameterTest
+	err := c.BindJSON(&parameter)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("参数：%+v\n", parameter)
+
+	c.JSON(200, "hello,world")
 }

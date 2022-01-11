@@ -20,4 +20,7 @@ func main() {
 	fmt.Println("-------------")
 	fmt.Println("==>", time.Now().Unix())
 
+	fmt.Println(15 == 0xF)    // true
+	fmt.Println(15 == 017)    // true
+	fmt.Println(15 == 0b1111) // true
 }

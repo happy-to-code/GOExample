@@ -1,0 +1,197 @@
+{
+  "subjectType": "legal",
+  "subjectId": "93321002573791460Q",
+  "totalItems": 9,
+  "errItems": 0,
+  "identity": {
+    "totalItems": 3,
+    "errItems": 0,
+    "items": [
+      {
+        "itemName": "网格数据",
+        "sourceHash": "",
+        "itemValue": null
+      },
+      {
+        "itemName": "企业在业",
+        "sourceHash": "7ad89caffc4988518da2dc0763430693cbe6a5f9877f2ad9abb7c237d50ee659",
+        "itemValue": [
+          {
+            "address": "扬州市广陵区沙头镇小虹桥村",
+            "approved_date": "2017-06-16 00:00:00",
+            "business_scope_and_method": "初级农产品、蔬菜、水果种植、加工生产及销售；食品添加剂、包装材料、预包装食品销售。（依法须经批准的项目，经相关部门批准后方可开展经营活动）",
+            "industry": "农业",
+            "legal_representative": "魏代军",
+            "name": "扬州市广陵区绿林蔬菜专业合作社",
+            "phone": "",
+            "registered_capital": "880.0000000000001",
+            "registration_authority": "扬州市广陵区市场监督管理局",
+            "set_date": "2011-03-03 00:00:00",
+            "uniform_social_credit_code": "93321002573791460Q"
+          },
+          {
+            "address": "扬州市广陵区沙头镇小虹桥村",
+            "approved_date": "2017-06-16 00:00:00",
+            "business_scope_and_method": "初级农产品、蔬菜、水果种植、加工生产及销售；食品添加剂、包装材料、预包装食品销售。（依法须经批准的项目，经相关部门批准后方可开展经营活动）",
+            "industry": "农业",
+            "legal_representative": "魏代军",
+            "name": "扬州市广陵区绿林蔬菜专业合作社",
+            "phone": "",
+            "registered_capital": "880",
+            "registration_authority": "扬州市广陵区市场监督管理局",
+            "set_date": "2011-03-03 00:00:00",
+            "uniform_social_credit_code": "93321002573791460Q"
+          }
+        ]
+      },
+      {
+        "itemName": "个体在业",
+        "sourceHash": "",
+        "itemValue": [
+          {
+            "representative_id": "32102719791125****",
+            "name": "扬州市邗江***百货店",
+            "legal_representative": "崔*",
+            "registered_capital": "20.0",
+            "industry": "百货零售",
+            "uniform_social_credit_code": "32102760021****",
+            "registration_authority": "扬州市邗江区市场监督管理局",
+            "address": "槐泗镇花园东路****",
+            "business_scope_and_method": "日用百货零售。",
+            "phone": "131515****",
+            "approved_date": "2008-09-17 00:00:00",
+            "set_date": "2008-09-17 00:00:00"
+          }
+        ]
+      }
+    ]
+  },
+  "asset": {
+    "totalItems": 6,
+    "errItems": 0,
+    "items": [
+      {
+        "itemName": "燃气欠缴费",
+        "sourceHash": "",
+        "itemValue": {
+          "name": "扬州*******有限公司",
+          "cert_type": "纳税人识别号",
+          "cert_no": "",
+          "records": [
+            {
+              "start_date": "2019-06-26",
+              "cutoff_date": "2020-07-23",
+              "days": 393,
+              "fee": 1031.44,
+              "is_paid": false
+            }
+          ]
+        }
+      },
+      {
+        "itemName": "药品生产经营许可证信息",
+        "sourceHash": "",
+        "itemValue": [
+          {
+            "administrative_counterpart": "扬州市百信缘医药连锁有限公司运河佳园店",
+            "uniform_social_credit_code": "11321023338858549A",
+            "legal_representative": "王保*",
+            "legal_representative_id": "32102319730*******",
+            "license_document": "药品经营许可证",
+            "license_document_no": "扬邗药零收〔2019〕04号（换）",
+            "license_content": "企业的名称：扬州市百信缘医药连锁有限公司运河佳园店；法定代表人：***； 企业负责人：王保灿；质量负责人：蒋蕾；经营方式：零售（连锁）；经营范围：中药饮片（仅经营不拆零的 精制包装单味中药饮片）、中成药、化学药制剂、抗生素制剂、生化药品（以上药品冷藏品种除外）；注册地 址：扬州市念泗新村31-109；仓库地址：***。",
+            "license_date": "2019-01-02 00:00:00",
+            "expire_date": "2024-01-01 00:00:00"
+          }
+        ]
+      },
+      {
+        "itemName": "医疗器械生产许可证信息",
+        "sourceHash": "",
+        "itemValue": [
+          {
+            "enterprise_name": "江苏迈源生物科技有限公司",
+            "organization_code": "09147186-X",
+            "uniform_social_credit_code": "321027000220786",
+            "license_no": "苏食药监械生产许20140059号",
+            "address": "扬州高新技术产业开发区南园毛圩路1号二号多层厂房第三层",
+            "legal_representative": "孟广*",
+            "scope": "Ⅱ类:6840-1-用于蛋白质检测的试剂，6840-2-用于糖类检测的试剂，6840-4-用于酶类 检测的试剂，6840-7-用于无机离子检测的试剂，6840-9-用于自身抗体检测的试剂。",
+            "license_date": "2017-09-11 00:00:00",
+            "expire_date": "2019-05-30 00:00:00"
+          }
+        ]
+      },
+      {
+        "itemName": "食品生产经营许可证信息",
+        "sourceHash": "",
+        "itemValue": [
+          {
+            "administrative_counterpart": "宝应县君慧百货商店",
+            "uniform_social_credit_code": "11321023338858549A",
+            "legal_representative": "刁建*",
+            "legal_representative_id": "32102319730*******",
+            "license_document": "《食品经营许可证》申请准予通知书",
+            "license_document_no": "bytszsz食许准字（2019）第01020002号",
+            "license_content": "预包装食品（含冷藏冷冻食品）销售，散装食品（含冷藏冷冻食品）销售 2019-01-02 00:00:00",
+            "lincense_date": "2019-01-02 00:00:00",
+            "expire_date": "2024-01-01 00:00:00"
+          }
+        ]
+      },
+      {
+        "itemName": "法人社保缴费",
+        "sourceHash": "",
+        "itemValue": [
+          {
+            "company_name": "扬州xxxxxx公司",
+            "persons": 10,
+            "base": 5800,
+            "month": "202003",
+            "payable": 58.4,
+            "paid": 58.4,
+            "type": "大病医疗救助"
+          },
+          {
+            "company_name": "扬州xxxxxx公司",
+            "persons": 10,
+            "base": 5800,
+            "month": "202002",
+            "payable": 58.4,
+            "paid": 58.4,
+            "type": "大病医疗救助"
+          }
+        ]
+      },
+      {
+        "itemName": "法人社保欠费",
+        "sourceHash": "",
+        "itemValue": {
+          "totalAmount": 1,
+          "totalMonth": 1,
+          "arrears": [
+            {
+              "company_name": "",
+              "start_date": "",
+              "cutoff_date": "",
+              "amount": 1000,
+              "month": "201709",
+              "is_paid": false,
+              "authority": "xx人社局"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "risk": {
+    "totalItems": 0,
+    "errItems": 0,
+    "items": null
+  },
+  "other": {
+    "totalItems": 0,
+    "errItems": 0,
+    "items": null
+  }
+}

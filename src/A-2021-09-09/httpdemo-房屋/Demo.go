@@ -60,11 +60,54 @@ func main() {
 
 	var param1 = Param{
 		Paperkind: "110001",
+		Paperid:   "321027199004113325",
+		Orgnum:    "0600",
+		Username:  "宋飞宇",
+	}
+	var param2 = Param{
+		Paperkind: "110001",
+		Paperid:   "321027199004113325",
+		Orgnum:    "0600",
+		Username:  "王道萍",
+	}
+	var param3 = Param{
+		Paperkind: "110001",
+		Paperid:   "321088198610215450",
+		Orgnum:    "0600",
+		Username:  "吴正寅",
+	}
+	var param4 = Param{
+		Paperkind: "110001",
+		Paperid:   "321081198611200344",
+		Orgnum:    "0600",
+		Username:  "孙雅",
+	}
+	var param5 = Param{
+		Paperkind: "110001",
+		Paperid:   "360202198807090038",
+		Orgnum:    "0600",
+		Username:  "曾嵩",
+	}
+	var param6 = Param{
+		Paperkind: "110001",
+		Paperid:   "321088198811155757",
+		Orgnum:    "0600",
+		Username:  "周江安",
+	}
+	var param7 = Param{
+		Paperkind: "110001",
+		Paperid:   "321084198106080416",
+		Orgnum:    "0600",
+		Username:  "吕兵兵",
+	}
+
+	var param8 = Param{
+		Paperkind: "110001",
 		Paperid:   "321084196601071745",
 		Orgnum:    "0600",
 		Username:  "李者女",
 	}
-	var param2 = Param{
+	var param9 = Param{
 		Paperkind: "110001",
 		Paperid:   "32102219660314171X",
 		Orgnum:    "0600",
@@ -72,11 +115,11 @@ func main() {
 	}
 
 	contentType := "application/x-www-form-urlencoded"
-	paramList = append(paramList, param1, param2)
+	paramList = append(paramList, param1, param2, param3, param4, param5, param6, param7, param8, param9)
 	for _, param := range paramList {
 		// 3区
 		t0 := time.Now().Unix()
-		str := queryFW(param, contentType, "args=", "gateway/api/2/fwqscx")
+		str := queryFW(param, contentType, "args=", "gateway/api/1/fwqscx")
 		t1 := time.Now().Unix()
 		fmt.Println("3区：", str)
 		fmt.Println("3区：", t1-t0)
