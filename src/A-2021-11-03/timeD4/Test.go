@@ -40,5 +40,4 @@ func timeStr2TimeStamp(timeStr string) int64 {
 	// 	return now
 	// }
 	// return parse.Unix()
-
 }

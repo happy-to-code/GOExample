@@ -1,7 +1,7 @@
 package main
 
 import (
-	"BlockChainDemo/day02_04_cli/BLC"
+	"BlockChainDemo/day03_05_Transaction/BLC"
 )
 
 func main() {

@@ -164,6 +164,7 @@ func main() {
 		// fmt.Printf("==>blockObject:%+v\n", blockObject)
 
 		if blockObject.Result.Timestamp == "" {
+			log.Infof("第[%d]块Timestamp is null ,continue", i)
 			continue
 		}
 		// 区块的时间戳
@@ -417,7 +418,7 @@ const (
 	pg_dbname   = "blockdb"
 
 	// pg_host     = "b2904236d6.zicp.vip"
-	// pg_host     = "121.239.164.179"
+	// // pg_host     = "121.239.164.179"
 	// pg_port     = 22021
 	// pg_user     = "root"
 	// pg_password = "wutongchain@ps"

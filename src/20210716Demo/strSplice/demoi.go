@@ -9,9 +9,12 @@ import (
 
 func createUUID() string {
 	ul := uuid.NewV4()
+	// 33b7f80e034c426e98ae96bf9dbe7fbe
+	// af5991e053584cd1a1fd194de62ad7f2
 	return strings.Replace(ul.String(), "-", "", -1)
 }
 func main() {
+	fmt.Println(createUUID())
 	s := "[\"http://127.0.0.1:9090/jml/v1/query\",\"http://127.0.0.1:8080/jml/v2/query2\",\"http://127.0.0.1:7070/jml/v3/query3\"]"
 
 	var urlList []string

@@ -17,7 +17,6 @@ func main() {
 	// Callback for when a scraped page contains an article element
 	c.OnHTML("article", func(e *colly.HTMLElement) {
 		isEmojiPage := false
-
 		// Extract meta tags from the document
 		metaTags := e.DOM.ParentsUntil("~").Find("meta")
 		metaTags.Each(func(_ int, s *goquery.Selection) {
@@ -35,9 +34,7 @@ func main() {
 			// Find the emoji page title
 			fmt.Println("Emoji: ", e.DOM.Find("h1").Text())
 			// Grab all the text from the emoji's description
-			fmt.Println(
-				"Description: ",
-				e.DOM.Find(".description").Find("p").Text())
+			fmt.Println("Description: ", e.DOM.Find(".description").Find("p").Text())
 		}
 	})
 
@@ -58,5 +55,5 @@ func main() {
 		fmt.Println("Visiting", r.URL.String())
 	})
 
-	c.Visit("https://emojipedia.org")
+	c.Visit("https://emojipedia.org/search/?q=haha")
 }

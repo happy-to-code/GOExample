@@ -1,0 +1,35 @@
+CREATE INDEX address_0_sid_index ON address_0 (sid);
+CREATE INDEX address_1_sid_index ON address_1 (sid);
+CREATE INDEX address_2_sid_index ON address_2 (sid);
+CREATE INDEX address_3_sid_index ON address_3 (sid);
+CREATE INDEX address_4_sid_index ON address_4 (sid);
+CREATE INDEX address_5_sid_index ON address_5 (sid);
+CREATE INDEX address_6_sid_index ON address_6 (sid);
+CREATE INDEX address_7_sid_index ON address_7 (sid);
+CREATE INDEX address_8_sid_index ON address_8 (sid);
+CREATE INDEX address_9_sid_index ON address_9 (sid);
+CREATE INDEX address_a_sid_index ON address_a (sid);
+CREATE INDEX address_b_sid_index ON address_b (sid);
+CREATE INDEX address_c_sid_index ON address_c (sid);
+CREATE INDEX address_d_sid_index ON address_d (sid);
+CREATE INDEX address_e_sid_index ON address_e (sid);
+CREATE INDEX address_f_sid_index ON address_f (sid);
+
+
+
+CREATE INDEX address_0_address_index ON address_0 (address);
+CREATE INDEX address_1_address_index ON address_1 (address);
+CREATE INDEX address_2_address_index ON address_2 (address);
+CREATE INDEX address_3_address_index ON address_3 (address);
+CREATE INDEX address_4_address_index ON address_4 (address);
+CREATE INDEX address_5_address_index ON address_5 (address);
+CREATE INDEX address_6_address_index ON address_6 (address);
+CREATE INDEX address_7_address_index ON address_7 (address);
+CREATE INDEX address_8_address_index ON address_8 (address);
+CREATE INDEX address_9_address_index ON address_9 (address);
+CREATE INDEX address_a_address_index ON address_a (address);
+CREATE INDEX address_b_address_index ON address_b (address);
+CREATE INDEX address_c_address_index ON address_c (address);
+CREATE INDEX address_d_address_index ON address_d (address);
+CREATE INDEX address_e_address_index ON address_e (address);
+CREATE INDEX address_f_address_index ON address_f (address);

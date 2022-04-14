@@ -39,7 +39,7 @@ var chromeDefaltOption = [...]chromedp.ExecAllocatorOption{
 }
 
 func main() {
-	names := []string{"zjl", "zxy"}
+	names := []string{"周杰伦", "张学友"}
 	for _, name := range names {
 		allocCtx, cancel := chromedp.NewExecAllocator(context.Background(), chromeDefaltOption[:]...)
 		defer cancel()

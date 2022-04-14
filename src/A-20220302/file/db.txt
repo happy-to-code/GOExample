@@ -1,0 +1,14 @@
+CREATE INDEX erc20_tx_2018_from_index ON erc20_tx_2018 ("from");
+CREATE INDEX erc20_tx_2019_from_index ON erc20_tx_2019 ("from");
+CREATE INDEX erc20_tx_2020_from_index ON erc20_tx_2020 ("from");
+CREATE INDEX erc20_tx_2021_from_index ON erc20_tx_2021 ("from");
+CREATE INDEX erc20_tx_2022_from_index ON erc20_tx_2022 ("from");
+CREATE INDEX erc20_tx_2023_from_index ON erc20_tx_2023 ("from");
+
+
+CREATE INDEX erc20_tx_2018_to_index ON erc20_tx_2018 ("to");
+CREATE INDEX erc20_tx_2019_to_index ON erc20_tx_2019 ("to");
+CREATE INDEX erc20_tx_2020_to_index ON erc20_tx_2020 ("to");
+CREATE INDEX erc20_tx_2021_to_index ON erc20_tx_2021 ("to");
+CREATE INDEX erc20_tx_2022_to_index ON erc20_tx_2022 ("to");
+CREATE INDEX erc20_tx_2023_to_index ON erc20_tx_2023 ("to");

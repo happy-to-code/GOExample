@@ -1,0 +1,41 @@
+package main
+
+
+
+CREATE TABLE "public"."asset_balance" (
+	"address" varchar(80) COLLATE "pg_catalog"."default" NOT NULL,
+	"token_symbol" varchar(10) COLLATE "pg_catalog"."default",
+	"balance" float,
+	"last_tradetime" float,
+	"last_tradetxhash" integer[],
+	"input_count" integer,
+	"output_count" integer,
+	"input_maxvalue" float,
+	"output_maxvalue" float8,
+	CONSTRAINT "contract_info_pkey" PRIMARY KEY ("address"),
+	distributed by ("address")
+);
+
+
+CREATE TABLE products
+  ( product_no integer PRIMARY KEY,
+     name text,
+     price numeric
+   )
+DISTRIBUTED BY (product_no);
+
+CREATE TABLE "public"."tx_history" (
+    txhash varchar(80),
+    "from" varchar(80),
+    "to" varchar(80),
+    amount float,
+    token varchar(10),
+    gas_used float,
+    gas_price float,
+    chain_name varchar(20),
+    created_time timestamp,
+    block_number bigint,
+    status varchar(10)
+)
+WITH (appendonly=true, rientation=column)
+DISTRIBUTED BY ("to");

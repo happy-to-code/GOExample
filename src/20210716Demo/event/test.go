@@ -39,7 +39,7 @@ type Callback struct {
 }
 
 func main() {
-	runWeb("9300")
+	runWeb("8088")
 }
 
 func runWeb(port string) {
@@ -50,10 +50,28 @@ func runWeb(port string) {
 	router.Use(gin.Recovery()) // 使用 Recovery 中间件
 
 	router.POST("/event", handlerEvent)
+	router.POST("/msg", handlerMsg)
 	router.POST("/callback", handlerCallback)
 	router.GET("/test/:param", handParam)
 	fmt.Println(fmt.Sprintf("服务启动...端口为%v...", port))
 	router.Run(":" + port)
+}
+
+type MsgToPush struct {
+	Content     string `json:"content"`
+	BlockHeight uint64 `json:"blockHeight"`
+}
+
+func handlerMsg(c *gin.Context) {
+	var req MsgToPush
+	err := c.BindJSON(&req)
+	if err != nil {
+		c.String(http.StatusBadRequest, fmt.Sprintf("err : %s", err))
+		return
+	}
+	fmt.Printf("====>%+v\n", req)
+	header := c.GetHeader("msg-topic")
+	fmt.Println("header:", header)
 }
 
 func handParam(c *gin.Context) {

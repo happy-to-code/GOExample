@@ -1,0 +1,12 @@
+"name:"0x44e75652460e4593b388c3e1fb0808d20acf52c7",
+"password":"123456",
+"address":"0x44e75652460e4593b388c3e1fb0808d20acf52c7",
+"phone":"15633224455",
+"idCard":"235456789123541568",
+"gender":1,
+"weixin":"test",
+"desc":"desc",
+"roleId":1,
+"age":15,
+"city":"bj",
+"email":"12122545dfd"
