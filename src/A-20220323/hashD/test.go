@@ -21,6 +21,10 @@ func main() {
 
 	currentTime := time.Now().Format("2006-01-02 15:04:05")
 	fmt.Println(currentTime)
+
+	if bool(true) {
+		panic(fmt.Errorf("%s", "---"))
+	}
 }
 
 // 0xcedc39708cca0088ea1cd3cbed346f52bb878d80
