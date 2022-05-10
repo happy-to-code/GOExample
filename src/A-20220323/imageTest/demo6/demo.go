@@ -43,11 +43,11 @@ func main() {
 }
 
 func createPic(c *gin.Context) {
-	detFile, err := os.Create("E:\\20.06.16Project\\GOExample\\src\\A-20220323\\imageTest\\demo6\\dst.jpg")
-	if err != nil {
-		fmt.Println(err)
-	}
-	defer detFile.Close()
+	// detFile, err := os.Create("E:\\20.06.16Project\\GOExample\\src\\A-20220323\\imageTest\\demo6\\dst.jpg")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+	// defer detFile.Close()
 
 	toPastePic, err := os.Open("E:\\20.06.16Project\\GOExample\\src\\A-20220323\\imageTest\\demo5\\qrcode.png")
 	if err != nil {
@@ -59,7 +59,7 @@ func createPic(c *gin.Context) {
 	// 重新调整二维码图片尺寸
 	qrcodeImg = resize.Resize(314, 314, qrcodeImg, resize.Lanczos3)
 
-	backGroundFile, err := os.Open("E:\\20.06.16Project\\GOExample\\src\\A-20220323\\imageTest\\demo6\\new1111.jpg")
+	backGroundFile, err := os.Open("E:\\20.06.16Project\\GOExample\\src\\A-20220323\\imageTest\\demo6\\kong.jpg")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -74,16 +74,17 @@ func createPic(c *gin.Context) {
 	// 向画布中写入文字
 	fontRender(jpg) // 首先将一个图片信息存入jpg
 
+	// 粘贴二维码
 	draw.Draw(jpg, qrcodeImg.Bounds().Add(image.Pt(60, 150)), qrcodeImg, qrcodeImg.Bounds().Min, draw.Src)  // 截取图片的一部分
 	draw.Draw(jpg, qrcodeImg.Bounds().Add(image.Pt(435, 150)), qrcodeImg, qrcodeImg.Bounds().Min, draw.Src) // 截取图片的一部分
 	draw.Draw(jpg, qrcodeImg.Bounds().Add(image.Pt(60, 610)), qrcodeImg, qrcodeImg.Bounds().Min, draw.Src)  // 截取图片的一部分
 	draw.Draw(jpg, qrcodeImg.Bounds().Add(image.Pt(435, 610)), qrcodeImg, qrcodeImg.Bounds().Min, draw.Src) // 截取图片的一部分
 
-	// png.Encode(c.Writer, jpg)
-	// c.Writer.Header().Set("Conetnt-Type", "image/jpg")
-	// c.Writer.Flush()
+	png.Encode(c.Writer, jpg)
+	c.Writer.Header().Set("Conetnt-Type", "image/jpg")
+	c.Writer.Flush()
 
-	jpeg.Encode(detFile, jpg, nil)
+	// jpeg.Encode(detFile, jpg, nil)
 
 }
 
