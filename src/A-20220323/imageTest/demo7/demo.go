@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"flag"
 	"fmt"
 	"github.com/gin-gonic/gin"
@@ -13,6 +14,7 @@ import (
 	"image/png"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 )
 
@@ -31,6 +33,7 @@ var text = []string{
 	"电话：18890908888",
 }
 
+// 使用从服务器直接读取文件的方式
 func main() {
 	// 获取router路由对象
 	r := gin.New()
@@ -49,12 +52,34 @@ func createPic(c *gin.Context) {
 	// }
 	// defer detFile.Close()
 
-	toPastePic, err := os.Open("E:\\20.06.16Project\\GOExample\\src\\A-20220323\\imageTest\\demo5\\qrcode.png")
+	// toPastePic, err := os.Open("E:\\20.06.16Project\\GOExample\\src\\A-20220323\\imageTest\\demo5\\qrcode.png")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+	// defer toPastePic.Close()
+	// qrcodeImg, _ := png.Decode(toPastePic) // 对要粘贴的图片解码
+
+	// ===========================================================================================
+	imgUrl := "http://qiniu.yueda.vip/0000.jpg"
+
+	// 获取远端图片
+	res, err := http.Get(imgUrl)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("A error occurred!")
+		return
 	}
-	defer toPastePic.Close()
-	qrcodeImg, _ := png.Decode(toPastePic) // 对要粘贴的图片解码
+	defer res.Body.Close()
+
+	// 读取获取的[]byte数据
+	data, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		panic(err)
+	}
+
+	// []byte 转 io.Reader
+	reader := bytes.NewReader(data)
+	qrcodeImg, _ := jpeg.Decode(reader)
+	// ===========================================================================================
 
 	// 重新调整二维码图片尺寸
 	qrcodeImg = resize.Resize(314, 314, qrcodeImg, resize.Lanczos3)
@@ -77,8 +102,8 @@ func createPic(c *gin.Context) {
 	// 粘贴二维码
 	draw.Draw(jpg, qrcodeImg.Bounds().Add(image.Pt(60, 150)), qrcodeImg, qrcodeImg.Bounds().Min, draw.Src)  // 截取图片的一部分
 	draw.Draw(jpg, qrcodeImg.Bounds().Add(image.Pt(435, 150)), qrcodeImg, qrcodeImg.Bounds().Min, draw.Src) // 截取图片的一部分
-	draw.Draw(jpg, qrcodeImg.Bounds().Add(image.Pt(60, 610)), qrcodeImg, qrcodeImg.Bounds().Min, draw.Src)  // 截取图片的一部分
-	draw.Draw(jpg, qrcodeImg.Bounds().Add(image.Pt(435, 610)), qrcodeImg, qrcodeImg.Bounds().Min, draw.Src) // 截取图片的一部分
+	// draw.Draw(jpg, qrcodeImg.Bounds().Add(image.Pt(60, 610)), qrcodeImg, qrcodeImg.Bounds().Min, draw.Src)  // 截取图片的一部分
+	// draw.Draw(jpg, qrcodeImg.Bounds().Add(image.Pt(435, 610)), qrcodeImg, qrcodeImg.Bounds().Min, draw.Src) // 截取图片的一部分
 
 	png.Encode(c.Writer, jpg)
 	c.Writer.Header().Set("Conetnt-Type", "image/jpg")
