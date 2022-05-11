@@ -132,7 +132,7 @@ func fontRender(jpg *image.RGBA) {
 	// draw.Draw(jpg, jpg.Bounds(), white, image.ZP, draw.Src)
 	c := freetype.NewContext()
 	c.SetDPI(*dpi)       // 设置字体分辨率
-	c.SetFont(f)         // 设置字体分辨率
+	c.SetFont(f)         // 设置字体
 	c.SetFontSize(*size) // 设置字体大小
 	c.SetClip(jpg.Bounds())
 	c.SetDst(jpg)

@@ -1,0 +1,10 @@
+[FontSize]
+"levelone" = 45
+"leveltwo" = 30
+"levelthree" = 28
+"levelfour" = 30
+
+[Location]
+"artworkName" = [1, 2]
+"ArtworkNo" = [3, 4]
+"author" = [5, 6]
