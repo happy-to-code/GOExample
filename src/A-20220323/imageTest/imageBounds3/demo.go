@@ -1,24 +1,49 @@
 package main
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	"image/draw"
+	"image/jpeg"
 	"os"
 )
 
 func main() {
-	f, err := os.Open("E:\\20.06.16Project\\GOExample\\src\\A-20220323\\imageTest\\imageBounds2\\logo.png")
-	if err != nil {
-		panic(err)
-	}
-	gopherImg, _, err := image.Decode(f) // 打开图片
 
-	img := image.NewRGBA(image.Rect(0, 0, 500, 500))
-	for x := 0; x < img.Bounds().Dx(); x++ { // 将背景图涂黑
-		for y := 0; y < img.Bounds().Dy(); y++ {
-			img.Set(x, y, color.Black)
+	fBg, err := os.Open("bkground.jpg")
+	defer fBg.Close()
+	bg, _, err := image.Decode(fBg)
+
+	fSrc, err := os.Open("arrow1.jpg")
+	defer fSrc.Close()
+	src, _, err := image.Decode(fSrc)
+
+	fMaskImg, err := os.Open("mask.jpg")
+	defer fMaskImg.Close()
+	maskImg, _, err := image.Decode(fMaskImg)
+
+	bounds := src.Bounds() // you have defined that both src and mask are same size, and maskImg is a grayscale of the src image. So we'll use that common size.
+	mask := image.NewAlpha(bounds)
+	for x := 0; x < bounds.Dx(); x++ {
+		for y := 0; y < bounds.Dy(); y++ {
+			// get one of r, g, b on the mask image ...
+			r, _, _, _ := maskImg.At(x, y).RGBA()
+			// ... and set it as the alpha value on the mask.
+			mask.SetAlpha(x, y, color.Alpha{uint8(255 - r)}) // Assuming that white is your transparency, subtract it from 255
 		}
 	}
-	draw.Draw(img, img.Bounds(), gopherImg, image.Pt(0, 0), draw.Over) // 将gopherImg绘制到背景图上
+
+	m := image.NewRGBA(bounds)
+	draw.Draw(m, m.Bounds(), bg, image.ZP, draw.Src)
+
+	draw.DrawMask(m, bounds, src, image.ZP, mask, image.ZP, draw.Over)
+
+	toimg, _ := os.Create("E:\\20.06.16Project\\GOExample\\src\\A-20220323\\imageTest\\imageBounds3\\new.jpeg")
+	defer toimg.Close()
+
+	err = jpeg.Encode(toimg, m, nil)
+	if err != nil {
+		fmt.Println("Error: " + err.Error())
+	}
 }
