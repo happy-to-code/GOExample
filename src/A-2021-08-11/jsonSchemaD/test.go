@@ -230,7 +230,7 @@ func main() {
 }
 
 func checkSchemaValid(jsonStr string) (bool, error) {
-	var schemaLoader = gojsonschema.NewReferenceLoader("file://E:/20.06.16Project/GOExample/src/A-2021-08-11/jsonSchemaD/Schema-v2.0.0.json")
+	var schemaLoader = gojsonschema.NewReferenceLoader("file://E:/20.06.16Project/GOExample/src/A-2021-08-11/jsonSchemaD/Schema-v2.0.0.1.json")
 
 	// 读取验证数据
 	documentLoader := gojsonschema.NewStringLoader(jsonStr)

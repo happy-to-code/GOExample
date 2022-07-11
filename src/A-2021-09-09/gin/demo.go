@@ -65,8 +65,8 @@ func handParam(c *gin.Context) {
 }
 
 type ParameterTest struct {
-	Id         string `json:"id,omitempty"`
-	DidJsonStr string `json:"didJsonStr,omitempty"`
+	Id         string `1.json:"id,omitempty"`
+	DidJsonStr string `1.json:"didJsonStr,omitempty"`
 }
 
 func handlerParameter(c *gin.Context) {

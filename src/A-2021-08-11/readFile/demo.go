@@ -141,7 +141,7 @@ func httpDo(client *http.Client, url, data string) (string, error) {
 
 	// fmt.Println("1===============================1===========================1")
 	// var reply Reply
-	// json.Unmarshal(body, &reply)
+	// 1.json.Unmarshal(body, &reply)
 	// log.Printf("reply:%+v\n", reply)
 	// fmt.Println("2===============================2===========================2")
 
@@ -312,7 +312,7 @@ type ObjectRepair struct {
 }
 
 type Reply struct {
-	State   int         `json:"state"`
-	Message string      `json:"message"`
-	Data    interface{} `json:"data"`
+	State   int         `1.json:"state"`
+	Message string      `1.json:"message"`
+	Data    interface{} `1.json:"data"`
 }

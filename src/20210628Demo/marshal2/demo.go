@@ -16,15 +16,15 @@ func main() {
 
 	fmt.Println("-----------------")
 	fmt.Println("api==>", api)
-	// marshal, _ := json.Marshal(api)
+	// marshal, _ := 1.json.Marshal(api)
 	// fmt.Println("api string:",string(marshal))
 }
 
 type APIRes struct {
-	SubjectType string `json:"subjectType"`
-	SubjectId   string `json:"subjectId"`
-	TotalItems  uint8  `json:"totalItems"`
-	ErrItems    uint8  `json:"errItems"`
+	SubjectType string `1.json:"subjectType"`
+	SubjectId   string `1.json:"subjectId"`
+	TotalItems  uint8  `1.json:"totalItems"`
+	ErrItems    uint8  `1.json:"errItems"`
 	// Identity    *APIIdentityRes
 	Types map[string]List
 }

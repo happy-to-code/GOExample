@@ -8,12 +8,12 @@ import (
 
 type Config struct {
 	FontSize struct {
-		LevelOne   int `json:"levelOne"`
-		LevelTwo   int `json:"levelTwo"`
-		LevelThree int `json:"levelThree"`
-		LevelFour  int `json:"levelFour"`
+		LevelOne   int `1.json:"levelOne"`
+		LevelTwo   int `1.json:"levelTwo"`
+		LevelThree int `1.json:"levelThree"`
+		LevelFour  int `1.json:"levelFour"`
 	}
-	Location map[string][2]int `json:"location"`
+	Location map[string][2]int `1.json:"location"`
 }
 
 func main() {

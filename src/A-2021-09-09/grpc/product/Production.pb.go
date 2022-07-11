@@ -29,9 +29,9 @@ type Product struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Id          string `protobuf:"bytes,1,opt,name=id,proto3" 1.json:"id,omitempty"`
+	Name        string `protobuf:"bytes,2,opt,name=name,proto3" 1.json:"name,omitempty"`
+	Description string `protobuf:"bytes,3,opt,name=description,proto3" 1.json:"description,omitempty"`
 }
 
 func (x *Product) Reset() {
@@ -92,7 +92,7 @@ type ProductId struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Value string `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
+	Value string `protobuf:"bytes,1,opt,name=value,proto3" 1.json:"value,omitempty"`
 }
 
 func (x *ProductId) Reset() {

@@ -48,10 +48,10 @@ const (
 )
 
 type Param struct {
-	Paperkind string `json:"paperkind"`
-	Paperid   string `json:"paperid"`
-	Orgnum    string `json:"orgnum"`
-	Username  string `json:"username"`
+	Paperkind string `1.json:"paperkind"`
+	Paperid   string `1.json:"paperid"`
+	Orgnum    string `1.json:"orgnum"`
+	Username  string `1.json:"username"`
 }
 
 var qydj = `
@@ -1702,7 +1702,7 @@ var xzbg = `
 // var equity string
 
 func main() {
-	var contentType = "application/json"
+	var contentType = "application/1.json"
 	for i := 0; i < 1; i++ {
 		equity := createUUID()
 		fmt.Println("===============iii=================", i, "  ", equity)
@@ -1835,29 +1835,29 @@ func createUUID() string {
 }
 
 type Res struct {
-	State   int    `json:"state"`
-	Message string `json:"message"`
+	State   int    `1.json:"state"`
+	Message string `1.json:"message"`
 	Data    []struct {
-		Amount          int    `json:"amount"`
-		LockAmount      int    `json:"lockAmount"`
-		ShareProperty   int    `json:"shareProperty"`
-		SharePropertyCN string `json:"sharePropertyCN"`
-		Address         string `json:"address"`
-	} `json:"data"`
+		Amount          int    `1.json:"amount"`
+		LockAmount      int    `1.json:"lockAmount"`
+		ShareProperty   int    `1.json:"shareProperty"`
+		SharePropertyCN string `1.json:"sharePropertyCN"`
+		Address         string `1.json:"address"`
+	} `1.json:"data"`
 }
 
 type AccountRes struct {
-	State   int    `json:"state"`
-	Message string `json:"message"`
+	State   int    `1.json:"state"`
+	Message string `1.json:"message"`
 	Data    struct {
 		AccountList struct {
-			KeyId         string `json:"keyId"`
-			Address       string `json:"address"`
-			ClientNo      string `json:"clientNo"`
-			ShareholderNo string `json:"shareholderNo"`
-		} `json:"accountList"`
-		TxId string `json:"txId"`
-	} `json:"data"`
+			KeyId         string `1.json:"keyId"`
+			Address       string `1.json:"address"`
+			ClientNo      string `1.json:"clientNo"`
+			ShareholderNo string `1.json:"shareholderNo"`
+		} `1.json:"accountList"`
+		TxId string `1.json:"txId"`
+	} `1.json:"data"`
 }
 
 func change2Account(res string) AccountRes {

@@ -44,27 +44,27 @@ func createHTTPClient() *http.Client {
 }
 
 const (
-	UrlPrefix = "http://172.21.33.7/"
+	UrlPrefix = "http://172.21.47.49/"
 )
 
 func main() {
 	// 定义接受参数的变量
 	var id string
-	var name string
+	// var name string
 
-	flag.StringVar(&id, "id", "360202198807090038", "用户id")
-	flag.StringVar(&name, "name", "曾嵩", "用户name")
+	flag.StringVar(&id, "id", "310109192910255235", "用户id")
+	// flag.StringVar(&name, "name", "曾嵩", "用户name")
 
 	// 解析命令行参数写入注册的flag里,在所有flag都注册之后，这一步一定不能少
 	flag.Parse()
 
 	var contentType = "application/x-www-form-urlencoded"
 	// 养老保险
-	api := UrlPrefix + "gateway/api/1/getdata"
-	api = api + "?paperkind=110001&paperid=" + id + "&orgnum=0600&username=" + name
-	fmt.Println("api::", api)
+	api := UrlPrefix + "gateway/api/1/cjrzffxx?SFZH="
+	api = api + id
+	fmt.Println("残疾人证》发放信息查询接口api::", api)
 
-	basicInfo := httpDo(httpClient, "POST", api, contentType, "")
+	basicInfo := httpDo(httpClient, "GET", api, contentType, "")
 	log.Info("===>", basicInfo)
 
 }
@@ -72,8 +72,8 @@ func main() {
 // 有时需要在请求的时候设置头参数、cookie之类的数据，就可以使用http.Do方法。
 func httpDo(client *http.Client, requestType, url, contentType, data string) string {
 	req, err := http.NewRequest(requestType, url, strings.NewReader(data))
-	// req.Header.Set("Appkey", "718131542538321920")
-	req.Header.Set("Appkey", "823877309051174912")
+	req.Header.Set("Appkey", "718131542538321920")
+	// req.Header.Set("Appkey", "823877309051174912")
 	if err != nil {
 		return fmt.Sprintf("httpDo err:%v\n", err)
 	}

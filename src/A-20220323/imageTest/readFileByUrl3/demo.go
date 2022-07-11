@@ -1,14 +1,15 @@
 package main
 
 import (
-	"encoding/base64"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 )
 
 func main() {
-	imgUrl := "http://qiniu.yueda.vip/0000.jpg"
+	// imgUrl := "http://qiniu.yueda.vip/0000.jpg"
+	// imgUrl := "https://horifon.oss-cn-shanghai.aliyuncs.com/20220511/f323ce8e00304625ab3cbdb61914b8e2.jpg"
+	imgUrl := "http://qn.yueda.vip/yes.txt"
 
 	// 获取远端图片
 	res, err := http.Get(imgUrl)
@@ -23,8 +24,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("data:", string(data))
 
-	imageBase64 := base64.StdEncoding.EncodeToString(data)
-	fmt.Println("base64", imageBase64)
+	// imageBase64 := base64.StdEncoding.EncodeToString(data)
+	// fmt.Println("base64", imageBase64)
 
 }

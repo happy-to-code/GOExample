@@ -12,8 +12,8 @@ import (
 )
 
 type PostDemo struct {
-	Name string `json:"name"`
-	Age  int    `json:"age"`
+	Name string `1.json:"name"`
+	Age  int    `1.json:"age"`
 }
 
 func main() {
@@ -49,7 +49,7 @@ func main() {
 	// // 	var p PostDemo
 	// // 	p.Age = i
 	// // 	p.Name = "aa" + strconv.Itoa(i)
-	// // 	jsonBytes, _ := json.Marshal(p)
+	// // 	jsonBytes, _ := 1.json.Marshal(p)
 	// // 	// fmt.Println("---->", string(jsonBytes))
 	// // 	// err, s := httpPost(url, string(jsonBytes))
 	// // 	s, err := httpGetAndPost(url,"POST",string(jsonBytes))
@@ -97,7 +97,7 @@ func httpPost(url, jsonData string) (error, string) {
 	// req.SetBody(requestBody)
 
 	// 默认是application/x-www-form-urlencoded
-	req.Header.SetContentType("application/json")
+	req.Header.SetContentType("application/1.json")
 	// req.Header.SetContentType("application/x-www-form-urlencoded")
 	req.Header.SetMethod("POST")
 
@@ -140,7 +140,7 @@ func httpGetAndPost(url, method, data, contentType string, timeOut int) (string,
 	req.SetRequestURI(url) // 设置请求的url
 	req.Header.Set("Appkey", "718131542538321920")
 
-	// bytes, err := json.Marshal(data) // data是请求数据
+	// bytes, err := 1.json.Marshal(data) // data是请求数据
 	//
 	// if err != nil {
 	// 	return "", err
@@ -148,7 +148,7 @@ func httpGetAndPost(url, method, data, contentType string, timeOut int) (string,
 
 	req.SetBody([]byte(data)) // 存储转换好的数据
 
-	// req.Header.SetContentType("application/json") // 设置header头信息
+	// req.Header.SetContentType("application/1.json") // 设置header头信息
 	req.Header.SetContentType(contentType) // 设置header头信息
 
 	req.Header.SetMethod(method) // 设置请求方法
@@ -181,7 +181,7 @@ func GetInfoFromBigData(name2url map[string]string, individual Individual) {
 	var timeOut = viper.GetInt("http.timeout")
 	// var contentType = "application/x-www-form-urlencoded"
 	// var contentType = "multipart/form-data"
-	// var contentType = "application/json"
+	// var contentType = "application/1.json"
 	var p = PersonInfo{Qlr: individual.Subject.Name, Sfzh: individual.Subject.Id}
 	pBytes, _ := json.Marshal(p)
 
@@ -226,14 +226,14 @@ func GetInfoFromBigData(name2url map[string]string, individual Individual) {
 }
 
 type PersonInfo struct {
-	Qlr  string `json:"qlr"`  // 权利人名字
-	Sfzh string `json:"sfzh"` // 权利人身份证
+	Qlr  string `1.json:"qlr"`  // 权利人名字
+	Sfzh string `1.json:"sfzh"` // 权利人身份证
 }
 
 type PersonInfo4JD struct {
-	Qlrmc  string `json:"qlrmc"`  // 权利人名称
-	Qlrzjh string `json:"qlrzjh"` // 权利人证件号
-	Bdcqzh string `json:"bdcqzh"` // 不动产权证号
+	Qlrmc  string `1.json:"qlrmc"`  // 权利人名称
+	Qlrzjh string `1.json:"qlrzjh"` // 权利人证件号
+	Bdcqzh string `1.json:"bdcqzh"` // 不动产权证号
 }
 
 // 拼装请求路径以及添加参数
@@ -322,7 +322,7 @@ func packageSecurityPayment(url string, individual Individual, m map[string]stri
 func packageHouseOwnerUrl(individual Individual, m map[string]string) map[string]string {
 	// 高邮市房屋权属查询接口
 	// var p = PersonInfo{Qlr: individual.Subject.Name, Sfzh: individual.Subject.Id}
-	// bytes, _ := json.Marshal(p)
+	// bytes, _ := 1.json.Marshal(p)
 
 	// var api = UrlPrefix + "gateway/api/1/gysfwqscxjk"
 	// api = api + "?args={\"selarea\": \"\",\"clientusername\": \"1\",\"clientusercid\": \"2\",\"ytcn\": \"test\",\"computerid\": \"4\",\"computermac\": \"5\",\"computername\": \"6\",\"psw\": \"7\",\"cxrzp\": \"8\",\"qlrlist\":[" + string(bytes) + "]}"
@@ -352,20 +352,20 @@ func packageHouseOwnerUrl(individual Individual, m map[string]string) map[string
 
 // Individual 个体信息
 type Individual struct {
-	AuthID      string `json:"authId" binding:"required"`
-	SubjectType string `json:"subjectType" binding:"oneof=natural legal"`
-	BankID      string `json:"bankId" binding:"required"`
-	EndTime     string `json:"endTime" binding:"required"` // 格式为：yyyy-MM-dd hh:mm:ss
-	FileHash    string `json:"fileHash" binding:"required"`
-	// FilePath    string  `json:"filePath"`
-	Subject Subject `json:"subject" binding:"required"`
+	AuthID      string `1.json:"authId" binding:"required"`
+	SubjectType string `1.json:"subjectType" binding:"oneof=natural legal"`
+	BankID      string `1.json:"bankId" binding:"required"`
+	EndTime     string `1.json:"endTime" binding:"required"` // 格式为：yyyy-MM-dd hh:mm:ss
+	FileHash    string `1.json:"fileHash" binding:"required"`
+	// FilePath    string  `1.json:"filePath"`
+	Subject Subject `1.json:"subject" binding:"required"`
 }
 type Subject struct {
-	Id         string `json:"id" binding:"required"`   // 身份证号码or社会统一信用代码
-	Name       string `json:"name" binding:"required"` // 姓名or企业/组织全称
-	Code       string `json:"code"`                    // 组织机构代码
-	WeChatName string `json:"weChatName"`
-	Location   string `json:"location"`
-	Ip         string `json:"ip"`
-	Phone      string `json:"phone" binding:"required"`
+	Id         string `1.json:"id" binding:"required"`   // 身份证号码or社会统一信用代码
+	Name       string `1.json:"name" binding:"required"` // 姓名or企业/组织全称
+	Code       string `1.json:"code"`                    // 组织机构代码
+	WeChatName string `1.json:"weChatName"`
+	Location   string `1.json:"location"`
+	Ip         string `1.json:"ip"`
+	Phone      string `1.json:"phone" binding:"required"`
 }

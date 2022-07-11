@@ -48,10 +48,10 @@ const (
 )
 
 type Param struct {
-	Paperkind string `json:"paperkind"`
-	Paperid   string `json:"paperid"`
-	Orgnum    string `json:"orgnum"`
-	Username  string `json:"username"`
+	Paperkind string `1.json:"paperkind"`
+	Paperid   string `1.json:"paperid"`
+	Orgnum    string `1.json:"orgnum"`
+	Username  string `1.json:"username"`
 }
 
 var zf = `{
@@ -433,7 +433,7 @@ var shareholderList = `{"equityCode":"8008"}`
 
 func main() {
 
-	var contentType = "application/json"
+	var contentType = "application/1.json"
 	// 增发
 	// api1 := "http://10.1.3.150:9100/equity/share/increase"
 	// httpDo(httpClient, "POST", api1, contentType, zfs)
@@ -496,13 +496,13 @@ func createUUID() string {
 }
 
 type Res struct {
-	State   int    `json:"state"`
-	Message string `json:"message"`
+	State   int    `1.json:"state"`
+	Message string `1.json:"message"`
 	Data    []struct {
-		Amount          int    `json:"amount"`
-		LockAmount      int    `json:"lockAmount"`
-		ShareProperty   int    `json:"shareProperty"`
-		SharePropertyCN string `json:"sharePropertyCN"`
-		Address         string `json:"address"`
-	} `json:"data"`
+		Amount          int    `1.json:"amount"`
+		LockAmount      int    `1.json:"lockAmount"`
+		ShareProperty   int    `1.json:"shareProperty"`
+		SharePropertyCN string `1.json:"sharePropertyCN"`
+		Address         string `1.json:"address"`
+	} `1.json:"data"`
 }

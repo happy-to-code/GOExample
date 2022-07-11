@@ -47,10 +47,10 @@ const (
 )
 
 type Param struct {
-	Paperkind string `json:"paperkind"`
-	Paperid   string `json:"paperid"`
-	Orgnum    string `json:"orgnum"`
-	Username  string `json:"username"`
+	Paperkind string `1.json:"paperkind"`
+	Paperid   string `1.json:"paperid"`
+	Orgnum    string `1.json:"orgnum"`
+	Username  string `1.json:"username"`
 }
 
 func main() {
@@ -144,8 +144,8 @@ func main() {
 
 func queryFW(param Param, contentType string, arg string, url string) string {
 	type stru struct {
-		Qlr  string `json:"qlr"`
-		Sfzh string `json:"sfzh"`
+		Qlr  string `1.json:"qlr"`
+		Sfzh string `1.json:"sfzh"`
 	}
 	p := stru{
 		Qlr:  param.Username,

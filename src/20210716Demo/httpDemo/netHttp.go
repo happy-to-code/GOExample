@@ -43,32 +43,32 @@ func createHTTPClient() *http.Client {
 }
 
 type PostDemo struct {
-	Name string `json:"name"`
-	Age  int    `json:"age"`
+	Name string `1.json:"name"`
+	Age  int    `1.json:"age"`
 }
 
 // Individual 个体信息
 type Individual struct {
-	AuthID      string `json:"authId" binding:"required"`
-	SubjectType string `json:"subjectType" binding:"oneof=natural legal"`
-	BankID      string `json:"bankId" binding:"required"`
-	EndTime     string `json:"endTime" binding:"required"` // 格式为：yyyy-MM-dd hh:mm:ss
-	FileHash    string `json:"fileHash" binding:"required"`
-	// FilePath    string  `json:"filePath"`
-	Subject Subject `json:"subject" binding:"required"`
+	AuthID      string `1.json:"authId" binding:"required"`
+	SubjectType string `1.json:"subjectType" binding:"oneof=natural legal"`
+	BankID      string `1.json:"bankId" binding:"required"`
+	EndTime     string `1.json:"endTime" binding:"required"` // 格式为：yyyy-MM-dd hh:mm:ss
+	FileHash    string `1.json:"fileHash" binding:"required"`
+	// FilePath    string  `1.json:"filePath"`
+	Subject Subject `1.json:"subject" binding:"required"`
 }
 type Subject struct {
-	Id         string `json:"id" binding:"required"`   // 身份证号码or社会统一信用代码
-	Name       string `json:"name" binding:"required"` // 姓名or企业/组织全称
-	Code       string `json:"code"`                    // 组织机构代码
-	WeChatName string `json:"weChatName"`
-	Location   string `json:"location"`
-	Ip         string `json:"ip"`
-	Phone      string `json:"phone" binding:"required"`
+	Id         string `1.json:"id" binding:"required"`   // 身份证号码or社会统一信用代码
+	Name       string `1.json:"name" binding:"required"` // 姓名or企业/组织全称
+	Code       string `1.json:"code"`                    // 组织机构代码
+	WeChatName string `1.json:"weChatName"`
+	Location   string `1.json:"location"`
+	Ip         string `1.json:"ip"`
+	Phone      string `1.json:"phone" binding:"required"`
 }
 type PersonInfo struct {
-	Qlr  string `json:"qlr"`  // 权利人名字
-	Sfzh string `json:"sfzh"` // 权利人身份证
+	Qlr  string `1.json:"qlr"`  // 权利人名字
+	Sfzh string `1.json:"sfzh"` // 权利人身份证
 }
 
 const (

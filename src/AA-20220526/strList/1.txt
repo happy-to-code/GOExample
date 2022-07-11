@@ -1,0 +1,30 @@
+hyperledger/fabric-ca                                           1.4.6               3b96a893c1e4        2 years ago         150MB
+hyperledger/fabric-tools                                        1.4.6               0f9743ac0662        2 years ago         1.49GB
+hyperledger/fabric-ccenv                                        1.4.6               191911f4454f        2 years ago         1.36GB
+hyperledger/fabric-orderer                                      1.4.6               84eaba5388e7        2 years ago         120MB
+hyperledger/fabric-peer                                         1.4.6               5a52faa5d8c2        2 years ago         128MB
+tjfoc/tjfoc-ccenv                                               2.1                 318cbabd4c78        2 years ago         771MB
+hyperledger/fabric-zookeeper                                    0.4.18              ede9389347db        2 years ago         276MB
+hyperledger/fabric-kafka                                        0.4.18              caaae0474ef2        2 years ago         270MB
+hyperledger/fabric-couchdb                                      0.4.18              d369d4eaa0fd        2 years ago         261MB
+hyperledger/fabric-baseimage                                    0.4.18              9e353eca480f        2 years ago         1.3GB
+hyperledger/fabric-baseos                                       0.4.18              c256a6aad46f        2 years ago         80.8MB
+
+
+
+
+docker tag 68914607b3a5 hyperledger/fabric-javaenv:latest
+
+
+docker tag 3b96a893c1e4 hyperledger/fabric-ca:latest
+docker tag 0f9743ac0662 hyperledger/fabric-tools:latest
+docker tag 191911f4454f hyperledger/fabric-ccenv:latest
+docker tag 84eaba5388e7 hyperledger/fabric-orderer:latest
+docker tag 5a52faa5d8c2 hyperledger/fabric-peer:latest
+docker tag 318cbabd4c78 tjfoc/tjfoc-ccenv:latest
+docker tag ede9389347db hyperledger/fabric-zookeeper:latest
+docker tag caaae0474ef2 hyperledger/fabric-kafka:latest
+docker tag d369d4eaa0fd hyperledger/fabric-couchdb:latest
+docker tag 9e353eca480f hyperledger/fabric-baseimage:latest
+docker tag c256a6aad46f hyperledger/fabric-baseos:latest
+

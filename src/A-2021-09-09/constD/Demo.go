@@ -69,9 +69,9 @@ type Query struct {
 	riskLegal  map[Data_Item]QueryFunc
 }
 type Item struct {
-	ItemName   string      `json:"itemName"`
-	SourceHash string      `json:"sourceHash"`
-	ItemValue  interface{} `json:"itemValue"`
+	ItemName   string      `1.json:"itemName"`
+	SourceHash string      `1.json:"sourceHash"`
+	ItemValue  interface{} `1.json:"itemValue"`
 }
 type QueryFunc func(string, string) (Item, error)
 

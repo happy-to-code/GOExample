@@ -6,18 +6,18 @@ import (
 )
 
 type TxHistory struct {
-	Txhash         string     `json:"txhash"`
-	From           string     `json:"from"`
-	To             string     `json:"to"`
-	Amount         *big.Float `json:"amount"`
-	OriginalAmount string     `json:"original_amount"`
-	Token          string     `json:"token"`
-	GasUsed        int64      `json:"gas_used"`
-	GasPrice       int64      `json:"gas_price"`
-	ChainName      string     `json:"chain_name"`
-	CreatedTime    int64      `json:"created_time"`
-	BlockNumber    int64      `json:"block_number"`
-	Status         int        `json:"status"`
+	Txhash         string     `1.json:"txhash"`
+	From           string     `1.json:"from"`
+	To             string     `1.json:"to"`
+	Amount         *big.Float `1.json:"amount"`
+	OriginalAmount string     `1.json:"original_amount"`
+	Token          string     `1.json:"token"`
+	GasUsed        int64      `1.json:"gas_used"`
+	GasPrice       int64      `1.json:"gas_price"`
+	ChainName      string     `1.json:"chain_name"`
+	CreatedTime    int64      `1.json:"created_time"`
+	BlockNumber    int64      `1.json:"block_number"`
+	Status         int        `1.json:"status"`
 }
 
 func main() {

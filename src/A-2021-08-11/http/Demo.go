@@ -59,7 +59,7 @@ func httpDo(client *http.Client, ty, url, data string) (string, error) {
 
 	// fmt.Println("1===============================1===========================1")
 	// var reply Reply
-	// json.Unmarshal(body, &reply)
+	// 1.json.Unmarshal(body, &reply)
 	// log.Printf("reply:%+v\n", reply)
 	// fmt.Println("2===============================2===========================2")
 
@@ -111,12 +111,12 @@ func main() {
 }
 
 type Response struct {
-	State   int    `json:"state,omitempty"`
-	Message string `json:"message,omitempty"`
-	Data    Data   `json:"data"`
+	State   int    `1.json:"state,omitempty"`
+	Message string `1.json:"message,omitempty"`
+	Data    Data   `1.json:"data"`
 }
 
 type Data struct {
-	TxId   string `json:"txId,omitempty"`
-	AuthId string `json:"authId,omitempty"`
+	TxId   string `1.json:"txId,omitempty"`
+	AuthId string `1.json:"authId,omitempty"`
 }

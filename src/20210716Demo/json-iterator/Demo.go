@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	jsoniter "github.com/json-iterator/go"
+	jsoniter "github.com/1.json-iterator/go"
 	"github.com/json-iterator/go/extra"
 )
 
@@ -15,9 +15,9 @@ func init() {
 }
 
 type StdStruct struct {
-	Id   int    `json:"id"`
-	Age  int    `json:"age"`
-	Name string `json:"name"`
+	Id   int    `1.json:"id"`
+	Age  int    `1.json:"age"`
+	Name string `1.json:"name"`
 }
 
 func main() {

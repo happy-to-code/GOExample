@@ -48,10 +48,10 @@ const (
 )
 
 type Param struct {
-	Paperkind string `json:"paperkind"`
-	Paperid   string `json:"paperid"`
-	Orgnum    string `json:"orgnum"`
-	Username  string `json:"username"`
+	Paperkind string `1.json:"paperkind"`
+	Paperid   string `1.json:"paperid"`
+	Orgnum    string `1.json:"orgnum"`
+	Username  string `1.json:"username"`
 }
 
 func main() {
@@ -158,54 +158,54 @@ func httpDo(client *http.Client, requestType, url, contentType, data string) str
 
 // PensionRes 养老保险
 type PensionRes struct {
-	Code    int    `json:"code"`
-	Data    string `json:"data"`
-	Message string `json:"message"`
+	Code    int    `1.json:"code"`
+	Data    string `1.json:"data"`
+	Message string `1.json:"message"`
 }
 type PensionRaw struct {
 	Header struct {
-		Date    string `json:"date"`
-		SysCode string `json:"sysCode"`
-		Ref     string `json:"ref"`
+		Date    string `1.json:"date"`
+		SysCode string `1.json:"sysCode"`
+		Ref     string `1.json:"ref"`
 		Rst     struct {
-			BusiCode  string `json:"busiCode"`
-			TradeCode string `json:"tradeCode"`
-			Info      string `json:"info"`
-		} `json:"rst"`
-		BusCode  string `json:"busCode"`
-		ReSend   string `json:"reSend"`
-		Sender   string `json:"sender"`
-		TradeSrc string `json:"tradeSrc"`
-		Time     string `json:"time"`
-		Version  string `json:"version"`
-		Reciver  string `json:"reciver"`
-	} `json:"header"`
+			BusiCode  string `1.json:"busiCode"`
+			TradeCode string `1.json:"tradeCode"`
+			Info      string `1.json:"info"`
+		} `1.json:"rst"`
+		BusCode  string `1.json:"busCode"`
+		ReSend   string `1.json:"reSend"`
+		Sender   string `1.json:"sender"`
+		TradeSrc string `1.json:"tradeSrc"`
+		Time     string `1.json:"time"`
+		Version  string `1.json:"version"`
+		Reciver  string `1.json:"reciver"`
+	} `1.json:"header"`
 	Body struct {
 		DataSet struct {
 			RowSet struct {
-				Row interface{} `json:"row"`
-			} `json:"rowSet"`
-			PageSize   string `json:"pageSize"`
-			TotalCount string `json:"totalCount"`
-			Lst        string `json:"lst"`
-			PageNum    string `json:"pageNum"`
-		} `json:"dataSet"`
-	} `json:"body"`
+				Row interface{} `1.json:"row"`
+			} `1.json:"rowSet"`
+			PageSize   string `1.json:"pageSize"`
+			TotalCount string `1.json:"totalCount"`
+			Lst        string `1.json:"lst"`
+			PageNum    string `1.json:"pageNum"`
+		} `1.json:"dataSet"`
+	} `1.json:"body"`
 }
 
 type Pension struct {
-	TotalMonth string          `json:"total_month"`
-	Records    []PensionRecord `json:"records"`
+	TotalMonth string          `1.json:"total_month"`
+	Records    []PensionRecord `1.json:"records"`
 }
 type PensionRecord struct {
-	Company       string `json:"company"`        // 缴纳单位名称
-	PayMonth      string `json:"pay_month"`      // 缴纳月份
-	PayDate       string `json:"pay_date"`       // 缴纳日期
-	CompanyAmount string `json:"company_amount"` // 单位应缴金额
-	PersonAmount  string `json:"person_amount"`  // 个人应缴金额
-	TotalAmount   string `json:"total_amount"`   // 缴纳总额
-	PersonBase    string `json:"person_base"`    // 人员缴费基数
-	Status        string `json:"status"`         // 养老保险缴纳状态
+	Company       string `1.json:"company"`        // 缴纳单位名称
+	PayMonth      string `1.json:"pay_month"`      // 缴纳月份
+	PayDate       string `1.json:"pay_date"`       // 缴纳日期
+	CompanyAmount string `1.json:"company_amount"` // 单位应缴金额
+	PersonAmount  string `1.json:"person_amount"`  // 个人应缴金额
+	TotalAmount   string `1.json:"total_amount"`   // 缴纳总额
+	PersonBase    string `1.json:"person_base"`    // 人员缴费基数
+	Status        string `1.json:"status"`         // 养老保险缴纳状态
 }
 
 func handPensionRes(data string) (pension Pension) {
@@ -268,15 +268,15 @@ func handPensionRes(data string) (pension Pension) {
 }
 
 type Row struct {
-	Aae044 string `json:"aae044"` // 单位名称
-	Bab001 string `json:"bab001"` //
-	Aae140 string `json:"aae140"` //
-	Aae003 string `json:"aae003"` // 最近缴纳月份
-	Aae079 string `json:"aae079"` // 到账年月日
-	Aae078 string `json:"aae078"` // 缴纳状态，未缴纳为0，已缴纳为1
-	Aae080 string `json:"aae080"` // 单位应缴金额
-	Aae019 string `json:"aae019"` // 缴纳总额
-	Aaa115 string `json:"aaa115"` // 养老保险缴纳状态？
-	Aae082 string `json:"aae082"` // 个人应缴金额
-	Aae180 string `json:"aae180"` // 人员缴费基数
+	Aae044 string `1.json:"aae044"` // 单位名称
+	Bab001 string `1.json:"bab001"` //
+	Aae140 string `1.json:"aae140"` //
+	Aae003 string `1.json:"aae003"` // 最近缴纳月份
+	Aae079 string `1.json:"aae079"` // 到账年月日
+	Aae078 string `1.json:"aae078"` // 缴纳状态，未缴纳为0，已缴纳为1
+	Aae080 string `1.json:"aae080"` // 单位应缴金额
+	Aae019 string `1.json:"aae019"` // 缴纳总额
+	Aaa115 string `1.json:"aaa115"` // 养老保险缴纳状态？
+	Aae082 string `1.json:"aae082"` // 个人应缴金额
+	Aae180 string `1.json:"aae180"` // 人员缴费基数
 }

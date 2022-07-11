@@ -26,10 +26,10 @@ type Client struct {
 }
 
 type Message struct {
-	ClientID string `json:"clientId"`
-	Type     string `json:"type"`
-	Data     string `json:"data,omitempty"`
-	Time     int64  `json:"time"`
+	ClientID string `1.json:"clientId"`
+	Type     string `1.json:"type"`
+	Data     string `1.json:"data,omitempty"`
+	Time     int64  `1.json:"time"`
 }
 
 func NewClient(clientId string) *Client {

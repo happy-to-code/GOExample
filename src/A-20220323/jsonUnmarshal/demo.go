@@ -6,7 +6,7 @@ import (
 )
 
 type temp struct {
-	Data string `json:"data"`
+	Data string `1.json:"data"`
 }
 
 func main() {

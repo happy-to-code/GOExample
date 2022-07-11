@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fileName := "./file/test.json"
+	fileName := "./file/test.1.json"
 	dstFile, err := os.Create(fileName)
 	if err != nil {
 		fmt.Println(err.Error())

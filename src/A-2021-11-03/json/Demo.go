@@ -12,21 +12,21 @@ type Type string
 type SubType string
 
 type TxInfo struct {
-	TxHash  []byte `json:"txHash,omitempty"`  // 触发事件的交易
-	TxIndex uint   `json:"txIndex,omitempty"` // 触发事件的交易索引
+	TxHash  []byte `1.json:"txHash,omitempty"`  // 触发事件的交易
+	TxIndex uint   `1.json:"txIndex,omitempty"` // 触发事件的交易索引
 
 }
 type Event struct {
-	ID          uint64      `json:"id"` // 事件的ID
-	Topic       Type        `json:"topic"`
-	SubTopic    SubType     `json:"subTopic"`
-	Date        string      `json:"date"`        // 事件发生时间
-	LedgerID    string      `json:"ledgerID"`    // 触发事件的链
-	BlockHeight uint64      `json:"blockHeight"` // 触发事件的区块
-	Port        int         `json:"port"`        // 发送事件节点的端口
-	TxList      []TxInfo    `json:"txList"`      // 交易信息
-	Client      string      `json:"client"`      // 事件发起方——sdk ID
-	EventMsg    interface{} `json:"eventMsg"`    // 事件消息
+	ID          uint64      `1.json:"id"` // 事件的ID
+	Topic       Type        `1.json:"topic"`
+	SubTopic    SubType     `1.json:"subTopic"`
+	Date        string      `1.json:"date"`        // 事件发生时间
+	LedgerID    string      `1.json:"ledgerID"`    // 触发事件的链
+	BlockHeight uint64      `1.json:"blockHeight"` // 触发事件的区块
+	Port        int         `1.json:"port"`        // 发送事件节点的端口
+	TxList      []TxInfo    `1.json:"txList"`      // 交易信息
+	Client      string      `1.json:"client"`      // 事件发起方——sdk ID
+	EventMsg    interface{} `1.json:"eventMsg"`    // 事件消息
 	// Dump     bool      //持久化
 }
 

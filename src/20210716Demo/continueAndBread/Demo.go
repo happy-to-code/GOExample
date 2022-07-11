@@ -6,8 +6,8 @@ import (
 )
 
 type Api struct {
-	Name string   `json:"name,omitempty"`
-	Urls []string `json:"urls,omitempty"`
+	Name string   `1.json:"name,omitempty"`
+	Urls []string `1.json:"urls,omitempty"`
 }
 
 func main() {

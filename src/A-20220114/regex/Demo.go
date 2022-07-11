@@ -5,8 +5,8 @@ import "fmt"
 type SubType string
 
 type Msg struct {
-	ID       uint64  `json:"id"` // 事件的ID
-	SubTopic SubType `json:"subTopic"`
+	ID       uint64  `1.json:"id"` // 事件的ID
+	SubTopic SubType `1.json:"subTopic"`
 }
 
 func main() {

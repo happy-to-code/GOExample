@@ -12,20 +12,20 @@ import (
 
 // UserWater 用户用水情况
 type UserWater struct {
-	HZ                string `json:"hz"`       // 户主
-	YHDZ              string `json:"yhdz"`     // 用户地址
-	HH                string `json:"hh"`       // 户号
-	HZZJLX            string `json:"hzzjlx"`   // 户主证件类型
-	HZZJHM            string `json:"hzzjhm"`   // 户主证件号码
-	LX                string `json:"lx"`       // 类型
-	SD                string `json:"sd"`       // 时段
-	SYL               string `json:"syl"`      // 使用量
-	JLDW              string `json:"jldw"`     // 计量单位
-	XXYTBMQC          string `json:"xxytbmqc"` // 信息源头部门全称
-	TGDWQC            string `json:"tgdwqc"`   // 提供单位全称
-	TGRQ              string `json:"tgrq"`     // 提供日期
-	S_LAST_UPDATETIME string `json:"S_LAST_UPDATETIME"`
-	I_TIME            string `json:"I_TIME"`
+	HZ                string `1.json:"hz"`       // 户主
+	YHDZ              string `1.json:"yhdz"`     // 用户地址
+	HH                string `1.json:"hh"`       // 户号
+	HZZJLX            string `1.json:"hzzjlx"`   // 户主证件类型
+	HZZJHM            string `1.json:"hzzjhm"`   // 户主证件号码
+	LX                string `1.json:"lx"`       // 类型
+	SD                string `1.json:"sd"`       // 时段
+	SYL               string `1.json:"syl"`      // 使用量
+	JLDW              string `1.json:"jldw"`     // 计量单位
+	XXYTBMQC          string `1.json:"xxytbmqc"` // 信息源头部门全称
+	TGDWQC            string `1.json:"tgdwqc"`   // 提供单位全称
+	TGRQ              string `1.json:"tgrq"`     // 提供日期
+	S_LAST_UPDATETIME string `1.json:"S_LAST_UPDATETIME"`
+	I_TIME            string `1.json:"I_TIME"`
 }
 
 // 数据库配置

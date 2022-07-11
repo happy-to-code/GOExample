@@ -43,32 +43,32 @@ func createHTTPClient() *http.Client {
 }
 
 type PostDemo struct {
-	Name string `json:"name"`
-	Age  int    `json:"age"`
+	Name string `1.json:"name"`
+	Age  int    `1.json:"age"`
 }
 
 // Individual 个体信息
 type Individual struct {
-	AuthID      string `json:"authId" binding:"required"`
-	SubjectType string `json:"subjectType" binding:"oneof=natural legal"`
-	BankID      string `json:"bankId" binding:"required"`
-	EndTime     string `json:"endTime" binding:"required"` // 格式为：yyyy-MM-dd hh:mm:ss
-	FileHash    string `json:"fileHash" binding:"required"`
-	// FilePath    string  `json:"filePath"`
-	Subject Subject `json:"subject" binding:"required"`
+	AuthID      string `1.json:"authId" binding:"required"`
+	SubjectType string `1.json:"subjectType" binding:"oneof=natural legal"`
+	BankID      string `1.json:"bankId" binding:"required"`
+	EndTime     string `1.json:"endTime" binding:"required"` // 格式为：yyyy-MM-dd hh:mm:ss
+	FileHash    string `1.json:"fileHash" binding:"required"`
+	// FilePath    string  `1.json:"filePath"`
+	Subject Subject `1.json:"subject" binding:"required"`
 }
 type Subject struct {
-	Id         string `json:"id" binding:"required"`   // 身份证号码or社会统一信用代码
-	Name       string `json:"name" binding:"required"` // 姓名or企业/组织全称
-	Code       string `json:"code"`                    // 组织机构代码
-	WeChatName string `json:"weChatName"`
-	Location   string `json:"location"`
-	Ip         string `json:"ip"`
-	Phone      string `json:"phone" binding:"required"`
+	Id         string `1.json:"id" binding:"required"`   // 身份证号码or社会统一信用代码
+	Name       string `1.json:"name" binding:"required"` // 姓名or企业/组织全称
+	Code       string `1.json:"code"`                    // 组织机构代码
+	WeChatName string `1.json:"weChatName"`
+	Location   string `1.json:"location"`
+	Ip         string `1.json:"ip"`
+	Phone      string `1.json:"phone" binding:"required"`
 }
 type PersonInfo struct {
-	Qlr  string `json:"qlr"`  // 权利人名字
-	Sfzh string `json:"sfzh"` // 权利人身份证
+	Qlr  string `1.json:"qlr"`  // 权利人名字
+	Sfzh string `1.json:"sfzh"` // 权利人身份证
 }
 
 const (
@@ -101,7 +101,7 @@ func main() {
 		// requestType := "POST"
 		// contentType := "application/x-www-form-urlencoded"
 		// var p = PersonInfo{Qlr: i.Subject.Name, Sfzh: i.Subject.Id}
-		// bytes, _ := json.Marshal(p)
+		// bytes, _ := 1.json.Marshal(p)
 		// parm := "args={\"selarea\":\"\",\"clientusername\":\"1\",\"clientusercid\":\"2\",\"ytcn\":\"test\",\"computerid\":\"4\",\"computermac\":\"5\",\"computername\":\"dsj\",\"psw\":\"7\",\"cxrzp\":\"8\",\"qlrlist\":[" + string(bytes) + "]}"
 		// // fmt.Println("参数 parm:", parm)
 		//
@@ -139,7 +139,7 @@ func main() {
 
 		// api := "http://127.0.0.1:8088/fast-api/peasantHousehold/getDataList?beginTime="+url.QueryEscape("2021-06-13 00:00:00")+"&endTime="+url.QueryEscape("2021-06-23 00:00:00")
 		// // data := "beginTime=2021-06-13 00:00:00&endTime=2021-06-23 00:00:00"
-		// httpDo(httpClient, "GET", api, "application/json;charset=UTF-8", "")
+		// httpDo(httpClient, "GET", api, "application/1.json;charset=UTF-8", "")
 
 	}
 

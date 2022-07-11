@@ -37,19 +37,19 @@ func main() {
 }
 
 type Transaction struct {
-	BlockHash        string `json:"blockHash"`
-	BlockNumber      string `json:"blockNumber"`
-	From             string `json:"from"`
-	Gas              string `json:"gas"`
-	GasPrice         string `json:"gasPrice"`
-	Hash             string `json:"hash"`
-	Input            string `json:"input"`
-	Nonce            string `json:"nonce"`
-	To               string `json:"to"`
-	TransactionIndex string `json:"transactionIndex"`
-	Value            string `json:"value"`
-	Type             string `json:"type"`
-	V                string `json:"v"`
-	R                string `json:"r"`
-	S                string `json:"s"`
+	BlockHash        string `1.json:"blockHash"`
+	BlockNumber      string `1.json:"blockNumber"`
+	From             string `1.json:"from"`
+	Gas              string `1.json:"gas"`
+	GasPrice         string `1.json:"gasPrice"`
+	Hash             string `1.json:"hash"`
+	Input            string `1.json:"input"`
+	Nonce            string `1.json:"nonce"`
+	To               string `1.json:"to"`
+	TransactionIndex string `1.json:"transactionIndex"`
+	Value            string `1.json:"value"`
+	Type             string `1.json:"type"`
+	V                string `1.json:"v"`
+	R                string `1.json:"r"`
+	S                string `1.json:"s"`
 }

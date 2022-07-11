@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 type Relation struct {
-	Uid    string `json:"uid"`
-	Parent string `json:"parent"`
-	Level  int    `pg:"-"  json:"level"`
+	Uid    string `1.json:"uid"`
+	Parent string `1.json:"parent"`
+	Level  int    `pg:"-"  1.json:"level"`
 }
 
 func main() {

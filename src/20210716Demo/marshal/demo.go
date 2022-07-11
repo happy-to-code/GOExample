@@ -67,27 +67,27 @@ func main() {
 }
 
 type DataSourceAndItems struct {
-	Id          string `json:"id"`
-	Name        string `json:"name" binding:"required"`
-	Method      string `json:"method" binding:"required"`
-	ItemNum     int    `json:"itemNum"` // 项目数
-	Status      int    `json:"status"`
-	CreatedTime string `json:"createdTime"`
-	UpdatedTime string `json:"updatedTime"`
-	PublicKey   string `json:"publicKey" binding:"required"` // 公钥
-	Url         string `json:"url" binding:"required"`       // 数据源的url
+	Id          string `1.json:"id"`
+	Name        string `1.json:"name" binding:"required"`
+	Method      string `1.json:"method" binding:"required"`
+	ItemNum     int    `1.json:"itemNum"` // 项目数
+	Status      int    `1.json:"status"`
+	CreatedTime string `1.json:"createdTime"`
+	UpdatedTime string `1.json:"updatedTime"`
+	PublicKey   string `1.json:"publicKey" binding:"required"` // 公钥
+	Url         string `1.json:"url" binding:"required"`       // 数据源的url
 
-	DataItemList []DataItem `json:"dataItemList" binding:"required,dive"` // 数据项
+	DataItemList []DataItem `1.json:"dataItemList" binding:"required,dive"` // 数据项
 }
 
 type DataItem struct {
-	Id           string `json:"id" binding:"required"`   //  唯一ID
-	DataSourceId string `json:"dataSourceId"`            //  接口拥有者
-	Name         string `json:"name" binding:"required"` //  接口名称
-	NameCode     string `json:"nameCode"`                //  接口名称编码（比如：marriage,grid）
-	Url          string `json:"url"`                     //  接口路径
-	RequestType  int    `json:"requestType"`             //  请求类型(0:GET;1:POST),默认是0
-	CreateTime   string `json:"createTime"`              //  创建时间（格式：yyyy-MM-dd HH:mm:ss），默认是当前时间
-	UseType      int    `json:"useType"`                 //  使用类型（0：自然人；1：法人；2：通用）默认是0
-	Mold         int    `json:"mold"`                    //  分类（0：身份；1：资产；2：风险;3:其它） 默认是0
+	Id           string `1.json:"id" binding:"required"`   //  唯一ID
+	DataSourceId string `1.json:"dataSourceId"`            //  接口拥有者
+	Name         string `1.json:"name" binding:"required"` //  接口名称
+	NameCode     string `1.json:"nameCode"`                //  接口名称编码（比如：marriage,grid）
+	Url          string `1.json:"url"`                     //  接口路径
+	RequestType  int    `1.json:"requestType"`             //  请求类型(0:GET;1:POST),默认是0
+	CreateTime   string `1.json:"createTime"`              //  创建时间（格式：yyyy-MM-dd HH:mm:ss），默认是当前时间
+	UseType      int    `1.json:"useType"`                 //  使用类型（0：自然人；1：法人；2：通用）默认是0
+	Mold         int    `1.json:"mold"`                    //  分类（0：身份；1：资产；2：风险;3:其它） 默认是0
 }

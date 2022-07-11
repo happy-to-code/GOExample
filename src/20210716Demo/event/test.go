@@ -10,14 +10,14 @@ import (
 )
 
 type Event struct {
-	Topic       string      `json:topic,omitempty`
-	SubTopic    string      `json:subTopic,omitempty`
-	Date        string      `json:date,omitempty`        // 事件发生时间
-	LedgerID    string      `json:ledgerID,omitempty`    // 触发事件的链
-	BlockHeight uint64      `json:blockHeight,omitempty` // 触发事件的区块
-	TxList      []TxInfo    `json:txList,omitempty`      // 交易信息
-	Client      string      `json:client,omitempty`      // 事件发起方——sdk ID
-	EventMsg    interface{} `json:eventMsg,omitempty`    // 事件消息
+	Topic       string      `1.json:topic,omitempty`
+	SubTopic    string      `1.json:subTopic,omitempty`
+	Date        string      `1.json:date,omitempty`        // 事件发生时间
+	LedgerID    string      `1.json:ledgerID,omitempty`    // 触发事件的链
+	BlockHeight uint64      `1.json:blockHeight,omitempty` // 触发事件的区块
+	TxList      []TxInfo    `1.json:txList,omitempty`      // 交易信息
+	Client      string      `1.json:client,omitempty`      // 事件发起方——sdk ID
+	EventMsg    interface{} `1.json:eventMsg,omitempty`    // 事件消息
 	// Dump     bool      //持久化
 }
 type TxInfo struct {
@@ -26,16 +26,16 @@ type TxInfo struct {
 }
 
 type Callback struct {
-	Ledgerid    string `json:ledgerid,omitempty`
-	Msgcode     string `json:msgcode,omitempty`
-	Sender      string `json:sender,omitempty`
-	Receiver    string `json:receiver,omitempty`
-	Reftx       string `json:reftx,omitempty`
-	Msgdata     string `json:msgdata,omitempty`
-	Cipherkey   string `json:cipherkey,omitempty`
-	BlockHeight uint64 `json:blockHeight,omitempty`
-	TxIndex     uint64 `json:txIndex,omitempty`
-	TxHash      string `json:txHash,omitempty`
+	Ledgerid    string `1.json:ledgerid,omitempty`
+	Msgcode     string `1.json:msgcode,omitempty`
+	Sender      string `1.json:sender,omitempty`
+	Receiver    string `1.json:receiver,omitempty`
+	Reftx       string `1.json:reftx,omitempty`
+	Msgdata     string `1.json:msgdata,omitempty`
+	Cipherkey   string `1.json:cipherkey,omitempty`
+	BlockHeight uint64 `1.json:blockHeight,omitempty`
+	TxIndex     uint64 `1.json:txIndex,omitempty`
+	TxHash      string `1.json:txHash,omitempty`
 }
 
 func main() {
@@ -58,8 +58,8 @@ func runWeb(port string) {
 }
 
 type MsgToPush struct {
-	Content     string `json:"content"`
-	BlockHeight uint64 `json:"blockHeight"`
+	Content     string `1.json:"content"`
+	BlockHeight uint64 `1.json:"blockHeight"`
 }
 
 func handlerMsg(c *gin.Context) {

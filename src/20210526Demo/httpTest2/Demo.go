@@ -51,7 +51,7 @@ package main
 // 		req.Header.SetMethod(method)
 // 	}
 //
-// 	req.Header.SetContentType("application/json")
+// 	req.Header.SetContentType("application/1.json")
 // 	req.SetBodyString(bodyjson)
 //
 // 	req.SetRequestURI(url)

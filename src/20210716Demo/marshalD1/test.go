@@ -18,12 +18,12 @@ func main() {
 }
 
 type Upload struct {
-	AuthId   string      `json:"auth_id,omitempty"`
-	BankId   string      `json:"bank_id,omitempty"`
-	EventMsg interface{} `json:"event_msg,omitempty"`
+	AuthId   string      `1.json:"auth_id,omitempty"`
+	BankId   string      `1.json:"bank_id,omitempty"`
+	EventMsg interface{} `1.json:"event_msg,omitempty"`
 }
 
 type UploadAndHash struct {
-	Upload `json:"upload"`
-	Hash   string `json:"hash"`
+	Upload `1.json:"upload"`
+	Hash   string `1.json:"hash"`
 }

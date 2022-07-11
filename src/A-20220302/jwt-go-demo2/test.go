@@ -39,10 +39,10 @@ func main() {
 }
 
 type User struct {
-	ID       uint64 `json:"id"`
-	Username string `json:"username"`
-	Password string `json:"password"`
-	Phone    string `json:"phone"`
+	ID       uint64 `1.json:"id"`
+	Username string `1.json:"username"`
+	Password string `1.json:"password"`
+	Phone    string `1.json:"phone"`
 }
 
 var user = User{
@@ -55,7 +55,7 @@ var user = User{
 func Login(c *gin.Context) {
 	var u User
 	if err := c.ShouldBindJSON(&u); err != nil {
-		c.JSON(http.StatusUnprocessableEntity, "Invalid json provided")
+		c.JSON(http.StatusUnprocessableEntity, "Invalid 1.json provided")
 		return
 	}
 	// compare the user from the request, with the one we defined:
@@ -156,8 +156,8 @@ type TokenDetails struct {
 	RtExpires    int64
 }
 type Todo struct {
-	UserID uint64 `json:"user_id"`
-	Title  string `json:"title"`
+	UserID uint64 `1.json:"user_id"`
+	Title  string `1.json:"title"`
 }
 
 func ExtractToken(r *http.Request) string {
@@ -234,7 +234,7 @@ func FetchAuth(authD *AccessDetails) (uint64, error) {
 func CreateTodo(c *gin.Context) {
 	var td *Todo
 	if err := c.ShouldBindJSON(&td); err != nil {
-		c.JSON(http.StatusUnprocessableEntity, "invalid json")
+		c.JSON(http.StatusUnprocessableEntity, "invalid 1.json")
 		return
 	}
 	tokenAuth, err := ExtractTokenMetadata(c.Request)

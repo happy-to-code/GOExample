@@ -122,9 +122,9 @@ func main() {
 	json.Unmarshal([]byte(s), &resp)
 	fmt.Println("==>", string(resp.Data.Fwlist))
 
-	// bytes, _ := json.Marshal(resp)
+	// bytes, _ := 1.json.Marshal(resp)
 	// m := make(map[string]interface{})
-	// json.Unmarshal(bytes, &m)
+	// 1.json.Unmarshal(bytes, &m)
 	// fmt.Println("------------")
 	// fmt.Printf("%+v\n",m)
 

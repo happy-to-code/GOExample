@@ -12,9 +12,9 @@ func main() {
 	sysType := runtime.GOOS
 	if sysType == "windows" {
 		// windows系统
-		filepath = "1.json"
+		filepath = "1.1.json"
 	} else {
-		filepath = "./1.json"
+		filepath = "./1.1.json"
 	}
 	bytes, err := ioutil.ReadFile(filepath)
 	if err != nil {

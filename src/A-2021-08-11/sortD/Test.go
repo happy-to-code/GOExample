@@ -77,26 +77,26 @@ func SortByDate(ls []LegalSSPayment) []LegalSSPayment {
 }
 
 type LegalSSPayment struct {
-	JNRQ     string  `json:"JNRQ"`
-	BYSJJEHJ float64 `json:"BYSJJEHJ"`
-	JFNY     string  `json:"JFNY"`
-	TGDWQC   string  `json:"TGDWQC"`
-	BYYJJEHJ float64 `json:"BYYJJEHJ"`
-	TYSHXYDM string  `json:"TYSHXYDM"`
-	JBJGQC   string  `json:"JBJGQC"`
-	ZZJGDM   string  `json:"ZZJGDM"`
-	JGQC     string  `json:"JGQC"`
-	DWJFJS   int     `json:"DWJFJS"`
-	XXYTBMQC string  `json:"XXYTBMQC"`
-	TGRQ     string  `json:"TGRQ"`
-	LB       string  `json:"LB"`
-	CBRS     int     `json:"CBRS"`
+	JNRQ     string  `1.json:"JNRQ"`
+	BYSJJEHJ float64 `1.json:"BYSJJEHJ"`
+	JFNY     string  `1.json:"JFNY"`
+	TGDWQC   string  `1.json:"TGDWQC"`
+	BYYJJEHJ float64 `1.json:"BYYJJEHJ"`
+	TYSHXYDM string  `1.json:"TYSHXYDM"`
+	JBJGQC   string  `1.json:"JBJGQC"`
+	ZZJGDM   string  `1.json:"ZZJGDM"`
+	JGQC     string  `1.json:"JGQC"`
+	DWJFJS   int     `1.json:"DWJFJS"`
+	XXYTBMQC string  `1.json:"XXYTBMQC"`
+	TGRQ     string  `1.json:"TGRQ"`
+	LB       string  `1.json:"LB"`
+	CBRS     int     `1.json:"CBRS"`
 }
 
-// ZZJGDM   string  `json:"company_name"` // 组织机构代码
-// CBRS     int     `json:"persons"`      // 参保人数
-// DWJFJS   float64 `json:"base"`         // 单位缴费基数
-// JFNY     string  `json:"month"`        // 缴费年月
-// BYYJJEHJ float64 `json:"payable"`      // 本月应缴金额合计（元）
-// BYSJJEHJ float64 `json:"paid"`         // 本月实缴金额合计（元）
-// LB       string  `json:"type"`         // 类别
+// ZZJGDM   string  `1.json:"company_name"` // 组织机构代码
+// CBRS     int     `1.json:"persons"`      // 参保人数
+// DWJFJS   float64 `1.json:"base"`         // 单位缴费基数
+// JFNY     string  `1.json:"month"`        // 缴费年月
+// BYYJJEHJ float64 `1.json:"payable"`      // 本月应缴金额合计（元）
+// BYSJJEHJ float64 `1.json:"paid"`         // 本月实缴金额合计（元）
+// LB       string  `1.json:"type"`         // 类别

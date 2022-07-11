@@ -1,0 +1,43 @@
+# 存证证书相关配置
+[StoreCert]
+[StoreCert.Title]
+"name" = "艺术品区块链存证证书"
+"location" = [22, 22]
+"size" = 30
+"font" = 10
+"content" = ""
+
+[StoreCert.Number]
+"name" = "证书编号:"
+"location" = [22, 22]
+"size" = 30
+"font" = 10
+"content" = ""
+
+[StoreCert.StoreTime]
+"name" = "存证时间:"
+"location" = [22, 22]
+"size" = 30
+"font" = 10
+"content" = ""
+
+[StoreCert.User]
+"name" = "存证用户:"
+"location" = [22, 22]
+"size" = 30
+"font" = 10
+"content" = "江苏弘亿丰文化科技有限公司"
+
+[StoreCert.Hash]
+"name" = "存证哈希:"
+"location" = [22, 22]
+"size" = 30
+"font" = ""
+"content" = 10
+
+[StoreCert.Address]
+"name" = "存证地址:"
+"location" = [22, 22]
+"size" = 30
+"font" = ""
+"content" = "梧桐链存证平台"

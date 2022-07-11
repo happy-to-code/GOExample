@@ -46,10 +46,10 @@ const (
 )
 
 type Param struct {
-	Paperkind string `json:"paperkind"`
-	Paperid   string `json:"paperid"`
-	Orgnum    string `json:"orgnum"`
-	Username  string `json:"username"`
+	Paperkind string `1.json:"paperkind"`
+	Paperid   string `1.json:"paperid"`
+	Orgnum    string `1.json:"orgnum"`
+	Username  string `1.json:"username"`
 }
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 	for i, param := range paramList {
 		api := UrlPrefix + "gateway/api/1/getdata"
 
-		// pBytes, _ := json.Marshal(param)
+		// pBytes, _ := 1.json.Marshal(param)
 		// var contentType = "application/x-www-form-urlencoded"
 		var contentType = "application/x-www-form-urlencoded"
 

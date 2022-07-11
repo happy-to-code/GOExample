@@ -48,11 +48,11 @@ func InitTrans(locale string) (err error) {
 }
 
 type SignUpParam struct {
-	Age        uint8  `json:"age" binding:"gte=1,lte=130"`
-	Name       string `json:"name" binding:"required"`
-	Email      string `json:"email" binding:"required,email"`
-	Password   string `json:"password" binding:"required"`
-	RePassword string `json:"re_password" binding:"required,eqfield=Password"`
+	Age        uint8  `1.json:"age" binding:"gte=1,lte=130"`
+	Name       string `1.json:"name" binding:"required"`
+	Email      string `1.json:"email" binding:"required,email"`
+	Password   string `1.json:"password" binding:"required"`
+	RePassword string `1.json:"re_password" binding:"required,eqfield=Password"`
 }
 
 func main() {

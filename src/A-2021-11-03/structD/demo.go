@@ -7,27 +7,27 @@ import (
 
 // IndividualCipher 存到合约中的个体信息
 type IndividualCipher struct {
-	AuthID      string      `json:"authId"`
-	SubjectType string      `json:"subjectType"`
-	CipherText  string      `json:"cipherText"`
-	CipherKeys  []CipherKey `json:"cipherKeys"`
-	IdHash      string      `json:"idHash"`
-	BankID      string      `json:"bankId"`
-	CreateTime  string      `json:"createTime"` // 格式为：yyyy-MM-dd hh:mm:ss
-	EndTime     string      `json:"endTime"`    // 格式为：yyyy-MM-dd hh:mm:ss
-	FileHash    string      `json:"fileHash"`
-	// FilePath    string      `json:"filePath"`
-	Holder string `json:"holder"`
+	AuthID      string      `1.json:"authId"`
+	SubjectType string      `1.json:"subjectType"`
+	CipherText  string      `1.json:"cipherText"`
+	CipherKeys  []CipherKey `1.json:"cipherKeys"`
+	IdHash      string      `1.json:"idHash"`
+	BankID      string      `1.json:"bankId"`
+	CreateTime  string      `1.json:"createTime"` // 格式为：yyyy-MM-dd hh:mm:ss
+	EndTime     string      `1.json:"endTime"`    // 格式为：yyyy-MM-dd hh:mm:ss
+	FileHash    string      `1.json:"fileHash"`
+	// FilePath    string      `1.json:"filePath"`
+	Holder string `1.json:"holder"`
 }
 type CipherKey struct {
-	Id        string `json:"id"`
-	Keycipher string `json:"keycipher"` // 密钥
+	Id        string `1.json:"id"`
+	Keycipher string `1.json:"keycipher"` // 密钥
 }
 
 // Individual4C 存到合约中的个体信息
 type Individual4C struct {
-	Data IndividualCipher `json:"data"`
-	Sign string           `json:"Sign"`
+	Data IndividualCipher `1.json:"data"`
+	Sign string           `1.json:"Sign"`
 }
 
 func main() {

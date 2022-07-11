@@ -73,7 +73,7 @@ func main() {
 
 }
 
-var schemaLoader = gojsonschema.NewReferenceLoader("file://E:/20.06.16Project/GOExample/src/20210716Demo/jsonSchema/Schema-v2.0.0.json")
+var schemaLoader = gojsonschema.NewReferenceLoader("file://E:/20.06.16Project/GOExample/src/20210716Demo/jsonSchema/Schema-v2.0.0.1.json")
 
 func validJsonSchema(jsonStr string) {
 	documentLoader := gojsonschema.NewStringLoader(jsonStr)

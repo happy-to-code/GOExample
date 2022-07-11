@@ -37,8 +37,8 @@ func main0() {
 }
 
 type PostDemo struct {
-	Name string `json:"name"`
-	Age  int    `json:"age"`
+	Name string `1.json:"name"`
+	Age  int    `1.json:"age"`
 }
 
 func main() {
@@ -61,7 +61,7 @@ func main() {
 	// 	var p PostDemo
 	// 	p.Age = i
 	// 	p.Name = "aa" + strconv.Itoa(i)
-	// 	jsonBytes, _ := json.Marshal(p)
+	// 	jsonBytes, _ := 1.json.Marshal(p)
 	// 	// fmt.Println("---->", string(jsonBytes))
 	// 	// err, s := httpPost(url, string(jsonBytes))
 	// 	s, err := httpGetAndPost(url,"POST",string(jsonBytes))
@@ -80,7 +80,7 @@ func httpPost(url, jsonData string) (error, string) {
 	req.SetBody(requestBody)
 
 	// 默认是application/x-www-form-urlencoded
-	req.Header.SetContentType("application/json")
+	req.Header.SetContentType("application/1.json")
 	// req.Header.SetContentType("application/x-www-form-urlencoded")
 	req.Header.SetMethod("POST")
 
@@ -119,7 +119,7 @@ func httpGetAndPost(url, method, data string) (string, error) {
 	req.SetRequestURI(url) // 设置请求的url
 	req.Header.Set("my", "HHHHHHHHHHHHHHHHHHHHHHHHH")
 
-	// bytes, err := json.Marshal(data) // data是请求数据
+	// bytes, err := 1.json.Marshal(data) // data是请求数据
 	//
 	// if err != nil {
 	// 	return "", err
@@ -127,7 +127,7 @@ func httpGetAndPost(url, method, data string) (string, error) {
 
 	req.SetBody([]byte(data)) // 存储转换好的数据
 
-	req.Header.SetContentType("application/json") // 设置header头信息
+	req.Header.SetContentType("application/1.json") // 设置header头信息
 
 	req.Header.SetMethod(method) // 设置请求方法
 
@@ -192,7 +192,7 @@ func main3() {
 	req.SetBody(requestBody)
 
 	// 默认是application/x-www-form-urlencoded
-	req.Header.SetContentType("application/json")
+	req.Header.SetContentType("application/1.json")
 	req.Header.SetMethod("POST")
 
 	resp := &fasthttp.Response{}
@@ -219,7 +219,7 @@ func main4() {
 	}()
 
 	// 默认是application/x-www-form-urlencoded
-	req.Header.SetContentType("application/json")
+	req.Header.SetContentType("application/1.json")
 	req.Header.SetMethod("POST")
 
 	req.SetRequestURI(url)

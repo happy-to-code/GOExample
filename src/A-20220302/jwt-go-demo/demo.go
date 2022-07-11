@@ -67,9 +67,9 @@ func ParseToken(token string) (*LoginClaims, error) {
 }
 
 type User struct {
-	ID       uint64 `json:"id"`
-	Username string `json:"username"`
-	Password string `json:"password"`
+	ID       uint64 `1.json:"id"`
+	Username string `1.json:"username"`
+	Password string `1.json:"password"`
 }
 
 // A sample use
@@ -82,7 +82,7 @@ var user = User{
 func Login(c *gin.Context) {
 	var u User
 	if err := c.ShouldBindJSON(&u); err != nil {
-		c.JSON(http.StatusUnprocessableEntity, "Invalid json provided")
+		c.JSON(http.StatusUnprocessableEntity, "Invalid 1.json provided")
 		return
 	}
 	// compare the user from the request, with the one we defined:

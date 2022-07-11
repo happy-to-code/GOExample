@@ -60,12 +60,14 @@ func createPic(c *gin.Context) {
 	// qrcodeImg, _ := png.Decode(toPastePic) // 对要粘贴的图片解码
 
 	// ===========================================================================================
-	imgUrl := "http://qiniu.yueda.vip/0000.jpg"
+	// imgUrl := "http://qiniu.yueda.vip/0000.jpg"
+	imgUrl := "https://horifon.oss-cn-shanghai.aliyuncs.com/20220511/f323ce8e00304625ab3cbdb61914b8e2.jpg"
+	// imgUrl := "https://aloss.yueda.vip/123.jpg"
 
 	// 获取远端图片
 	res, err := http.Get(imgUrl)
 	if err != nil {
-		fmt.Println("A error occurred!")
+		fmt.Printf("A error occurred!:%+v\n", err)
 		return
 	}
 	defer res.Body.Close()
@@ -78,7 +80,11 @@ func createPic(c *gin.Context) {
 
 	// []byte 转 io.Reader
 	reader := bytes.NewReader(data)
-	qrcodeImg, _ := jpeg.Decode(reader)
+	qrcodeImg, err := jpeg.Decode(reader)
+	if err != nil {
+		fmt.Printf("====>%s\n", err.Error())
+		panic(err)
+	}
 	// ===========================================================================================
 
 	// 重新调整二维码图片尺寸

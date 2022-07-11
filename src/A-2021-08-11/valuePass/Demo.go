@@ -7,8 +7,8 @@ import (
 )
 
 type Boy struct {
-	Name string `json:"name,omitempty"`
-	Age  int    `json:"age,omitempty"`
+	Name string `1.json:"name,omitempty"`
+	Age  int    `1.json:"age,omitempty"`
 }
 
 func main() {

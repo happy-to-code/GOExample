@@ -22,18 +22,18 @@ func main() {
 }
 
 type QueryRecord struct {
-	CardId              string          `json:"cardId"`     // 被查询人身份标识
-	ChainHash           string          `json:"chainHash"`  // 链上哈希
-	Id                  string          `json:"id"`         // 请求的ID，requestId
-	InquirerId          string          `json:"inquirerId"` // 查询方机构id
-	DataSourceAndItemId []SourceAndItem `json:"dataSourceAndItemId"`
+	CardId              string          `1.json:"cardId"`     // 被查询人身份标识
+	ChainHash           string          `1.json:"chainHash"`  // 链上哈希
+	Id                  string          `1.json:"id"`         // 请求的ID，requestId
+	InquirerId          string          `1.json:"inquirerId"` // 查询方机构id
+	DataSourceAndItemId []SourceAndItem `1.json:"dataSourceAndItemId"`
 }
 
 // type DataSourceAndItemIds struct {
-// 	DataSourceAndItemId []SourceAndItem `json:"dataSourceAndItemId"`
+// 	DataSourceAndItemId []SourceAndItem `1.json:"dataSourceAndItemId"`
 // }
 
 type SourceAndItem struct {
-	DataSourceId string   `json:"dataSourceId"` // 数据源id
-	DataItemId   []string `json:"dataItemId"`   // 数据项id
+	DataSourceId string   `1.json:"dataSourceId"` // 数据源id
+	DataItemId   []string `1.json:"dataItemId"`   // 数据项id
 }

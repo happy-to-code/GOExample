@@ -48,7 +48,7 @@ const (
 
 func main() {
 
-	var contentType = "application/json"
+	var contentType = "application/1.json"
 	m := make(map[string]string)
 	m["id"] = "123"
 	m["didJsonStr"] = `{

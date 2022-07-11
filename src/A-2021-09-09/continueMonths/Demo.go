@@ -1640,17 +1640,17 @@ func main() {
 }
 
 type Pension struct {
-	Aae044 string `json:"aae044"`
-	Bab001 string `json:"bab001"`
-	Aae140 string `json:"aae140"`
-	Aae003 string `json:"aae003"` // 年月
-	Aae079 string `json:"aae079"`
-	Aae078 string `json:"aae078"`
-	Aae080 string `json:"aae080"`
-	Aae019 string `json:"aae019"`
-	Aaa115 string `json:"aaa115"`
-	Aae082 string `json:"aae082"`
-	Aae180 string `json:"aae180"`
+	Aae044 string `1.json:"aae044"`
+	Bab001 string `1.json:"bab001"`
+	Aae140 string `1.json:"aae140"`
+	Aae003 string `1.json:"aae003"` // 年月
+	Aae079 string `1.json:"aae079"`
+	Aae078 string `1.json:"aae078"`
+	Aae080 string `1.json:"aae080"`
+	Aae019 string `1.json:"aae019"`
+	Aaa115 string `1.json:"aaa115"`
+	Aae082 string `1.json:"aae082"`
+	Aae180 string `1.json:"aae180"`
 }
 
 func countContinueMonths(pensions []Pension) int {

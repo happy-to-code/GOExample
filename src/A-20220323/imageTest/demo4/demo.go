@@ -132,7 +132,7 @@ func Cors() gin.HandlerFunc {
 			c.Header("Access-Control-Expose-Headers", "Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers,Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma,FooBar") // 跨域关键设置 让浏览器可以解析
 			c.Header("Access-Control-Max-Age", "172800")                                                                                                                                                           // 缓存请求信息 单位为秒
 			c.Header("Access-Control-Allow-Credentials", "false")                                                                                                                                                  //  跨域请求是否需要带cookie信息 默认设置为true
-			c.Set("content-type", "application/json")                                                                                                                                                              // 设置返回格式是json
+			c.Set("content-type", "application/1.json")                                                                                                                                                            // 设置返回格式是json
 		}
 
 		// 放行所有OPTIONS方法

@@ -50,7 +50,9 @@ func main() {
 	fmt.Println("--->", transparentImg.Bounds().Dy())
 	draw.Draw(transparentImg,
 		image.Rect(50, 50, transparentImg.Bounds().Dx(), transparentImg.Bounds().Dy()),
-		backGroundFileImg, image.Point{}, draw.Over)
+		backGroundFileImg,
+		image.Point{},
+		draw.Over)
 
 	width := transparentImg.Bounds().Dx()
 	height := transparentImg.Bounds().Dy()

@@ -57,7 +57,7 @@ func main() {
 
 		var data = `{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x%s", true],"id":1}`
 		data = fmt.Sprintf(data, blockNumStr)
-		res := httpDo(httpClient, "POST", UrlPrefix, "application/json", data)
+		res := httpDo(httpClient, "POST", UrlPrefix, "application/1.json", data)
 
 		var blockObject BlockObject
 		err := json.Unmarshal([]byte(res), &blockObject)
@@ -104,48 +104,48 @@ func httpDo(client *http.Client, requestType, url, contentType, data string) str
 }
 
 type BlockObject struct {
-	Jsonrpc string `json:"jsonrpc"`
-	Id      int    `json:"id"`
-	Result  Result `json:"result"`
+	Jsonrpc string `1.json:"jsonrpc"`
+	Id      int    `1.json:"id"`
+	Result  Result `1.json:"result"`
 }
 
 type Result struct {
-	Difficulty       string        `json:"difficulty"`
-	ExtraData        string        `json:"extraData"`
-	GasLimit         string        `json:"gasLimit"`
-	GasUsed          string        `json:"gasUsed"`
-	Hash             string        `json:"hash"`
-	LogsBloom        string        `json:"logsBloom"`
-	Miner            string        `json:"miner"`
-	MixHash          string        `json:"mixHash"`
-	Nonce            string        `json:"nonce"`
-	Number           string        `json:"number"`
-	ParentHash       string        `json:"parentHash"`
-	ReceiptsRoot     string        `json:"receiptsRoot"`
-	Sha3Uncles       string        `json:"sha3Uncles"`
-	Size             string        `json:"size"`
-	StateRoot        string        `json:"stateRoot"`
-	Timestamp        string        `json:"timestamp"`
-	TotalDifficulty  string        `json:"totalDifficulty"`
-	Transactions     []Transaction `json:"transactions"`
-	TransactionsRoot string        `json:"transactionsRoot"`
-	Uncles           []string      `json:"uncles"`
+	Difficulty       string        `1.json:"difficulty"`
+	ExtraData        string        `1.json:"extraData"`
+	GasLimit         string        `1.json:"gasLimit"`
+	GasUsed          string        `1.json:"gasUsed"`
+	Hash             string        `1.json:"hash"`
+	LogsBloom        string        `1.json:"logsBloom"`
+	Miner            string        `1.json:"miner"`
+	MixHash          string        `1.json:"mixHash"`
+	Nonce            string        `1.json:"nonce"`
+	Number           string        `1.json:"number"`
+	ParentHash       string        `1.json:"parentHash"`
+	ReceiptsRoot     string        `1.json:"receiptsRoot"`
+	Sha3Uncles       string        `1.json:"sha3Uncles"`
+	Size             string        `1.json:"size"`
+	StateRoot        string        `1.json:"stateRoot"`
+	Timestamp        string        `1.json:"timestamp"`
+	TotalDifficulty  string        `1.json:"totalDifficulty"`
+	Transactions     []Transaction `1.json:"transactions"`
+	TransactionsRoot string        `1.json:"transactionsRoot"`
+	Uncles           []string      `1.json:"uncles"`
 }
 
 type Transaction struct {
-	BlockHash        string `json:"blockHash"`
-	BlockNumber      string `json:"blockNumber"`
-	From             string `json:"from"`
-	Gas              string `json:"gas"`
-	GasPrice         string `json:"gasPrice"`
-	Hash             string `json:"hash"`
-	Input            string `json:"input"`
-	Nonce            string `json:"nonce"`
-	To               string `json:"to"`
-	TransactionIndex string `json:"transactionIndex"`
-	Value            string `json:"value"`
-	Type             string `json:"type"`
-	V                string `json:"v"`
-	R                string `json:"r"`
-	S                string `json:"s"`
+	BlockHash        string `1.json:"blockHash"`
+	BlockNumber      string `1.json:"blockNumber"`
+	From             string `1.json:"from"`
+	Gas              string `1.json:"gas"`
+	GasPrice         string `1.json:"gasPrice"`
+	Hash             string `1.json:"hash"`
+	Input            string `1.json:"input"`
+	Nonce            string `1.json:"nonce"`
+	To               string `1.json:"to"`
+	TransactionIndex string `1.json:"transactionIndex"`
+	Value            string `1.json:"value"`
+	Type             string `1.json:"type"`
+	V                string `1.json:"v"`
+	R                string `1.json:"r"`
+	S                string `1.json:"s"`
 }

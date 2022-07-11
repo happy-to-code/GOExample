@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	jsoniter "github.com/json-iterator/go"
+	jsoniter "github.com/1.json-iterator/go"
 )
 
 func main() {
@@ -47,13 +47,13 @@ func main() {
 }
 
 type Event struct {
-	ID          uint64      `json:"id"` // 事件的ID
-	Topic       string      `json:"topic"`
-	SubTopic    string      `json:"subTopic"`
-	Date        string      `json:"date"`        // 事件发生时间
-	LedgerID    string      `json:"ledgerID"`    // 触发事件的链
-	BlockHeight uint64      `json:"blockHeight"` // 触发事件的区块
-	Port        int         `json:"port"`        // 发送事件节点的端口
-	Client      string      `json:"client"`      // 事件发起方——sdk ID
-	EventMsg    interface{} `json:"eventMsg"`    // 事件消息
+	ID          uint64      `1.json:"id"` // 事件的ID
+	Topic       string      `1.json:"topic"`
+	SubTopic    string      `1.json:"subTopic"`
+	Date        string      `1.json:"date"`        // 事件发生时间
+	LedgerID    string      `1.json:"ledgerID"`    // 触发事件的链
+	BlockHeight uint64      `1.json:"blockHeight"` // 触发事件的区块
+	Port        int         `1.json:"port"`        // 发送事件节点的端口
+	Client      string      `1.json:"client"`      // 事件发起方——sdk ID
+	EventMsg    interface{} `1.json:"eventMsg"`    // 事件消息
 }

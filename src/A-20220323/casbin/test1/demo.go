@@ -12,9 +12,9 @@ import (
 
 // Response 统一响应结构体
 type Response struct {
-	Code    int         `json:"code"`
-	Message string      `json:"message"`
-	Data    interface{} `json:"data"`
+	Code    int         `1.json:"code"`
+	Message string      `1.json:"message"`
+	Data    interface{} `1.json:"data"`
 }
 
 var O *gorm.DB

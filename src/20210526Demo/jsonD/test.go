@@ -6,7 +6,7 @@ import (
 )
 
 type IndividualCipher struct {
-	AuthID      string `json:"authId"`
+	AuthID      string `1.json:"authId"`
 	SubjectType string
 	CipherText  string
 	IdHash      string
@@ -24,8 +24,8 @@ type Individual4C struct {
 	Sign string
 }
 type PersonInfo struct {
-	Qlr  string `json:"qlr"`  // 权利人名字
-	Sfzh string `json:"sfzh"` // 权利人身份证
+	Qlr  string `1.json:"qlr"`  // 权利人名字
+	Sfzh string `1.json:"sfzh"` // 权利人身份证
 }
 
 func main() {

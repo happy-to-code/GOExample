@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	file, err := ioutil.ReadFile("./test.json")
+	file, err := ioutil.ReadFile("./test.1.json")
 	if err != nil {
 		panic(err)
 	}

@@ -18,21 +18,21 @@ func main() {
 }
 
 type UploadCreditLoan struct {
-	AuthId          string   `json:"authId" binding:"required"`
-	BankId          string   `json:"bankId"`
-	BanKName        string   `json:"bankName"`
-	ReceiverPubkeys []string `json:"receiverPubkeys"`
-	Result          Result   `json:"result" binding:"required,dive"`
+	AuthId          string   `1.json:"authId" binding:"required"`
+	BankId          string   `1.json:"bankId"`
+	BanKName        string   `1.json:"bankName"`
+	ReceiverPubkeys []string `1.json:"receiverPubkeys"`
+	Result          Result   `1.json:"result" binding:"required,dive"`
 }
 
 type Result struct {
-	BizOrderId   string `json:"bizOrderId"`                // 金民通业 务订单ID
-	Status       string `json:"status" binding:"required"` // accepted - 授信审批通过 rejected - 授信审批驳回
-	Comments     string `json:"comments"`                  // 授信审批意见
-	Name         string `json:"name" binding:"required"`
-	Id           string `json:"id" binding:"required"`
-	CreditAmount int64  `json:"creditAmount"`
-	Duration     int    `json:"duration"`
-	Interest     string `json:"interest"`
-	Product      string `json:"product"`
+	BizOrderId   string `1.json:"bizOrderId"`                // 金民通业 务订单ID
+	Status       string `1.json:"status" binding:"required"` // accepted - 授信审批通过 rejected - 授信审批驳回
+	Comments     string `1.json:"comments"`                  // 授信审批意见
+	Name         string `1.json:"name" binding:"required"`
+	Id           string `1.json:"id" binding:"required"`
+	CreditAmount int64  `1.json:"creditAmount"`
+	Duration     int    `1.json:"duration"`
+	Interest     string `1.json:"interest"`
+	Product      string `1.json:"product"`
 }

@@ -6,8 +6,8 @@ import (
 )
 
 type LabelAdd struct {
-	Creator int64    `json:"creator"` // 创建人(对应用户表的ID)
-	Tags    []string `json:"tags"`    // 标签
+	Creator int64    `1.json:"creator"` // 创建人(对应用户表的ID)
+	Tags    []string `1.json:"tags"`    // 标签
 }
 
 func main() {

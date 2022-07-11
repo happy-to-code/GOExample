@@ -13,13 +13,13 @@ func main() {
 func test() {
 	req := &Req{}
 	body, err := req.Url("https://www.baidu.com").
-		Method(http.MethodGet).                     // 请求方式
-		Header("user-agent", "Mozilla/5.0...").     // 请求头
-		Header("content-type", "application/json"). // 请求头可以设置多个
-		Timeout(3).                                 // 请求超时时间
-		Retry(3).                                   // 请求错误重试次数
-		Chunk().                                    // 开启Chunk不会自动关闭response io,需要自己手动读取response body数据并关闭io 参考Test5分块传输
-		Params(Query{                               // 请求参数,所有请求方式通用，如果get参数携带?id=1则优先使用url参数
+		Method(http.MethodGet).                       // 请求方式
+		Header("user-agent", "Mozilla/5.0...").       // 请求头
+		Header("content-type", "application/1.json"). // 请求头可以设置多个
+		Timeout(3).                                   // 请求超时时间
+		Retry(3).                                     // 请求错误重试次数
+		Chunk().                                      // 开启Chunk不会自动关闭response io,需要自己手动读取response body数据并关闭io 参考Test5分块传输
+		Params(Query{                                 // 请求参数,所有请求方式通用，如果get参数携带?id=1则优先使用url参数
 			"id": 1,
 		}).
 		// ProxyUrl("192.168.1.1:8080"). // 配置要使用的代理ip
