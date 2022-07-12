@@ -24,4 +24,5 @@ func main() {
 	fmt.Println("===========now:", now)
 	timeStr := now.Format("20060102150405")
 	fmt.Println("timeStr==>", timeStr)
+
 }
