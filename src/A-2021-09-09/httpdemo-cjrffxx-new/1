@@ -1,0 +1,40 @@
+{
+    "code": 200,
+    "data": [
+        {
+            "CON_PHONE": "13222318768",
+            "CERTTIME": "2020-08-13 00:00:00",
+            "EYE_LEVEL": "",
+            "IDCARD": "321081197109121224",
+            "BRITH_TIME": "1971-09-12 00:00:00",
+            "SEX": "2",
+            "STATE": 1,
+            "EDUCATION": "3",
+            "FIRST_TIME": "2009-11-12 00:00:00",
+            "AREA_CODE": "321081401207",
+            "KINDSTR": "5,",
+            "CJR_CJRLX": "0",
+            "NATION": "1",
+            "DISABLED_NUMBER": "32108119710912122454",
+            "EAR_LEVEL": "",
+            "EVALUATE": "同意换证",
+            "DISABLED_LEVEL": "4",
+            "BODY_LEVEL": "",
+            "RESIDENCE_AREA": "江苏省扬州市仪征市枣林湾旅游度假区长山村委会钱长组",
+            "STIME": "2020-08-13 00:00:00",
+            "ZX_REASON": "",
+            "ETIME": "2030-08-13 00:00:00",
+            "DISABLED_TYPE": "5",
+            "GUARD_NAME": "钱修林",
+            "SPEECH_LEVEL": "",
+            "NAME": "王华英",
+            "DEFORMITY_TYPE": "",
+            "CJR_ALLOCATION_STATE": "0",
+            "UTIME": "2021-05-15 00:00:00",
+            "IQ_LEVEL": "4",
+            "MENTAL_LEVEL": "",
+            "PROVINCEID": 32
+        }
+    ],
+    "message": ""
+}

@@ -8,8 +8,8 @@ import (
 func main() {
 	var wg sync.WaitGroup
 	dogChan := make(chan struct{}, 1)
-	catChan := make(chan struct{}, 1)
-	fishChan := make(chan struct{}, 1)
+	catChan := make(chan struct{})
+	fishChan := make(chan struct{})
 
 	dogChan <- struct{}{}
 	wg.Add(15)
