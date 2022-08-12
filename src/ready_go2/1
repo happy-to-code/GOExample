@@ -1,0 +1,51 @@
+{
+    "itemName": "企业和专利信息",
+    "sourceHash": "ad7e92694fea75d74bdd6e890310e08439b03462774c4604e631b038dc7610a1",
+    "itemValue": {
+        "entities": [
+            {
+                "address": "江苏省扬州市瓜洲镇****",
+                "applyDate": "2011-09-26",
+                "companyName": "江苏*****股份有限公司",
+                "id": "15",
+                "registrationDate": "2012-11-28",
+                "registrationNumber": "100**473",
+                "specialBeginDate": "2012-11-28",
+                "specialEndDate": "2022-11-27",
+                "subjectType": "私营",
+                "tradeName": "*****",
+                "unifiedCode": "91321000753905****"
+            }
+        ],
+        "inventions": [
+            {
+                "address": "江苏省扬州市瓜洲镇****",
+                "applyDate": "20110628",
+                "applyNo": "2011101770170",
+                "companyName": "江苏*****股份有限公司",
+                "id": "3",
+                "inventionName": "海上石油装置*******及其生产方法",
+                "isEffective": "是",
+                "isHandle": "否",
+                "patenteeType": "企业",
+                "type": "发明",
+                "unifiedCode": "91321000753905****",
+                "zipCode": "225129"
+            },
+            {
+                "address": "江苏省扬州市瓜洲镇****",
+                "applyDate": "20110628",
+                "applyNo": "2011101770151",
+                "companyName": "江苏*****股份有限公司",
+                "id": "10",
+                "inventionName": "船舶及海洋*******及其制造方法",
+                "isEffective": "是",
+                "isHandle": "否",
+                "patenteeType": "企业",
+                "type": "发明",
+                "unifiedCode": "91321000753905****",
+                "zipCode": "225129"
+            }
+        ]
+    }
+}
