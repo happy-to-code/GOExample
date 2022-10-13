@@ -1,0 +1,25 @@
+  "contract_address" varchar(80) COLLATE "pg_catalog"."default" NOT NULL,
+  "protocol" varchar(50) COLLATE "pg_catalog"."default" NOT NULL,
+  "tokenA_address" varchar(80) COLLATE "pg_catalog"."default" NOT NULL,
+  "tokenA_amount" numeric(140) NOT NULL,
+  "tokenA_name" text COLLATE "pg_catalog"."default",
+  "tokenB_address" varchar(80) COLLATE "pg_catalog"."default" NOT NULL,
+  "tokenB_amount" numeric(120) NOT NULL,
+  "tokenB_name" text COLLATE "pg_catalog"."default",
+  "lp_name" text COLLATE "pg_catalog"."default",
+  "lp_symbol" text COLLATE "pg_catalog"."default",
+  "chain_name" varchar(20) COLLATE "pg_catalog"."default" NOT NULL,
+  "block_updated_time" timestamp(6),
+  "created_at" timestamp(6) DEFAULT CURRENT_TIMESTAMP,
+  "updated_at" timestamp(6) DEFAULT CURRENT_TIMESTAMP,
+  "hash_code" int8 DEFAULT 0
+
+
+
+INSERT INTO "public"."lp_pool_snapshot"("contract_address", "protocol", "tokenA_address", "tokenA_amount", "tokenA_name", "tokenB_address", "tokenB_amount", "tokenB_name", "lp_name", "lp_symbol", "chain_name", "block_updated_time", "created_at", "updated_at", "hash_code") SELECT
+                                                                                                                                                                                                                                                                                 	"contract_address", "protocol", "tokenA_address", "tokenA_amount", "tokenA_name", "tokenB_address", "tokenB_amount", "tokenB_name", "lp_name", "lp_symbol", "chain_name", "block_updated_time", "created_at", "updated_at", "hash_code"
+                                                                                                                                                                                                                                                                                 FROM
+                                                                                                                                                                                                                                                                                 	"lp_pool"
+                                                                                                                                                                                                                                                                                 WHERE
+                                                                                                                                                                                                                                                                                 	block_updated_time <= CURRENT_DATE + INTERVAL '1d'
+                                                                                                                                                                                                                                                                                 	AND block_updated_time > CURRENT_DATE - INTERVAL '1sec' ;

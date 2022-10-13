@@ -1,0 +1,5 @@
+p, demo , /user, write
+p, demo , /user, read
+p, demo , /order, read
+p, demo1 , /user/userlist,read
+p, demo2 , /order/orderlist,read

@@ -1636,7 +1636,7 @@ func main() {
 		return pensionList[i].Aae003 > pensionList[j].Aae003
 	})
 
-	fmt.Println(pensionList)
+	fmt.Printf("%+v\n", pensionList)
 }
 
 type Pension struct {

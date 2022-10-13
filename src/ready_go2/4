@@ -1,0 +1,31 @@
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1, 'test1', 'test1', 'bsc',  1, NULL, NULL);
+
+
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x8b99f3660622e21f2910ecca7fbe51d654a1517d','Binance:Charity','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x01c952174c24e1210d26961d456a77a39e1f0bb0','Binance:HotWallet10','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x08adbaa6a215affd711f532ec219299ba1e5b9b7','Binance:BEP-20Factory','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x9a2f5556e9a637e8fbce886d8e3cf8b316a1d8a2','Binance:BIDRToken','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c','Binance:BTCBToken','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xe9e7cea3dedca5984780bafc599bd69add087d56','Binance:BUSDStablecoin','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xf07c30e4cd6cfff525791b4b601bd345bded7f47','Binance:Deployer','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x4e656459ed25bf986eea1196bc1b00665401645d','Binance:Deployer1','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x88efdac29e3ba290512e26c04908692ae9810566','Binance:Deployer2','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xfc19e4ce0e0a27b09f2011ef0512669a0f76367a','Binance:Deployer3','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x631fc1ea2270e98fbd9d92658ece0f5a269aa161','Binance:HotWallet','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xeb2d2f1b8c558a40207669291fda468e50c8a0bb','Binance:HotWallet10','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x161ba15a5f335c9f06bb5bbb0a9ce14076fbb645','Binance:HotWallet11','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x515b72ed8a97f42c568d6a143232775018f133c8','Binance:HotWallet12','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xbd612a3f30dca67bf60a39fd0d35e39b7ab80774','Binance:HotWallet13','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x7a8a34db9acd10c3b6277473b192fe47192569ca','Binance:HotWallet14','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xa180fe01b906a1be37be6c534a3300785b20d947','Binance:HotWallet16','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x29bdfbf7d27462a2d115748ace2bd71a2646946c','Binance:HotWallet17','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x73f5ebe90f27b46ea12e5795d16c4b408b19cc6f','Binance:HotWallet18','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xb1256d6b31e4ae87da1d56e5890c66be7f1c038e','Binance:HotWallet2','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x17b692ae403a8ff3a3b2ed7676cf194310dde9af','Binance:HotWallet3','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x8ff804cc2143451f454779a40de386f913dcff20','Binance:HotWallet4','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xad9ffffd4573b642959d3b854027735579555cbc','Binance:HotWallet5','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x8894e0a0c962cb723c1976a4421c95949be2d4e3','Binance:HotWallet6','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xe2fc31f816a9b94326492132018c3aecc4a93ae1','Binance:HotWallet7','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0x3c783c21a0383057d128bae431894a5c19f9cf06','Binance:HotWallet8','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xdccf3b77da55107280bd850ea519df3705d1a75a','Binance:HotWallet9','bsc',1,1,1);
+INSERT INTO "public"."label"("creator", "address", "tag", "chain_name", "del_flag", "ty", "source") VALUES ( -1,'0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c','Binance:WBNBToken','bsc',1,1,1);

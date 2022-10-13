@@ -1,0 +1,82 @@
+DROP INDEX ix_tx_history_201801_from,ix_tx_history_201801_to;
+DROP INDEX ix_tx_history_201802_from,ix_tx_history_201802_to;
+DROP INDEX ix_tx_history_201803_from,ix_tx_history_201803_to;
+DROP INDEX ix_tx_history_201804_from,ix_tx_history_201804_to;
+DROP INDEX ix_tx_history_201805_from,ix_tx_history_201805_to;
+DROP INDEX ix_tx_history_201806_from,ix_tx_history_201806_to;
+DROP INDEX ix_tx_history_201807_from,ix_tx_history_201807_to;
+DROP INDEX ix_tx_history_201808_from,ix_tx_history_201808_to;
+DROP INDEX ix_tx_history_201809_from,ix_tx_history_201809_to;
+DROP INDEX ix_tx_history_201810_from,ix_tx_history_201810_to;
+DROP INDEX ix_tx_history_201811_from,ix_tx_history_201811_to;
+DROP INDEX ix_tx_history_201812_from,ix_tx_history_201812_to;
+
+
+DROP INDEX ix_tx_history_201901_from,ix_tx_history_201901_to;
+DROP INDEX ix_tx_history_201902_from,ix_tx_history_201902_to;
+DROP INDEX ix_tx_history_201903_from,ix_tx_history_201903_to;
+DROP INDEX ix_tx_history_201904_from,ix_tx_history_201904_to;
+DROP INDEX ix_tx_history_201905_from,ix_tx_history_201905_to;
+DROP INDEX ix_tx_history_201906_from,ix_tx_history_201906_to;
+DROP INDEX ix_tx_history_201907_from,ix_tx_history_201907_to;
+DROP INDEX ix_tx_history_201908_from,ix_tx_history_201908_to;
+DROP INDEX ix_tx_history_201909_from,ix_tx_history_201909_to;
+DROP INDEX ix_tx_history_201910_from,ix_tx_history_201910_to;
+DROP INDEX ix_tx_history_201911_from,ix_tx_history_201911_to;
+DROP INDEX ix_tx_history_201912_from,ix_tx_history_201912_to;
+
+
+DROP INDEX ix_tx_history_202001_from,ix_tx_history_202001_to;
+DROP INDEX ix_tx_history_202002_from,ix_tx_history_202002_to;
+DROP INDEX ix_tx_history_202003_from,ix_tx_history_202003_to;
+DROP INDEX ix_tx_history_202004_from,ix_tx_history_202004_to;
+DROP INDEX ix_tx_history_202005_from,ix_tx_history_202005_to;
+DROP INDEX ix_tx_history_202006_from,ix_tx_history_202006_to;
+DROP INDEX ix_tx_history_202007_from,ix_tx_history_202007_to;
+DROP INDEX ix_tx_history_202008_from,ix_tx_history_202008_to;
+DROP INDEX ix_tx_history_202009_from,ix_tx_history_202009_to;
+DROP INDEX ix_tx_history_202010_from,ix_tx_history_202010_to;
+DROP INDEX ix_tx_history_202011_from,ix_tx_history_202011_to;
+DROP INDEX ix_tx_history_202012_from,ix_tx_history_202012_to;
+
+
+DROP INDEX ix_tx_history_202101_from,ix_tx_history_202101_to;
+DROP INDEX ix_tx_history_202102_from,ix_tx_history_202102_to;
+DROP INDEX ix_tx_history_202103_from,ix_tx_history_202103_to;
+DROP INDEX ix_tx_history_202104_from,ix_tx_history_202104_to;
+DROP INDEX ix_tx_history_202105_from,ix_tx_history_202105_to;
+DROP INDEX ix_tx_history_202106_from,ix_tx_history_202106_to;
+DROP INDEX ix_tx_history_202107_from,ix_tx_history_202107_to;
+DROP INDEX ix_tx_history_202108_from,ix_tx_history_202108_to;
+DROP INDEX ix_tx_history_202109_from,ix_tx_history_202109_to;
+DROP INDEX ix_tx_history_202110_from,ix_tx_history_202110_to;
+DROP INDEX ix_tx_history_202111_from,ix_tx_history_202111_to;
+DROP INDEX ix_tx_history_202112_from,ix_tx_history_202112_to;
+
+
+DROP INDEX ix_tx_history_202201_from,ix_tx_history_202201_to;
+DROP INDEX ix_tx_history_202202_from,ix_tx_history_202202_to;
+DROP INDEX ix_tx_history_202203_from,ix_tx_history_202203_to;
+DROP INDEX ix_tx_history_202204_from,ix_tx_history_202204_to;
+DROP INDEX ix_tx_history_202205_from,ix_tx_history_202205_to;
+DROP INDEX ix_tx_history_202206_from,ix_tx_history_202206_to;
+DROP INDEX ix_tx_history_202207_from,ix_tx_history_202207_to;
+DROP INDEX ix_tx_history_202208_from,ix_tx_history_202208_to;
+DROP INDEX ix_tx_history_202209_from,ix_tx_history_202209_to;
+DROP INDEX ix_tx_history_202210_from,ix_tx_history_202210_to;
+DROP INDEX ix_tx_history_202211_from,ix_tx_history_202211_to;
+DROP INDEX ix_tx_history_202212_from,ix_tx_history_202212_to;
+
+
+DROP INDEX ix_tx_history_202301_from,ix_tx_history_202301_to;
+DROP INDEX ix_tx_history_202302_from,ix_tx_history_202302_to;
+DROP INDEX ix_tx_history_202303_from,ix_tx_history_202303_to;
+DROP INDEX ix_tx_history_202304_from,ix_tx_history_202304_to;
+DROP INDEX ix_tx_history_202305_from,ix_tx_history_202305_to;
+DROP INDEX ix_tx_history_202306_from,ix_tx_history_202306_to;
+DROP INDEX ix_tx_history_202307_from,ix_tx_history_202307_to;
+DROP INDEX ix_tx_history_202308_from,ix_tx_history_202308_to;
+DROP INDEX ix_tx_history_202309_from,ix_tx_history_202309_to;
+DROP INDEX ix_tx_history_202310_from,ix_tx_history_202310_to;
+DROP INDEX ix_tx_history_202311_from,ix_tx_history_202311_to;
+DROP INDEX ix_tx_history_202312_from,ix_tx_history_202312_to;

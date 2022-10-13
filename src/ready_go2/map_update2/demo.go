@@ -108,5 +108,4 @@ func main() {
 	// 		subjectQualificationInfoMap, ok := value.(map[string]interface{})
 	// 	}
 	// }
-
 }

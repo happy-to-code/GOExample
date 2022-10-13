@@ -1,0 +1,27 @@
+{
+  "regulation": {
+    "basic_info": {
+      "operating_institution_subject_ref": "operating_institution_subject_ref",
+      "info_type": 1
+    },
+    "business_rule_execution_info": {
+      "reporter_name_subject_ref": "reporter_name_subject_ref_1",
+      "file_name": "file_name_test",
+      "remark": "remark"
+    },
+    "policy_implementation_info": {
+      "releasing_organization_name": "发布单位",
+      "releasing_organization_subject_ref": "releasing_organization_subject_ref"
+    },
+    "major_events_measures_info": {
+      "reporter_name_subject_ref": "reporter_name_subject_ref_2",
+      "next_measures": "拟进一步采取的措施",
+      "remark": "remark"
+    },
+    "regulatory_execution_info": {
+      "reporter_name_subject_ref": "reporter_name_subject_ref_3",
+      "regulator_name": "监管机构名称",
+      "remark": "监管措施执行信息-备注"
+    }
+  }
+}
