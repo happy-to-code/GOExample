@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>移动端页面示例</title>
+    <style>
+        /* 使用流式布局 */
+        body {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 针对不同屏幕大小设置样式 */
+        @media screen and (max-width: 480px) {
+            .main {
+                width: 100%;
+            }
+        }
+
+        /* 使用移动优化的CSS框架 */
+        @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 main">
+            <h1>移动端页面示例</h1>
+            <p>这个页面使用了流式布局和Bootstrap CSS框架</p>
+            <img src="<!--此处放置自己的图片地址-->" alt="">
+            <a href="#" class="btn btn-primary">Button示例</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
