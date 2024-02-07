@@ -8,7 +8,7 @@ import (
 
 func main() {
 	var arr []string
-	for i := 0; i < 1000000; i++ {
+	for i := 0; i < 10000000; i++ {
 		rand := rand.Intn(1000000)
 		arr = append(arr, fmt.Sprintf("%d", rand))
 	}
